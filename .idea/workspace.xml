@@ -3,7 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="a7662d79-40e2-4a0b-bbf6-9c4cfa6cdf0b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/about.html" beforeDir="false" afterPath="$PROJECT_DIR$/about.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/contact.html" beforeDir="false" afterPath="$PROJECT_DIR$/contact.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cv.html" beforeDir="false" afterPath="$PROJECT_DIR$/cv.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/portfolio.html" beforeDir="false" afterPath="$PROJECT_DIR$/portfolio.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/research.html" beforeDir="false" afterPath="$PROJECT_DIR$/research.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/single.html" beforeDir="false" afterPath="$PROJECT_DIR$/single.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -37,23 +42,23 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="html" value="428" />
+          <entry key="html" value="429" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="HTML" value="428" />
+          <entry key="HTML" value="429" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/about.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="205">
-              <caret line="71" column="116" selection-start-line="71" selection-start-column="116" selection-end-line="71" selection-end-column="116" />
+            <state relative-caret-position="585">
+              <caret line="39" column="65" selection-start-line="39" selection-start-column="65" selection-end-line="39" selection-end-column="65" />
             </state>
           </provider>
         </entry>
@@ -61,7 +66,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/contact.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="203">
+            <state relative-caret-position="735">
               <caret line="49" selection-start-line="49" selection-end-line="51" selection-end-column="101" />
             </state>
           </provider>
@@ -112,10 +117,10 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/cv.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="309">
+            <state relative-caret-position="-143">
               <caret line="569" column="97" selection-start-line="569" selection-start-column="97" selection-end-line="569" selection-end-column="97" />
             </state>
           </provider>
@@ -143,8 +148,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>Copyright &amp;copy;&lt;script&gt;document.write(new Date().getFullYear());&lt;/script&gt; All rights reserved</find>
-      <find>Copyright &amp;copy;</find>
       <find>Copyright &amp;copy;&lt;script&gt;document.write(new Date().getFullYear());&lt;/script&gt; All rights reserved |&lt;/a&gt;</find>
       <find>Copyright &amp;copy;&lt;script&gt;document.write(new Date().getFullYear());&lt;/script&gt; All rights reserved | This template is made with &lt;i class=&quot;icon-heart&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt; by &lt;a href=&quot;https://colorlib.com&quot; target=&quot;_blank&quot;&gt;Colorlib</find>
       <find>Copyright &amp;copy</find>
@@ -167,18 +170,30 @@
       <find>linker</find>
       <find>face</find>
       <find>fcto</find>
+      <find>Explorer - Free Bootstrap 4 Template by</find>
+      <find>Research</find>
+      <find>Portfolio</find>
+      <find>Reasearch_</find>
+      <find>research</find>
+      <find>portfolio</find>
+      <find>research_</find>
       <find>ftco-social</find>
     </findStrings>
     <replaceStrings>
       <replace />
-      <replace>Avi</replace>
       <replace>avi</replace>
       <replace>avi.vajpeyi@gmail.com</replace>
       <replace>Avi Vajpeyi</replace>
       <replace>Research</replace>
-      <replace>Portfolio</replace>
       <replace>CV</replace>
       <replace>&lt;li&gt;&lt;a href=&quot;https://avivajpeyi.itch.io/&quot;&gt;&lt;i class=&quot;icon-gamepad&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/li&gt;                     &lt;li&gt;&lt;a href=&quot;https://www.linkedin.com/feed/&quot;&gt;&lt;i class=&quot;icon-linkedin&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/li&gt;                     &lt;li&gt;&lt;a href=&quot;https://github.com/avivajpeyi/&quot;&gt;&lt;i class=&quot;icon-github&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/li&gt;</replace>
+      <replace>Avi</replace>
+      <replace>Portfolio_</replace>
+      <replace>Reasearch</replace>
+      <replace>Portfolio</replace>
+      <replace>research_</replace>
+      <replace>research</replace>
+      <replace>portfolio</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -317,20 +332,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/contact.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="203">
-          <caret line="49" selection-start-line="49" selection-end-line="51" selection-end-column="101" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cv.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="309">
-          <caret line="569" column="97" selection-start-line="569" selection-start-column="97" selection-end-line="569" selection-end-column="97" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/single.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="226">
@@ -368,8 +369,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/about.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="205">
-          <caret line="71" column="116" selection-start-line="71" selection-start-column="116" selection-end-line="71" selection-end-column="116" />
+        <state relative-caret-position="585">
+          <caret line="39" column="65" selection-start-line="39" selection-start-column="65" selection-end-line="39" selection-end-column="65" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/contact.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="735">
+          <caret line="49" selection-start-line="49" selection-end-line="51" selection-end-column="101" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cv.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-143">
+          <caret line="569" column="97" selection-start-line="569" selection-start-column="97" selection-end-line="569" selection-end-column="97" />
         </state>
       </provider>
     </entry>
