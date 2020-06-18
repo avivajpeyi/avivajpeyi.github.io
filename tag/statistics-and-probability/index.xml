@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Statistics and Probability | Avi Vajpeyi</title>
+    <link>https://avivajpeyi.github.io/tag/statistics-and-probability/</link>
+      <atom:link href="https://avivajpeyi.github.io/tag/statistics-and-probability/index.xml" rel="self" type="application/rss+xml" />
+    <description>Statistics and Probability</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>Avi Vajpeyi © 2020</copyright><lastBuildDate>Wed, 01 Aug 2018 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://avivajpeyi.github.io/img/static/img/apex.png</url>
+      <title>Statistics and Probability</title>
+      <link>https://avivajpeyi.github.io/tag/statistics-and-probability/</link>
+    </image>
+    
+    <item>
+      <title>Enhancing confidence in the detection of gravitational waves from compact binaries using signal coherence</title>
+      <link>https://avivajpeyi.github.io/publication/content/publication/2018-ph-rv-d-98-d-2007-i/</link>
+      <pubDate>Wed, 01 Aug 2018 00:00:00 +0000</pubDate>
+      <guid>https://avivajpeyi.github.io/publication/content/publication/2018-ph-rv-d-98-d-2007-i/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Avi Vajpeyi</title>
+    <link>https://avivajpeyi.github.io/</link>
+      <atom:link href="https://avivajpeyi.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <description>Avi Vajpeyi</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>Avi Vajpeyi © 2020</copyright><lastBuildDate>Fri, 19 Jun 2020 01:00:52 +1000</lastBuildDate>
+    <image>
+      <url>https://avivajpeyi.github.io/img/static/img/apex.png</url>
+      <title>Avi Vajpeyi</title>
+      <link>https://avivajpeyi.github.io/</link>
+    </image>
+    
+    <item>
+      <title>Glass Runner</title>
+      <link>https://avivajpeyi.github.io/project/glass-runner/</link>
+      <pubDate>Fri, 19 Jun 2020 01:00:52 +1000</pubDate>
+      <guid>https://avivajpeyi.github.io/project/glass-runner/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>PhD Reports</title>
+      <link>https://avivajpeyi.github.io/post/phd-reports/</link>
+      <pubDate>Fri, 19 Jun 2020 00:20:45 +1000</pubDate>
+      <guid>https://avivajpeyi.github.io/post/phd-reports/</guid>
+      <description>&lt;p&gt;For my PhD canditure I have to produce some reports documenting my progress:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;6 months: 
+&lt;a href=&#34;https://avi.vajpeyi.docs.ligo.org/initial_review/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Initial Project Review Report&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;12 months: 
+&lt;a href=&#34;https://avi.vajpeyi.docs.ligo.org/confirmation_review/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Confirmation Report&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Note: to view these documents you may have to click on &amp;ldquo;Advanced &amp;gt; Proceed&amp;rdquo;.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Tunnel Vision</title>
+      <link>https://avivajpeyi.github.io/project/tunnel-vision/</link>
+      <pubDate>Thu, 18 Jun 2020 23:56:06 +1000</pubDate>
+      <guid>https://avivajpeyi.github.io/project/tunnel-vision/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Boogie Block</title>
+      <link>https://avivajpeyi.github.io/project/boogie-block/</link>
+      <pubDate>Thu, 18 Jun 2020 23:55:57 +1000</pubDate>
+      <guid>https://avivajpeyi.github.io/project/boogie-block/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Vitality</title>
+      <link>https://avivajpeyi.github.io/project/vitality/</link>
+      <pubDate>Thu, 18 Jun 2020 23:55:49 +1000</pubDate>
+      <guid>https://avivajpeyi.github.io/project/vitality/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Chain Game</title>
+      <link>https://avivajpeyi.github.io/project/chain-game/</link>
+      <pubDate>Thu, 18 Jun 2020 23:55:40 +1000</pubDate>
+      <guid>https://avivajpeyi.github.io/project/chain-game/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Taxi Tank</title>
+      <link>https://avivajpeyi.github.io/project/taxi-tank/</link>
+      <pubDate>Thu, 18 Jun 2020 23:55:19 +1000</pubDate>
+      <guid>https://avivajpeyi.github.io/project/taxi-tank/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Move It</title>
+      <link>https://avivajpeyi.github.io/project/move-it/</link>
+      <pubDate>Thu, 18 Jun 2020 23:55:13 +1000</pubDate>
+      <guid>https://avivajpeyi.github.io/project/move-it/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Soul Collector</title>
+      <link>https://avivajpeyi.github.io/project/soul-collector/</link>
+      <pubDate>Thu, 18 Jun 2020 23:55:06 +1000</pubDate>
+      <guid>https://avivajpeyi.github.io/project/soul-collector/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Time Turner</title>
+      <link>https://avivajpeyi.github.io/project/time-turner/</link>
+      <pubDate>Thu, 18 Jun 2020 13:59:47 +1000</pubDate>
+      <guid>https://avivajpeyi.github.io/project/time-turner/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Bayesian inference for compact binary coalescences with BILBY: Validation and application to the first LIGO--Virgo gravitational-wave transient catalogue</title>
+      <link>https://avivajpeyi.github.io/publication/content/publication/2020-ar-xiv-200600714-r/</link>
+      <pubDate>Mon, 01 Jun 2020 00:00:00 +0000</pubDate>
+      <guid>https://avivajpeyi.github.io/publication/content/publication/2020-ar-xiv-200600714-r/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Massively parallel Bayesian inference for transient gravitational-wave astronomy</title>
+      <link>https://avivajpeyi.github.io/publication/content/publication/2019-ar-xiv-190911873-s/</link>
+      <pubDate>Sun, 01 Sep 2019 00:00:00 +0000</pubDate>
+      <guid>https://avivajpeyi.github.io/publication/content/publication/2019-ar-xiv-190911873-s/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Enhancing confidence in the detection of gravitational waves from compact binaries using signal coherence</title>
+      <link>https://avivajpeyi.github.io/publication/content/publication/2018-ph-rv-d-98-d-2007-i/</link>
+      <pubDate>Wed, 01 Aug 2018 00:00:00 +0000</pubDate>
+      <guid>https://avivajpeyi.github.io/publication/content/publication/2018-ph-rv-d-98-d-2007-i/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

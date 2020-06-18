@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>K. Athar | Avi Vajpeyi</title>
+    <link>https://avivajpeyi.github.io/author/k.-athar/</link>
+      <atom:link href="https://avivajpeyi.github.io/author/k.-athar/index.xml" rel="self" type="application/rss+xml" />
+    <description>K. Athar</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>Avi Vajpeyi © 2020</copyright><lastBuildDate>Mon, 01 Jun 2020 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://avivajpeyi.github.io/img/static/img/apex.png</url>
+      <title>K. Athar</title>
+      <link>https://avivajpeyi.github.io/author/k.-athar/</link>
+    </image>
+    
+    <item>
+      <title>Bayesian inference for compact binary coalescences with BILBY: Validation and application to the first LIGO--Virgo gravitational-wave transient catalogue</title>
+      <link>https://avivajpeyi.github.io/publication/content/publication/2020-ar-xiv-200600714-r/</link>
+      <pubDate>Mon, 01 Jun 2020 00:00:00 +0000</pubDate>
+      <guid>https://avivajpeyi.github.io/publication/content/publication/2020-ar-xiv-200600714-r/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
