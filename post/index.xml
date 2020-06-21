@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts | Avi Vajpeyi</title><link>https://avivajpeyi.github.io/post/</link><atom:link href="https://avivajpeyi.github.io/post/index.xml" rel="self" type="application/rss+xml"/><description>Posts</description><generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>Avi Vajpeyi © 2020</copyright><image><url>https://avivajpeyi.github.io/img/static/img/apex.png</url><title>Posts</title><link>https://avivajpeyi.github.io/post/</link></image><item><title>PhD Reports</title><link>https://avivajpeyi.github.io/post/phd-reports/</link><pubDate>Fri, 19 Jun 2020 00:20:45 +1000</pubDate><guid>https://avivajpeyi.github.io/post/phd-reports/</guid><description>&lt;p>For my PhD canditure I have to produce some reports documenting my progress:&lt;/p>
+&lt;ul>
+&lt;li>6 months:
+&lt;a href="https://avi.vajpeyi.docs.ligo.org/initial_review/" target="_blank" rel="noopener">Initial Project Review Report&lt;/a>&lt;/li>
+&lt;li>12 months:
+&lt;a href="https://avi.vajpeyi.docs.ligo.org/confirmation_review/" target="_blank" rel="noopener">Confirmation Report&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;p>Note: to view these documents you may have to click on &amp;ldquo;Advanced &amp;gt; Proceed&amp;rdquo;.&lt;/p></description></item><item><title>Python Big-O Examples</title><link>https://avivajpeyi.github.io/post/python-big-o-examples/</link><pubDate>Fri, 19 Jun 2020 00:20:45 +1000</pubDate><guid>https://avivajpeyi.github.io/post/python-big-o-examples/</guid><description>&lt;h1 id="what-are-the-big-o-for-the-following">What are the Big-O for the following?&lt;/h1>
+&lt;p>Some students in an Algorithms class I am teaching are having trouble with
+Big-O notation. Here are some practice problems:&lt;/p>
+&lt;h2 id="qs-1">Qs 1&lt;/h2>
+&lt;pre>&lt;code class="language-python">for i in range(n):
+sum++
+&lt;/code>&lt;/pre>
+&lt;div class="container">
+&lt;a href="#qs1" class="btn btn-info" data-toggle="collapse">Answer&lt;/a>
+&lt;div id="qs1" class="collapse">
+O(n)
+&lt;/div>
+&lt;/div>
+&lt;h2 id="qs-2">Qs 2&lt;/h2>
+&lt;pre>&lt;code class="language-python">for i in range(n)
+for j in range(n)
+sum+=1
+&lt;/code>&lt;/pre>
+&lt;div class="container">
+&lt;a href="#qs2" class="btn btn-info" data-toggle="collapse">Answer&lt;/a>
+&lt;div id="qs2" class="collapse">
+O(n)
+&lt;/div>
+&lt;/div>
+&lt;h2 id="qs-3">Qs 3&lt;/h2>
+&lt;pre>&lt;code class="language-python">for i in range(n, - 1, -1):
+sum +=1
+&lt;/code>&lt;/pre>
+&lt;div class="container">
+&lt;a href="#qs3" class="btn btn-info" data-toggle="collapse">Answer&lt;/a>
+&lt;div id="qs3" class="collapse">
+O(n^2)
+&lt;/div>
+&lt;/div>
+&lt;h2 id="qs-4">Qs 4&lt;/h2>
+&lt;pre>&lt;code class="language-python">i = 1
+while i&amp;lt;n:
+i *= 2
+&lt;/code>&lt;/pre>
+&lt;div class="container">
+&lt;a href="#qs4" class="btn btn-info" data-toggle="collapse">Answer&lt;/a>
+&lt;div id="qs4" class="collapse">
+O(2^n)
+&lt;/div>
+&lt;/div>
+&lt;h2 id="qs-5">Qs 5&lt;/h2>
+&lt;pre>&lt;code class="language-python">i = n
+while (i &amp;lt; n)
+i ++
+&lt;/code>&lt;/pre>
+&lt;div class="container">
+&lt;a href="#qs5" class="btn btn-info" data-toggle="collapse">Answer&lt;/a>
+&lt;div id="qs5" class="collapse">
+O(1)
+&lt;/div>
+&lt;/div>
+&lt;h2 id="qs-6">Qs 6&lt;/h2>
+&lt;pre>&lt;code class="language-python">def fibonacci(n):
+if (n &amp;lt;= 1): return n
+else: return(fibonacci(n - 2) + fibonacci(n -1))
+&lt;/code>&lt;/pre>
+&lt;div class="container">
+&lt;a href="#qs6" class="btn btn-info" data-toggle="collapse">Answer&lt;/a>
+&lt;div id="qs6" class="collapse">
+O(2^n)
+&lt;/div>
+&lt;/div>
+&lt;h2 id="qs-7">Qs 7&lt;/h2>
+&lt;pre>&lt;code class="language-python">i = 0
+while (i &amp;gt; n)
+i *= 2
+&lt;/code>&lt;/pre>
+&lt;div class="container">
+&lt;a href="#qs7" class="btn btn-info" data-toggle="collapse">Answer&lt;/a>
+&lt;div id="qs7" class="collapse">
+O(1)
+&lt;/div>
+&lt;/div>
+&lt;h2 id="qs-8">Qs 8&lt;/h2>
+&lt;pre>&lt;code class="language-python">for(int i=n; i&amp;gt;0; i/=2)
+for(int j=0; j&amp;lt;i; j++)
+count++;
+&lt;/code>&lt;/pre>
+&lt;div class="container">
+&lt;a href="#qs8" class="btn btn-info" data-toggle="collapse">Answer&lt;/a>
+&lt;div id="qs8" class="collapse">
+O(n)
+&lt;/div>
+&lt;/div>
+&lt;h2 id="qs-9">Qs 9&lt;/h2>
+&lt;pre>&lt;code class="language-python">for(int i=1; i&amp;lt;n*n; i++)
+for(int j=1; j≤i; j++)
+for(int k=1; k≤ 6; k++)
+sum ++;
+&lt;/code>&lt;/pre>
+&lt;div class="container">
+&lt;a href="#qs9" class="btn btn-info" data-toggle="collapse">Answer&lt;/a>
+&lt;div id="qs9" class="collapse">
+O(n^4)
+&lt;/div>
+&lt;/div></description></item></channel></rss>
