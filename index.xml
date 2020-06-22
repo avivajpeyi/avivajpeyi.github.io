@@ -11,7 +11,15 @@ cs = [list(c) for c in cs]
 for i in range(len(cs)):
 cs[i].append(alpha)
 return cs
-&lt;/code>&lt;/pre></description></item><item><title>PhD Reports</title><link>https://avivajpeyi.github.io/post/phd-reports/</link><pubDate>Fri, 19 Jun 2020 00:20:45 +1000</pubDate><guid>https://avivajpeyi.github.io/post/phd-reports/</guid><description>&lt;p>For my PhD canditure I have to produce some reports documenting my progress:&lt;/p>
+&lt;/code>&lt;/pre>
+&lt;figure id="figure-20-colorblind-cols-note-the-colors-are-very-similar-after-10">
+&lt;a data-fancybox="" href="https://avivajpeyi.github.io/post/colorblind-palette-for-plotting/example_colorblind_cols_huf7e7db2a8672f1d7016a6ba445fb678c_8259_2000x2000_fit_lanczos_2.png" data-caption="20 colorblind cols. Note the colors are very similar after ~10.">
+&lt;img data-src="https://avivajpeyi.github.io/post/colorblind-palette-for-plotting/example_colorblind_cols_huf7e7db2a8672f1d7016a6ba445fb678c_8259_2000x2000_fit_lanczos_2.png" class="lazyload" alt="" width="2241" height="160">
+&lt;/a>
+&lt;figcaption>
+20 colorblind cols. Note the colors are very similar after ~10.
+&lt;/figcaption>
+&lt;/figure></description></item><item><title>PhD Reports</title><link>https://avivajpeyi.github.io/post/phd-reports/</link><pubDate>Fri, 19 Jun 2020 00:20:45 +1000</pubDate><guid>https://avivajpeyi.github.io/post/phd-reports/</guid><description>&lt;p>For my PhD canditure I have to produce some reports documenting my progress:&lt;/p>
 &lt;ul>
 &lt;li>6 months:
 &lt;a href="https://avi.vajpeyi.docs.ligo.org/initial_review/" target="_blank" rel="noopener">Initial Project Review Report&lt;/a>&lt;/li>
