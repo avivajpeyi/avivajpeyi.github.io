@@ -1,4 +1,17 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Avi Vajpeyi</title><link>https://avivajpeyi.github.io/</link><atom:link href="https://avivajpeyi.github.io/index.xml" rel="self" type="application/rss+xml"/><description>Avi Vajpeyi</description><generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>Avi Vajpeyi © 2020</copyright><lastBuildDate>Fri, 19 Jun 2020 01:00:52 +1000</lastBuildDate><image><url>https://avivajpeyi.github.io/img/static/img/apex.png</url><title>Avi Vajpeyi</title><link>https://avivajpeyi.github.io/</link></image><item><title>Glass Runner</title><link>https://avivajpeyi.github.io/project/glass-runner/</link><pubDate>Fri, 19 Jun 2020 01:00:52 +1000</pubDate><guid>https://avivajpeyi.github.io/project/glass-runner/</guid><description/></item><item><title>PhD Reports</title><link>https://avivajpeyi.github.io/post/phd-reports/</link><pubDate>Fri, 19 Jun 2020 00:20:45 +1000</pubDate><guid>https://avivajpeyi.github.io/post/phd-reports/</guid><description>&lt;p>For my PhD canditure I have to produce some reports documenting my progress:&lt;/p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Avi Vajpeyi</title><link>https://avivajpeyi.github.io/</link><atom:link href="https://avivajpeyi.github.io/index.xml" rel="self" type="application/rss+xml"/><description>Avi Vajpeyi</description><generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>Avi Vajpeyi © 2020</copyright><lastBuildDate>Fri, 19 Jun 2020 01:00:52 +1000</lastBuildDate><image><url>https://avivajpeyi.github.io/img/static/img/apex.png</url><title>Avi Vajpeyi</title><link>https://avivajpeyi.github.io/</link></image><item><title>Glass Runner</title><link>https://avivajpeyi.github.io/project/glass-runner/</link><pubDate>Fri, 19 Jun 2020 01:00:52 +1000</pubDate><guid>https://avivajpeyi.github.io/project/glass-runner/</guid><description/></item><item><title>Colorblind Palette for Plotting</title><link>https://avivajpeyi.github.io/post/colorblind-palette-for-plotting/</link><pubDate>Fri, 19 Jun 2020 00:20:45 +1000</pubDate><guid>https://avivajpeyi.github.io/post/colorblind-palette-for-plotting/</guid><description>&lt;pre>&lt;code class="language-python">from typing import List, Optional
+import seaborn as sns
+def get_colors(num_colors: int, alpha: Optional[float]=1) -&amp;gt; List[List[float]]:
+&amp;quot;&amp;quot;&amp;quot;Get a list of colorblind colors,
+:param num_colors: Number of colors.
+:param alpha: The transparency
+:return: List of colors. Each color is a list of [r, g, b, alpha].
+&amp;quot;&amp;quot;&amp;quot;
+cs = sns.color_palette(palette=&amp;quot;colorblind&amp;quot;, n_colors=num_colors)
+cs = [list(c) for c in cs]
+for i in range(len(cs)):
+cs[i].append(alpha)
+return cs
+&lt;/code>&lt;/pre></description></item><item><title>PhD Reports</title><link>https://avivajpeyi.github.io/post/phd-reports/</link><pubDate>Fri, 19 Jun 2020 00:20:45 +1000</pubDate><guid>https://avivajpeyi.github.io/post/phd-reports/</guid><description>&lt;p>For my PhD canditure I have to produce some reports documenting my progress:&lt;/p>
 &lt;ul>
 &lt;li>6 months:
 &lt;a href="https://avi.vajpeyi.docs.ligo.org/initial_review/" target="_blank" rel="noopener">Initial Project Review Report&lt;/a>&lt;/li>
