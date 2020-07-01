@@ -392,4 +392,46 @@ O(n^4)
 &lt;li>12 months:
 &lt;a href="https://avi.vajpeyi.docs.ligo.org/confirmation_review/" target="_blank" rel="noopener">Confirmation Report&lt;/a>&lt;/li>
 &lt;/ul>
-&lt;p>Note: to view these documents you may have to click on &amp;ldquo;Advanced &amp;gt; Proceed&amp;rdquo;.&lt;/p></description></item><item><title>Massively parallel Bayesian inference for transient gravitational-wave astronomy</title><link>https://avivajpeyi.github.io/publication/content/publication/2019-ar-xiv-190911873-s/</link><pubDate>Sun, 01 Sep 2019 00:00:00 +0000</pubDate><guid>https://avivajpeyi.github.io/publication/content/publication/2019-ar-xiv-190911873-s/</guid><description/></item><item><title>Enhancing confidence in the detection of gravitational waves from compact binaries using signal coherence</title><link>https://avivajpeyi.github.io/publication/content/publication/2018-ph-rv-d-98-d-2007-i/</link><pubDate>Wed, 01 Aug 2018 00:00:00 +0000</pubDate><guid>https://avivajpeyi.github.io/publication/content/publication/2018-ph-rv-d-98-d-2007-i/</guid><description/></item></channel></rss>
+&lt;p>Note: to view these documents you may have to click on &amp;ldquo;Advanced &amp;gt; Proceed&amp;rdquo;.&lt;/p></description></item><item><title>Installing LalSuite from Source</title><link>https://avivajpeyi.github.io/post/installing-lalsuite-from-source/</link><pubDate>Thu, 19 Sep 2019 00:20:45 +1000</pubDate><guid>https://avivajpeyi.github.io/post/installing-lalsuite-from-source/</guid><description>&lt;h2 id="steps">Steps&lt;/h2>
+&lt;h3 id="step-0-requirements">Step 0: Requirements&lt;/h3>
+&lt;p>Module loads/things you might need:&lt;/p>
+&lt;pre>&lt;code class="language-bash">module load git/2.18.0
+module load git-lfs/2.4.0
+module load anaconda3/5.1.0
+module load gcc/6.4.0
+module load openmpi/3.0.0
+module load fftw/3.3.7
+module load swig/3.0.12-python-3.6.4
+module load framel/8.30
+module load metaio/8.4.0
+module load gsl/2.4
+&lt;/code>&lt;/pre>
+&lt;h3 id="step-1-install-lal">Step 1: Install lal&lt;/h3>
+&lt;pre>&lt;code class="language-bash">git clone git@git.ligo.org:lscsoft/lalsuite.git
+mkdir lal_install_dir
+cd lalsuite/lal
+./00boot &amp;amp;&amp;amp; ./configure --prefix=/&amp;lt;path to&amp;gt;/lal_install_dir/ &amp;amp;&amp;amp; make &amp;amp;&amp;amp; make install
+. &amp;lt;path to&amp;gt;/lal_install_dir/etc/lal-user-env.sh
+&lt;/code>&lt;/pre>
+&lt;h3 id="step-2-install-lalsimulation">Step 2: Install lalsimulation&lt;/h3>
+&lt;pre>&lt;code class="language-bash">cd ../lalsimulation
+./00boot &amp;amp;&amp;amp; ./configure --prefix=/&amp;lt;path to&amp;gt;/lal_install_dir/ &amp;amp;&amp;amp; make &amp;amp;&amp;amp; make install
+&amp;lt;path to&amp;gt;/lal_install_dir/etc/lalsimulation-user-env.sh
+&lt;/code>&lt;/pre>
+&lt;p>At this point, the installation &lt;em>should(?)&lt;/em> work. Test it out in python:&lt;/p>
+&lt;pre>&lt;code class="language-bash">cd ~
+python
+&amp;gt;&amp;gt;&amp;gt; import lalsimulation
+&lt;/code>&lt;/pre>
+&lt;h3 id="step-3-get-waveform-data">Step 3: Get waveform data&lt;/h3>
+&lt;pre>&lt;code class="language-bash">cd ~/ &amp;amp; mkdir waveform_data
+echo &amp;quot;export LAL_DATA_PATH=/&amp;lt;path_to_wave_data_dir&amp;gt;&amp;quot; &amp;gt;&amp;gt; .bash_profile
+&lt;/code>&lt;/pre>
+&lt;p>Copy the waveform data files and place them into this the &lt;code>waveform_data/&lt;/code> dir&lt;/p>
+&lt;div class="alert alert-warning">
+&lt;div>
+Where do we get the waveform datafiles from again?
+&lt;/div>
+&lt;/div>
+&lt;h2 id="test-install-with-the-following-script">Test install with the following script&lt;/h2>
+&lt;script type="application/javascript" src="https://gist.github.com/avivajpeyi/030a544b097fcb4508055d73fa3fa895.js">&lt;/script></description></item><item><title>Massively parallel Bayesian inference for transient gravitational-wave astronomy</title><link>https://avivajpeyi.github.io/publication/content/publication/2019-ar-xiv-190911873-s/</link><pubDate>Sun, 01 Sep 2019 00:00:00 +0000</pubDate><guid>https://avivajpeyi.github.io/publication/content/publication/2019-ar-xiv-190911873-s/</guid><description/></item><item><title>Enhancing confidence in the detection of gravitational waves from compact binaries using signal coherence</title><link>https://avivajpeyi.github.io/publication/content/publication/2018-ph-rv-d-98-d-2007-i/</link><pubDate>Wed, 01 Aug 2018 00:00:00 +0000</pubDate><guid>https://avivajpeyi.github.io/publication/content/publication/2018-ph-rv-d-98-d-2007-i/</guid><description/></item></channel></rss>
