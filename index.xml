@@ -38,8 +38,8 @@ matched filtering to find gravitational waves in LIGO data.&lt;/p>
 &lt;a href="pycbc">PyCBC&lt;/a> use &lt;em>matched filtering&lt;/em> to find gravitational wave signals in LIGO strain data. This method compares a gravitational wave template (numerical values representing one perticular gravitational wave) to strain data. Before the strain data is compared to the gravitational wave template, the data is weighed based on the detector&amp;rsquo;s sensitivity (lower the weight of the data that comes from a region where the detector is not sensitive). The output of matched-filtering is a signal-to-noise ratio (SNR) that can be used to determine if the data contains something interesting (a potential gravitational wave candidate) or just noise.&lt;/p>
 &lt;p>There are many possible gravitational wave templates (gravitational waves from CBCs can have 15 parameters that can describe them hence there are $O(n^{15})$ possible templates). To compute a matched-filter SNR for each of these templates with the LIGO data is computationally expensive. Hence, instead of match-filtering with all templates, only a subset of templates to be used in matched-filtering is selected and stored in a &lt;em>template bank&lt;/em>. The bank is created to cover as much of the parameter space as possible by storing only the unique looking templates.&lt;/p>
 &lt;figure id="figure-an-example-template-bank-used-by-ligo-searches">
-&lt;a data-fancybox="" href="example_bank.png" data-caption="An example template bank used by LIGO searches.">
-&lt;img src="example_bank.png" alt="" >
+&lt;a data-fancybox="" href="https://avivajpeyi.github.io/post/matched-filtering/example_bank_huf1562fd73a0e497989eef78c62a97bdb_306564_2000x2000_fit_lanczos_2.png" data-caption="An example template bank used by LIGO searches.">
+&lt;img data-src="https://avivajpeyi.github.io/post/matched-filtering/example_bank_huf1562fd73a0e497989eef78c62a97bdb_306564_2000x2000_fit_lanczos_2.png" class="lazyload" alt="" width="916" height="696">
 &lt;/a>
 &lt;figcaption>
 An example template bank used by LIGO searches.
