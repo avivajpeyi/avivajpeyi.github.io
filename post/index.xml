@@ -1,7 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts | Avi Vajpeyi</title><link>https://avivajpeyi.github.io/post/</link><atom:link href="https://avivajpeyi.github.io/post/index.xml" rel="self" type="application/rss+xml"/><description>Posts</description><generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>Avi Vajpeyi © 2020</copyright><image><url>https://avivajpeyi.github.io/img/static/img/apex.png</url><title>Posts</title><link>https://avivajpeyi.github.io/post/</link></image><item><title>Merger Recoil Kicks</title><link>https://avivajpeyi.github.io/post/merger-recoil-kicks/</link><pubDate>Mon, 29 Jun 2020 01:20:45 +1000</pubDate><guid>https://avivajpeyi.github.io/post/merger-recoil-kicks/</guid><description>&lt;h1 id="recoil-kick-notes">Recoil kick notes&lt;/h1>
-&lt;p>S190521g&amp;rsquo;s EM paper suggests v_kick ∼ 200 km/s&lt;/p>
-&lt;p>&lt;a href="https://arxiv.org/pdf/gr-qc/0610154.pdf">https://arxiv.org/pdf/gr-qc/0610154.pdf&lt;/a> says ~ max v_kick ~ 175 . 2 ± 11 km/s for non spinning BH&lt;/p>
-&lt;p>While precessing BH v_kick &amp;raquo; 1000 km/s &lt;a href="https://arxiv.org/abs/1908.04382">https://arxiv.org/abs/1908.04382&lt;/a>&lt;/p></description></item><item><title>Matched Filtering</title><link>https://avivajpeyi.github.io/post/matched-filtering/</link><pubDate>Mon, 29 Jun 2020 00:20:45 +1000</pubDate><guid>https://avivajpeyi.github.io/post/matched-filtering/</guid><description>&lt;h2>Table of Contents&lt;/h2>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts | Avi Vajpeyi</title><link>https://avivajpeyi.github.io/post/</link><atom:link href="https://avivajpeyi.github.io/post/index.xml" rel="self" type="application/rss+xml"/><description>Posts</description><generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>Avi Vajpeyi © 2020</copyright><image><url>https://avivajpeyi.github.io/img/static/img/apex.png</url><title>Posts</title><link>https://avivajpeyi.github.io/post/</link></image><item><title>Matched Filtering</title><link>https://avivajpeyi.github.io/post/matched-filtering/</link><pubDate>Mon, 29 Jun 2020 00:20:45 +1000</pubDate><guid>https://avivajpeyi.github.io/post/matched-filtering/</guid><description>&lt;h2>Table of Contents&lt;/h2>
 &lt;nav id="TableOfContents">
 &lt;ul>
 &lt;li>&lt;a href="#a-conceptual-discussion">A Conceptual Discussion&lt;/a>
@@ -148,12 +145,12 @@ $$R_{nn}(\tau)=\sigma^2\delta(\tau) $$&lt;/p>
 &lt;strong>Derivation of the above PSD equation&lt;/strong> (&lt;em>taken from Mike Lau&amp;rsquo;s master&amp;rsquo;s thesis&lt;/em>)
 \begin{equation} \label{eq:psd_derivation}
 \begin{split}
-\mathcal{F}(R_{nn}(t))) &amp;amp;= \langle \tilde{n}^*(f) \tilde{n}(f&amp;rsquo;)\rangle\\&lt;br>
-&amp;amp;= \iint^{\infty}_{-\infty} \langle {n}(t) {n}(t&amp;rsquo;)\rangle e^{-2\pi i (ft-f&amp;rsquo;t&amp;rsquo;)} dt dt&amp;rsquo;\\&lt;br>
-&amp;amp;{t&amp;rsquo;\to t+t&amp;rsquo;}\\&lt;br>
-&amp;amp;=\iint^{\infty}_{-\infty} \langle {n}(t) {n}(t+t&amp;rsquo;)\rangle e^{-2\pi i(f-f&amp;rsquo;)t} e^{-2\pi if&amp;rsquo;t&amp;rsquo;} dt dt&amp;rsquo;\\&lt;br>
-&amp;amp;=\int^{\infty}_{-\infty} \langle {n}(t) {n}(t+t&amp;rsquo;)\rangle e^{-2\pi if&amp;rsquo;t&amp;rsquo;} dt&amp;rsquo; \delta(f-f&amp;rsquo;) \\&lt;br>
-&amp;amp;= \frac{1}{2}\text{PSD}(f)\delta(f-f&amp;rsquo;) \\ &lt;br>
+\mathcal{F}(R_{nn}(t))) &amp;amp;= \langle \tilde{n}^*(f) \tilde{n}(f')\rangle\\&lt;br>
+&amp;amp;= \iint^{\infty}_{-\infty} \langle {n}(t) {n}(t')\rangle e^{-2\pi i (ft-f&amp;rsquo;t')} dt dt'\\&lt;br>
+&amp;amp;{t'\to t+t'}\\&lt;br>
+&amp;amp;=\iint^{\infty}_{-\infty} \langle {n}(t) {n}(t+t')\rangle e^{-2\pi i(f-f')t} e^{-2\pi if&amp;rsquo;t'} dt dt'\\&lt;br>
+&amp;amp;=\int^{\infty}_{-\infty} \langle {n}(t) {n}(t+t')\rangle e^{-2\pi if&amp;rsquo;t'} dt' \delta(f-f') \\&lt;br>
+&amp;amp;= \frac{1}{2}\text{PSD}(f)\delta(f-f') \\ &lt;br>
 \end{split}
 \end{equation}
 &lt;/div>
@@ -177,11 +174,11 @@ p_n(\vec{n}) &amp;amp;= \lim_{\Delta t \to 0}\frac{1}{(\sigma\sqrt{2\pi})^N}\ \t
 \end{equation}&lt;/p>
 &lt;div class="alert alert-note">
 &lt;div>
-*&lt;em>Noise Weighted Inner product of two time-series **
+**Noise Weighted Inner product of two time-series **
 The noise weighted inner product $(a,b)$ of two time-series $a(t)$ and $b(t)$ is defined as
 \begin{equation} \label{eq:inner_producs}
 \begin{split}
-(a,b) &amp;amp;= 4 \text{Re} \int_0^{\infty} \frac{\tilde{a}(f) \tilde{b}^&lt;/em>(f)}{\text{PSD}(f)}df\\&lt;br>
+(a,b) &amp;amp;= 4 \text{Re} \int_0^{\infty} \frac{\tilde{a}(f) \tilde{b}^*(f)}{\text{PSD}(f)}df\\&lt;br>
 &amp;amp;= 2 \int_{-\infty}}^{\infty} \frac{\tilde{a}(f) \tilde{b}^*(f)}{\text{PSD}(|f|)}df\\&lt;br>
 &amp;amp;= \int_{-\infty}}^{\infty} \frac{\tilde{a}(f) \tilde{b}^*(f) + \tilde{a}^*(f) \tilde{b}(f)}{\text{PSD}(|f|)}df,
 \end{split}
@@ -277,7 +274,19 @@ return match_filter_values
 &lt;h3 id="code-for-demo">Code for demo&lt;/h3>
 &lt;p>The entire code for the demo can be found here:
 &lt;script type="application/javascript" src="https://gist.github.com/avivajpeyi/c5fbcdabc5a52b3fd039075f98fcd563.js">&lt;/script>
-&lt;/p></description></item><item><title>Colorblind Palette for Plotting</title><link>https://avivajpeyi.github.io/post/colorblind-palette-for-plotting/</link><pubDate>Fri, 19 Jun 2020 00:20:45 +1000</pubDate><guid>https://avivajpeyi.github.io/post/colorblind-palette-for-plotting/</guid><description>&lt;script type="application/javascript" src="https://gist.github.com/avivajpeyi/6cafec9c0ffa70b0bd72b7ee85e995d1.js">&lt;/script>
+&lt;/p></description></item><item><title>Understanding exoplanet transits</title><link>https://avivajpeyi.github.io/post/understanding-exoplanet-transits/</link><pubDate>Mon, 29 Jun 2020 00:20:45 +1000</pubDate><guid>https://avivajpeyi.github.io/post/understanding-exoplanet-transits/</guid><description>&lt;p>Here are some of my note written on
+&lt;a href="https://monashuni-my.sharepoint.com/personal/avi_vajpeyi_monash_edu/_layouts/15/Doc.aspx?sourcedoc=%7b53f5d67a-7a1b-42f2-a693-65ef9fb374fc%7d&amp;amp;action=view&amp;amp;wd=target%28Reading%20Notes.one%7Cfaaa413a-250a-6140-925a-e1e174ac0934%2FThe%20Search%20for%20Exoplanets%7C5e36e1fd-6e00-8f48-9a9f-edcd007a97d8%2F%29" target="_blank" rel="noopener">OneNote&lt;/a>:&lt;/p>
+&lt;!DOCTYPE html>
+&lt;html>
+&lt;head>
+&lt;title>&lt;/title>
+&lt;/head>
+&lt;body>
+&lt;h1>&lt;/h1>
+&lt;iframe src="understanding_exoplanet_transits.pdf" width="100%" height="500px">
+&lt;/iframe>
+&lt;/body>
+&lt;/html></description></item><item><title>Colorblind Palette for Plotting</title><link>https://avivajpeyi.github.io/post/colorblind-palette-for-plotting/</link><pubDate>Fri, 19 Jun 2020 00:20:45 +1000</pubDate><guid>https://avivajpeyi.github.io/post/colorblind-palette-for-plotting/</guid><description>&lt;script type="application/javascript" src="https://gist.github.com/avivajpeyi/6cafec9c0ffa70b0bd72b7ee85e995d1.js">&lt;/script>
 &lt;figure id="figure-20-colorblind-cols-note-the-colors-are-very-similar-after-10">
 &lt;a data-fancybox="" href="https://avivajpeyi.github.io/post/colorblind-palette-for-plotting/example_colorblind_cols_huf7e7db2a8672f1d7016a6ba445fb678c_8259_2000x2000_fit_lanczos_2.png" data-caption="20 colorblind cols. Note the colors are very similar after ~10.">
 &lt;img data-src="https://avivajpeyi.github.io/post/colorblind-palette-for-plotting/example_colorblind_cols_huf7e7db2a8672f1d7016a6ba445fb678c_8259_2000x2000_fit_lanczos_2.png" class="lazyload" alt="" width="2241" height="160">

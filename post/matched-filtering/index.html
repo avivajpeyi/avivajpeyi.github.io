@@ -53,7 +53,7 @@ $$R_{nn}(\tau)=\sigma^2\delta(\tau) $$</p><h4 id=power-spectral-density-from-aut
 \end{equation}</p><div class="alert alert-note"><div><strong>Derivation of the above PSD equation</strong> (<em>taken from Mike Lau&rsquo;s master&rsquo;s thesis</em>)
 \begin{equation} \label{eq:psd_derivation}
 \begin{split}
-\mathcal{F}(R_{nn}(t))) &= \langle \tilde{n}^*(f) \tilde{n}(f&rsquo;)\rangle\\<br>&= \iint^{\infty}_{-\infty} \langle {n}(t) {n}(t&rsquo;)\rangle e^{-2\pi i (ft-f&rsquo;t&rsquo;)} dt dt&rsquo;\\<br>&{t&rsquo;\to t+t&rsquo;}\\<br>&=\iint^{\infty}_{-\infty} \langle {n}(t) {n}(t+t&rsquo;)\rangle e^{-2\pi i(f-f&rsquo;)t} e^{-2\pi if&rsquo;t&rsquo;} dt dt&rsquo;\\<br>&=\int^{\infty}_{-\infty} \langle {n}(t) {n}(t+t&rsquo;)\rangle e^{-2\pi if&rsquo;t&rsquo;} dt&rsquo; \delta(f-f&rsquo;) \\<br>&= \frac{1}{2}\text{PSD}(f)\delta(f-f&rsquo;) \\<br>\end{split}
+\mathcal{F}(R_{nn}(t))) &= \langle \tilde{n}^*(f) \tilde{n}(f')\rangle\\<br>&= \iint^{\infty}_{-\infty} \langle {n}(t) {n}(t')\rangle e^{-2\pi i (ft-f&rsquo;t')} dt dt'\\<br>&{t'\to t+t'}\\<br>&=\iint^{\infty}_{-\infty} \langle {n}(t) {n}(t+t')\rangle e^{-2\pi i(f-f')t} e^{-2\pi if&rsquo;t'} dt dt'\\<br>&=\int^{\infty}_{-\infty} \langle {n}(t) {n}(t+t')\rangle e^{-2\pi if&rsquo;t'} dt' \delta(f-f') \\<br>&= \frac{1}{2}\text{PSD}(f)\delta(f-f') \\<br>\end{split}
 \end{equation}</div></div><p>In the case where $\lim {\Delta t \to 0}$,
 $$R_{nn}(\tau)=\sigma^2\delta(\tau) = R_{nn}(f), $$
 hence,
@@ -63,11 +63,11 @@ datapoints $\vec{n}$ from Guassian white noise is simplified to:
 \begin{split}
 p_n(\vec{n}) &= \lim_{\Delta t \to 0}\frac{1}{(\sigma\sqrt{2\pi})^N}\ \text{exp}\left( \frac{-1}{2\sigma^2} \sum^{N-1}_{i=0} n_i^2\right) \\<br>&\propto \lim_{\Delta t \to 0} \text{exp}\left( \frac{-1}{2\sigma^2\Delta t} \sum^{N-1}_{i=0} n_i^2 \Delta t\right) \\<br>&\propto \text{exp}\left( \frac{-1}{\text{PSD}(f)} \int^{T}_{0} n(t)^2 dt\right) \\<br>&\propto \text{exp}\left( - \int^{\infty}_{-\infty} \frac{|n(f)|^2}{\text{PSD}(f)} df\right) \\<br>&\propto \text{exp}\left(-\frac{1}{2} 4 \int^{\infty}_{0} \frac{|n(f)|^2}{\text{PSD}(f)} df\right) \\<br>\therefore p_n(\vec{n}) &\propto \text{e}^{-(n,n)/2}
 \end{split}
-\end{equation}</p><div class="alert alert-note"><div>*<em>Noise Weighted Inner product of two time-series **
+\end{equation}</p><div class="alert alert-note"><div>**Noise Weighted Inner product of two time-series **
 The noise weighted inner product $(a,b)$ of two time-series $a(t)$ and $b(t)$ is defined as
 \begin{equation} \label{eq:inner_producs}
 \begin{split}
-(a,b) &= 4 \text{Re} \int_0^{\infty} \frac{\tilde{a}(f) \tilde{b}^</em>(f)}{\text{PSD}(f)}df\\<br>&= 2 \int_{-\infty}}^{\infty} \frac{\tilde{a}(f) \tilde{b}^*(f)}{\text{PSD}(|f|)}df\\<br>&= \int_{-\infty}}^{\infty} \frac{\tilde{a}(f) \tilde{b}^*(f) + \tilde{a}^*(f) \tilde{b}(f)}{\text{PSD}(|f|)}df,
+(a,b) &= 4 \text{Re} \int_0^{\infty} \frac{\tilde{a}(f) \tilde{b}^*(f)}{\text{PSD}(f)}df\\<br>&= 2 \int_{-\infty}}^{\infty} \frac{\tilde{a}(f) \tilde{b}^*(f)}{\text{PSD}(|f|)}df\\<br>&= \int_{-\infty}}^{\infty} \frac{\tilde{a}(f) \tilde{b}^*(f) + \tilde{a}^*(f) \tilde{b}(f)}{\text{PSD}(|f|)}df,
 \end{split}
 \end{equation}</div></div><p>where</p><ul><li>$\text{PSD}(f) is the one-sided power spectral density of noise, and</li><li>$\tilde{y}(-f) = \tilde{y}^*(f)$ .</li></ul><h3 id=matched-filter>Matched-Filter</h3><p>The above section provides a mathematical perscription to calculate the probability desnsity that
 a collection of time-series data comes from stationary Gaussian white noise. Using this,
