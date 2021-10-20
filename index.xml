@@ -1,4 +1,18 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Avi Vajpeyi</title><link>https://avivajpeyi.github.io/</link><atom:link href="https://avivajpeyi.github.io/index.xml" rel="self" type="application/rss+xml"/><description>Avi Vajpeyi</description><generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>Avi Vajpeyi © 2020</copyright><lastBuildDate>Mon, 29 Jun 2020 00:20:45 +1000</lastBuildDate><image><url>https://avivajpeyi.github.io/img/static/img/apex.png</url><title>Avi Vajpeyi</title><link>https://avivajpeyi.github.io/</link></image><item><title>Matched Filtering</title><link>https://avivajpeyi.github.io/post/matched-filtering/</link><pubDate>Mon, 29 Jun 2020 00:20:45 +1000</pubDate><guid>https://avivajpeyi.github.io/post/matched-filtering/</guid><description>&lt;h2>Table of Contents&lt;/h2>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Avi Vajpeyi</title><link>https://avivajpeyi.github.io/</link><atom:link href="https://avivajpeyi.github.io/index.xml" rel="self" type="application/rss+xml"/><description>Avi Vajpeyi</description><generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>Avi Vajpeyi © 2021</copyright><lastBuildDate>Wed, 20 Oct 2021 00:20:45 +1000</lastBuildDate><image><url>https://avivajpeyi.github.io/img/static/img/apex.png</url><title>Avi Vajpeyi</title><link>https://avivajpeyi.github.io/</link></image><item><title>Slurm Notes</title><link>https://avivajpeyi.github.io/post/slurm-notes/</link><pubDate>Wed, 20 Oct 2021 00:20:45 +1000</pubDate><guid>https://avivajpeyi.github.io/post/slurm-notes/</guid><description>&lt;h2 id="plot-cpu-hours-used-for-jobs">Plot CPU hours used for jobs&lt;/h2>
+&lt;p>The folowing creates a file &lt;code>jobstats.txt&lt;/code> that contains the CPU time (seconds) for each job run bw the start+end time specified.&lt;/p>
+&lt;pre>&lt;code class="language-bash">sacct -S 2021-01-01 -E 2021-10-06 -u avajpeyi -X -o &amp;quot;jobname%-40,cputimeraw&amp;quot; --parsable2 &amp;gt; jobstats.txt
+&lt;/code>&lt;/pre>
+&lt;p>To plot the data you can use the following:
+&lt;script type="application/javascript" src="https://gist.github.com/avivajpeyi/3beed78d92cd5f3520b4a1a93eb97cea.js">&lt;/script>
+&lt;/p>
+&lt;figure id="figure-total-cpu-hours-ive-used-19-22">
+&lt;a data-fancybox="" href="https://avivajpeyi.github.io/post/slurm-notes/cpuhrs_hue501005abdd0d309a25415d2822d82f1_63641_2000x2000_fit_lanczos_3.png" data-caption="Total CPU hours I&amp;amp;rsquo;ve used (&amp;amp;lsquo;19-&amp;amp;lsquo;22)">
+&lt;img data-src="https://avivajpeyi.github.io/post/slurm-notes/cpuhrs_hue501005abdd0d309a25415d2822d82f1_63641_2000x2000_fit_lanczos_3.png" class="lazyload" alt="" width="1200" height="1200">
+&lt;/a>
+&lt;figcaption>
+Total CPU hours I&amp;rsquo;ve used (&amp;lsquo;19-&amp;lsquo;22)
+&lt;/figcaption>
+&lt;/figure></description></item><item><title>Matched Filtering</title><link>https://avivajpeyi.github.io/post/matched-filtering/</link><pubDate>Mon, 29 Jun 2020 00:20:45 +1000</pubDate><guid>https://avivajpeyi.github.io/post/matched-filtering/</guid><description>&lt;h2>Table of Contents&lt;/h2>
 &lt;nav id="TableOfContents">
 &lt;ul>
 &lt;li>&lt;a href="#a-conceptual-discussion">A Conceptual Discussion&lt;/a>
@@ -35,8 +49,8 @@ matched filtering to find gravitational waves in LIGO data.&lt;/p>
 &lt;a href="pycbc">PyCBC&lt;/a> use &lt;em>matched filtering&lt;/em> to find gravitational wave signals in LIGO strain data. This method compares a gravitational wave template (numerical values representing one perticular gravitational wave) to strain data. Before the strain data is compared to the gravitational wave template, the data is weighed based on the detector&amp;rsquo;s sensitivity (lower the weight of the data that comes from a region where the detector is not sensitive). The output of matched-filtering is a signal-to-noise ratio (SNR) that can be used to determine if the data contains something interesting (a potential gravitational wave candidate) or just noise.&lt;/p>
 &lt;p>There are many possible gravitational wave templates (gravitational waves from CBCs can have 15 parameters that can describe them hence there are $O(n^{15})$ possible templates). To compute a matched-filter SNR for each of these templates with the LIGO data is computationally expensive. Hence, instead of match-filtering with all templates, only a subset of templates to be used in matched-filtering is selected and stored in a &lt;em>template bank&lt;/em>. The bank is created to cover as much of the parameter space as possible by storing only the unique looking templates.&lt;/p>
 &lt;figure id="figure-an-example-template-bank-used-by-ligo-searches">
-&lt;a data-fancybox="" href="https://avivajpeyi.github.io/post/matched-filtering/example_bank_huf1562fd73a0e497989eef78c62a97bdb_306564_2000x2000_fit_lanczos_2.png" data-caption="An example template bank used by LIGO searches.">
-&lt;img data-src="https://avivajpeyi.github.io/post/matched-filtering/example_bank_huf1562fd73a0e497989eef78c62a97bdb_306564_2000x2000_fit_lanczos_2.png" class="lazyload" alt="" width="916" height="696">
+&lt;a data-fancybox="" href="https://avivajpeyi.github.io/post/matched-filtering/example_bank_huf1562fd73a0e497989eef78c62a97bdb_306564_2000x2000_fit_lanczos_3.png" data-caption="An example template bank used by LIGO searches.">
+&lt;img data-src="https://avivajpeyi.github.io/post/matched-filtering/example_bank_huf1562fd73a0e497989eef78c62a97bdb_306564_2000x2000_fit_lanczos_3.png" class="lazyload" alt="" width="916" height="696">
 &lt;/a>
 &lt;figcaption>
 An example template bank used by LIGO searches.
@@ -231,8 +245,8 @@ return noise[0]
 &lt;/code>&lt;/pre>
 &lt;p>The data generated from Gaussian noise and a Gaussian Pulse signal is shown in the following image.
 &lt;figure id="figure-a-demonstrative-image-showing-what-happens-to-a-gaussian-pulse-signal-when-some-noise-is-added-to-it">
-&lt;a data-fancybox="" href="https://avivajpeyi.github.io/post/matched-filtering/data_huc79dad2933094a5bf23c1ca19d9dd784_53716_2000x2000_fit_lanczos_2.png" data-caption="A demonstrative image showing what happens to a Gaussian Pulse signal when some noise is added to it.">
-&lt;img data-src="https://avivajpeyi.github.io/post/matched-filtering/data_huc79dad2933094a5bf23c1ca19d9dd784_53716_2000x2000_fit_lanczos_2.png" class="lazyload" alt="" width="640" height="480">
+&lt;a data-fancybox="" href="https://avivajpeyi.github.io/post/matched-filtering/data_huc79dad2933094a5bf23c1ca19d9dd784_53716_2000x2000_fit_lanczos_3.png" data-caption="A demonstrative image showing what happens to a Gaussian Pulse signal when some noise is added to it.">
+&lt;img data-src="https://avivajpeyi.github.io/post/matched-filtering/data_huc79dad2933094a5bf23c1ca19d9dd784_53716_2000x2000_fit_lanczos_3.png" class="lazyload" alt="" width="640" height="480">
 &lt;/a>
 &lt;figcaption>
 A demonstrative image showing what happens to a Gaussian Pulse signal when some noise is added to it.
@@ -288,8 +302,8 @@ return match_filter_values
 &lt;/body>
 &lt;/html></description></item><item><title>Glass Runner</title><link>https://avivajpeyi.github.io/project/glass-runner/</link><pubDate>Fri, 19 Jun 2020 01:00:52 +1000</pubDate><guid>https://avivajpeyi.github.io/project/glass-runner/</guid><description/></item><item><title>Colorblind Palette for Plotting</title><link>https://avivajpeyi.github.io/post/colorblind-palette-for-plotting/</link><pubDate>Fri, 19 Jun 2020 00:20:45 +1000</pubDate><guid>https://avivajpeyi.github.io/post/colorblind-palette-for-plotting/</guid><description>&lt;script type="application/javascript" src="https://gist.github.com/avivajpeyi/6cafec9c0ffa70b0bd72b7ee85e995d1.js">&lt;/script>
 &lt;figure id="figure-20-colorblind-cols-note-the-colors-are-very-similar-after-10">
-&lt;a data-fancybox="" href="https://avivajpeyi.github.io/post/colorblind-palette-for-plotting/example_colorblind_cols_huf7e7db2a8672f1d7016a6ba445fb678c_8259_2000x2000_fit_lanczos_2.png" data-caption="20 colorblind cols. Note the colors are very similar after ~10.">
-&lt;img data-src="https://avivajpeyi.github.io/post/colorblind-palette-for-plotting/example_colorblind_cols_huf7e7db2a8672f1d7016a6ba445fb678c_8259_2000x2000_fit_lanczos_2.png" class="lazyload" alt="" width="2241" height="160">
+&lt;a data-fancybox="" href="https://avivajpeyi.github.io/post/colorblind-palette-for-plotting/example_colorblind_cols_huf7e7db2a8672f1d7016a6ba445fb678c_8259_2000x2000_fit_lanczos_3.png" data-caption="20 colorblind cols. Note the colors are very similar after ~10.">
+&lt;img data-src="https://avivajpeyi.github.io/post/colorblind-palette-for-plotting/example_colorblind_cols_huf7e7db2a8672f1d7016a6ba445fb678c_8259_2000x2000_fit_lanczos_3.png" class="lazyload" alt="" width="2241" height="160">
 &lt;/a>
 &lt;figcaption>
 20 colorblind cols. Note the colors are very similar after ~10.
