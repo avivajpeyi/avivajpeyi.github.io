@@ -1,4 +1,37 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts | Avi Vajpeyi</title><link>https://avivajpeyi.github.io/post/</link><atom:link href="https://avivajpeyi.github.io/post/index.xml" rel="self" type="application/rss+xml"/><description>Posts</description><generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>Avi Vajpeyi © 2021</copyright><image><url>https://avivajpeyi.github.io/img/static/img/apex.png</url><title>Posts</title><link>https://avivajpeyi.github.io/post/</link></image><item><title>Slurm Notes</title><link>https://avivajpeyi.github.io/post/slurm-notes/</link><pubDate>Wed, 20 Oct 2021 00:20:45 +1000</pubDate><guid>https://avivajpeyi.github.io/post/slurm-notes/</guid><description>&lt;h2 id="plot-cpu-hours-used-for-jobs">Plot CPU hours used for jobs&lt;/h2>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts | Avi Vajpeyi</title><link>https://avivajpeyi.github.io/post/</link><atom:link href="https://avivajpeyi.github.io/post/index.xml" rel="self" type="application/rss+xml"/><description>Posts</description><generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>Avi Vajpeyi © 2021</copyright><image><url>https://avivajpeyi.github.io/img/static/img/apex.png</url><title>Posts</title><link>https://avivajpeyi.github.io/post/</link></image><item><title>Slurm Notes</title><link>https://avivajpeyi.github.io/post/slurm-notes/</link><pubDate>Wed, 20 Oct 2021 00:20:45 +1000</pubDate><guid>https://avivajpeyi.github.io/post/slurm-notes/</guid><description>&lt;h2 id="interactive-jobs">Interactive Jobs&lt;/h2>
+&lt;p>If you want to test softwre that requires GUI, MPI/Parallel/Multiple threads using interactive jobs may be useful.
+Note that if you need a GUI &amp;ndash; you&amp;rsquo;ll need to &lt;code>ssh&lt;/code> with &lt;code>-X&lt;/code>.&lt;/p>
+&lt;pre>&lt;code class="language-bash">sinteractive --ntasks 1 --nodes 1 --time 00:30:00 --mem 32GB
+&lt;/code>&lt;/pre>
+&lt;p>Once you have obtained the resources and are in the interactive job session, you can open a &lt;code>jupyter&lt;/code> notebook with the following:&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>Source envs&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Setup tunnel + jupyter instance on cluster
+run:&lt;/p>
+&lt;pre>&lt;code class="language-bash">ipnport=$(shuf -i8000-9999 -n1)
+ipnip=$(hostname -i)
+echo &amp;quot;Run on local &amp;gt;&amp;gt;&amp;gt; ssh -N -L $ipnport:$ipnip:$ipnport avajpeyi@ozstar.swin.edu.au&amp;quot;
+jupyter-notebook --no-browser --port=$ipnport --ip=$ipnip
+&lt;/code>&lt;/pre>
+&lt;/li>
+&lt;li>
+&lt;p>Local connection to interactive job&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;ul>
+&lt;li>run the command echoed above&lt;/li>
+&lt;li>open the link to the jupyer notebook (also printed in the previous window)&lt;/li>
+&lt;/ul>
+&lt;ol start="4">
+&lt;li>
+&lt;p>Exit when done!&lt;/p>
+&lt;p>Otherwise the job will keep running until it times out.&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;h2 id="plot-cpu-hours-used-for-jobs">Plot CPU hours used for jobs&lt;/h2>
 &lt;p>The folowing creates a file &lt;code>jobstats.txt&lt;/code> that contains the CPU time (seconds) for each job run bw the start+end time specified.&lt;/p>
 &lt;pre>&lt;code class="language-bash">sacct -S 2021-01-01 -E 2021-10-06 -u avajpeyi -X -o &amp;quot;jobname%-40,cputimeraw&amp;quot; --parsable2 &amp;gt; jobstats.txt
 &lt;/code>&lt;/pre>

@@ -30,8 +30,8 @@
 <meta property="og:description" content="Some notes on using slurm for HPC."><meta property="og:image" content="https://avivajpeyi.github.io/img/static/img/apex.png">
 <meta property="twitter:image" content="https://avivajpeyi.github.io/img/static/img/apex.png"><meta property="og:locale" content="en-us">
 <meta property="article:published_time" content="2021-10-20T00:20:45+10:00">
-<meta property="article:modified_time" content="2021-10-20T16:18:01+11:00">
-<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://avivajpeyi.github.io/post/slurm-notes/"},"headline":"Slurm Notes","datePublished":"2021-10-20T00:20:45+10:00","dateModified":"2021-10-20T16:18:01+11:00","author":{"@type":"Person","name":"Avi Vajpeyi"},"publisher":{"@type":"Organization","name":"Avi Vajpeyi","logo":{"@type":"ImageObject","url":"https://avivajpeyi.github.io/images/icon_hu8bb3cd4a71e1097e37400a0f18d2a5e2_266862_192x192_fill_lanczos_center_3.png"}},"description":"Some notes on using slurm for HPC."}</script>
+<meta property="article:modified_time" content="2021-10-21T15:01:30+11:00">
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://avivajpeyi.github.io/post/slurm-notes/"},"headline":"Slurm Notes","datePublished":"2021-10-20T00:20:45+10:00","dateModified":"2021-10-21T15:01:30+11:00","author":{"@type":"Person","name":"Avi Vajpeyi"},"publisher":{"@type":"Organization","name":"Avi Vajpeyi","logo":{"@type":"ImageObject","url":"https://avivajpeyi.github.io/images/icon_hu8bb3cd4a71e1097e37400a0f18d2a5e2_266862_192x192_fill_lanczos_center_3.png"}},"description":"Some notes on using slurm for HPC."}</script>
 <title>Slurm Notes | Avi Vajpeyi</title>
 </head>
 <body id=top data-spy=scroll data-offset=70 data-target=#TableOfContents>
@@ -121,7 +121,7 @@
 <div class=article-metadata>
 <span class=article-date>
 Last updated on
-Oct 20, 2021
+Oct 21, 2021
 </span>
 <span class=middot-divider></span>
 <span class=article-reading-time>
@@ -131,6 +131,39 @@ Oct 20, 2021
 </div>
 <div class=article-container>
 <div class=article-style>
+<h2 id=interactive-jobs>Interactive Jobs</h2>
+<p>If you want to test softwre that requires GUI, MPI/Parallel/Multiple threads using interactive jobs may be useful.
+Note that if you need a GUI &ndash; you&rsquo;ll need to <code>ssh</code> with <code>-X</code>.</p>
+<pre><code class=language-bash>sinteractive --ntasks 1 --nodes 1 --time 00:30:00 --mem 32GB
+</code></pre>
+<p>Once you have obtained the resources and are in the interactive job session, you can open a <code>jupyter</code> notebook with the following:</p>
+<ol>
+<li>
+<p>Source envs</p>
+</li>
+<li>
+<p>Setup tunnel + jupyter instance on cluster
+run:</p>
+<pre><code class=language-bash>ipnport=$(shuf -i8000-9999 -n1)
+ipnip=$(hostname -i)
+echo &quot;Run on local &gt;&gt;&gt; ssh -N -L $ipnport:$ipnip:$ipnport avajpeyi@ozstar.swin.edu.au&quot;
+jupyter-notebook --no-browser --port=$ipnport --ip=$ipnip
+</code></pre>
+</li>
+<li>
+<p>Local connection to interactive job</p>
+</li>
+</ol>
+<ul>
+<li>run the command echoed above</li>
+<li>open the link to the jupyer notebook (also printed in the previous window)</li>
+</ul>
+<ol start=4>
+<li>
+<p>Exit when done!</p>
+<p>Otherwise the job will keep running until it times out.</p>
+</li>
+</ol>
 <h2 id=plot-cpu-hours-used-for-jobs>Plot CPU hours used for jobs</h2>
 <p>The folowing creates a file <code>jobstats.txt</code> that contains the CPU time (seconds) for each job run bw the start+end time specified.</p>
 <pre><code class=language-bash>sacct -S 2021-01-01 -E 2021-10-06 -u avajpeyi -X -o &quot;jobname%-40,cputimeraw&quot; --parsable2 &gt; jobstats.txt 
