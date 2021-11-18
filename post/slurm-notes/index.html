@@ -30,7 +30,7 @@
 <meta property="og:description" content="Some notes on using slurm for HPC."><meta property="og:image" content="https://avivajpeyi.github.io/img/static/img/apex.png">
 <meta property="twitter:image" content="https://avivajpeyi.github.io/img/static/img/apex.png"><meta property="og:locale" content="en-us">
 <meta property="article:published_time" content="2021-10-20T00:20:45+10:00">
-<meta property="article:modified_time" content="2021-11-19T09:58:04+11:00">
+<meta property="article:modified_time" content="2021-11-19T10:40:34+11:00">
 <title>Slurm Notes | Avi Vajpeyi</title>
 </head>
 <body id=top data-spy=scroll data-offset=70 data-target=#TableOfContents>
@@ -173,6 +173,19 @@ jupyter-notebook --no-browser --port=$ipnport --ip=$ipnip
 <p>Otherwise the job will keep running until it times out.</p>
 </li>
 </ol>
+<p>For convenience I have added the following to my <code>OzStar .bash_profile</code></p>
+<pre><code class=language-bash># Interactive Jupter notebooks
+alias start_ijob=&quot;sinteractive --ntasks 2 --time 00:60:00 --mem 4GB&quot;
+start_jupyter () {
+    ipnport=$(shuf -i8000-9999 -n1)
+    ipnip=$(hostname -i)
+    echo &quot;Run on local &gt;&gt;&gt;&quot;
+    echo &quot;ssh -N -L $ipnport:$ipnip:$ipnport avajpeyi@ozstar.swin.edu.au&quot;
+    jupcmd=$(jupyter-notebook --no-browser --port=$ipnport --ip=$ipnip)
+}
+export -f start_jupyter
+</code></pre>
+<p>Now I can start a interactive job by running <code>start_ijob</code> and start the jupter notebook with <code>start_jupyter</code>.</p>
 <h2 id=plot-cpu-hours-used-for-jobs>Plot CPU hours used for jobs</h2>
 <p>The folowing creates a file <code>jobstats.txt</code> that contains the CPU time (seconds) for each job run bw the start+end time specified.</p>
 <pre><code class=language-bash>sacct -S 2021-01-01 -E 2021-10-06 -u avajpeyi -X -o &quot;jobname%-40,cputimeraw&quot; --parsable2 &gt; jobstats.txt 

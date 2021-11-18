@@ -45,6 +45,19 @@ jupyter-notebook --no-browser --port=$ipnport --ip=$ipnip
 &lt;p>Otherwise the job will keep running until it times out.&lt;/p>
 &lt;/li>
 &lt;/ol>
+&lt;p>For convenience I have added the following to my &lt;code>OzStar .bash_profile&lt;/code>&lt;/p>
+&lt;pre>&lt;code class="language-bash"># Interactive Jupter notebooks
+alias start_ijob=&amp;quot;sinteractive --ntasks 2 --time 00:60:00 --mem 4GB&amp;quot;
+start_jupyter () {
+ipnport=$(shuf -i8000-9999 -n1)
+ipnip=$(hostname -i)
+echo &amp;quot;Run on local &amp;gt;&amp;gt;&amp;gt;&amp;quot;
+echo &amp;quot;ssh -N -L $ipnport:$ipnip:$ipnport avajpeyi@ozstar.swin.edu.au&amp;quot;
+jupcmd=$(jupyter-notebook --no-browser --port=$ipnport --ip=$ipnip)
+}
+export -f start_jupyter
+&lt;/code>&lt;/pre>
+&lt;p>Now I can start a interactive job by running &lt;code>start_ijob&lt;/code> and start the jupter notebook with &lt;code>start_jupyter&lt;/code>.&lt;/p>
 &lt;h2 id="plot-cpu-hours-used-for-jobs">Plot CPU hours used for jobs&lt;/h2>
 &lt;p>The folowing creates a file &lt;code>jobstats.txt&lt;/code> that contains the CPU time (seconds) for each job run bw the start+end time specified.&lt;/p>
 &lt;pre>&lt;code class="language-bash">sacct -S 2021-01-01 -E 2021-10-06 -u avajpeyi -X -o &amp;quot;jobname%-40,cputimeraw&amp;quot; --parsable2 &amp;gt; jobstats.txt
