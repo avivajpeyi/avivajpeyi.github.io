@@ -208,8 +208,8 @@ $$\vec{n} = \{n_0(t=0), n_1(t=\Delta t), n_2(t=2 \Delta t), &mldr;, n_{N-1}(t= (
 from $0\leq t\leq T$, can be written as:
 \begin{equation} \label{eq:gaussian}
 \begin{split}
-p_n(\vec{n}) &= \prod^{N-1}_0 \frac{1}{\sigma\sqrt{2\pi}}\ \text{exp}\left( \frac{-1}{2\sigma^2} n_i^2 \right) \\<br>
-&= \frac{1}{(\sigma\sqrt{2\pi})^N}\ \text{exp}\left( \frac{-1}{2\sigma^2} \sum^{N-1}_{i=0} n_i^2 \right)
+p_n(\vec{n}) &= \prod^{N-1}<em>0 \frac{1}{\sigma\sqrt{2\pi}}\ \text{exp}\left( \frac{-1}{2\sigma^2} n_i^2 \right) \\
+&= \frac{1}{(\sigma\sqrt{2\pi})^N}\ \text{exp}\left( \frac{-1}{2\sigma^2} \sum^{N-1}</em>{i=0} n_i^2 \right)
 \end{split}
 \end{equation}
 the following subsections delve into the maths required to simplify this.</p>
@@ -217,9 +217,9 @@ the following subsections delve into the maths required to simplify this.</p>
 <p>For $\lim {\Delta t \to 0}$, $\sum^{N}_{i=1} n_i^2$ turns into an integral:</p>
 <p>\begin{equation} \label{eq:gauss_limit}
 \begin{split}
-\lim_{\Delta t \to 0} \sum^{N}_{i=1} n_i^2 \Delta t &= \int^T_0 n^2(t) dt \\<br>
-&= \text{(Parseval&rsquo;s Theorem and assume $0 \to T$ very large?)} \\<br>
-&\approx \int^{-\infty}_{+\infty} |\widetilde{n}(f)|^2 df
+\lim_{\Delta t \to 0} \sum^{N}<em>{i=1} n_i^2 \Delta t &= \int^T_0 n^2(t) dt \\
+&= \text{(Parseval&rsquo;s Theorem and assume $0 \to T$ very large?)} \\
+&\approx \int^{-\infty}</em>{+\infty} |\widetilde{n}(f)|^2 df
 \end{split}
 \end{equation}</p>
 <h4 id=autocorrelation-function-for-gaussian-noise>Autocorrelation function for Gaussian Noise</h4>
@@ -234,11 +234,11 @@ the following subsections delve into the maths required to simplify this.</p>
 </ol>
 <p>As points become more separated, typically the temporal autocorrelation function should go to 0 (since it is difficult to to forecast further into the future from a given set of data).</p>
 <p>For a continuous-time signal $y(t)$ and a lag of $\tau$, the temporal autocorreclation $R^T_{yy}(\tau)$ is given by:
-$$ R^T_{yy}(\tau) = \int^{+\infty}_{-\infty} y(t) y^*(t-\tau)\ ,$$
-and the ensemble autocorrelation $R^E_{yy}(\tau)$ is given by:
+$$ R^T_{yy}(\tau) = \int^{+\infty}<em>{-\infty} y(t) y^*(t-\tau)\ ,$$
+and the ensemble autocorrelation $R^E</em>{yy}(\tau)$ is given by:
 $$ R^E_{yy}(\tau) = \langle y(t)|y(t-\tau)\rangle. $$</p>
 <p>If the signal is <em>erodic</em> (ie the signal&rsquo;s statistical properties can be deduced from a long set of random samples), then
-$$ R^T_{yy}(\tau) =\lim_{T\to \infty} \frac{1}{T} \int^{T}_{0} y(t) y^*(t-\tau)dt = R^E_{yy}(\tau) .$$</p>
+$$ R^T_{yy}(\tau) =\lim_{T\to \infty} \frac{1}{T} \int^{T}<em>{0} y(t) y^*(t-\tau)dt = R^E</em>{yy}(\tau) .$$</p>
 <p>Finally, note that the units ot $R$ are that of power! Hence, this can be used in the calculation of
 a power spectral density.</p>
 </div>
@@ -246,8 +246,8 @@ a power spectral density.</p>
 <p>At $\lim {\Delta t \to 0}$, the autocorrelation function for $n(t)$ becomes
 \begin{equation} \label{eq:gauss_autocorrelation_temporal}
 \begin{split}
-R^T_{nn}(\tau=\Delta t) &= \lim_{T\to \infty} \frac{1}{T} \int^{T}_{0} n(t) n^*(t-\Delta t)dt \\<br>
-&= \lim_{T\to \infty} \frac{1}{T} \int^{T}_{0} |n(t)|^2 dt \\<br>
+R^T_{nn}(\tau=\Delta t) &= \lim_{T\to \infty} \frac{1}{T} \int^{T}<em>{0} n(t) n^*(t-\Delta t)dt \\
+&= \lim</em>{T\to \infty} \frac{1}{T} \int^{T}_{0} |n(t)|^2 dt \\
 &= A\delta(\tau)
 \end{split}
 \end{equation}</p>
@@ -257,9 +257,9 @@ $$ \langle (x(\theta)-\mu)^2| (x(\theta)-\mu)^2 \rangle = \sigma^2$$
 Hence, for Gaussian white noise where $\mu=0$,</p>
 <p>\begin{equation} \label{eq:gauss_autocorrelation_ensemble}
 \begin{split}
-\sigma^2 &= \langle (n(t)-\mu)^2| (n(t)-\mu)^2 \rangle\rangle \\<br>
-&= \langle n^2(t)| n^2(t) \rangle\rangle \\<br>
-&= R^E_{nn}(\tau) \\<br>
+\sigma^2 &= \langle (n(t)-\mu)^2| (n(t)-\mu)^2 \rangle\rangle \\
+&= \langle n^2(t)| n^2(t) \rangle\rangle \\
+&= R^E_{nn}(\tau) \\
 &= A
 \end{split}
 \end{equation}</p>
@@ -269,7 +269,7 @@ $$R_{nn}(\tau)=\sigma^2\delta(\tau) $$</p>
 <p>The one-sided power spectral density $\text{PSD}(f)$ (of a signal $n(t)$) is defined as twice the Fourier transform of the noise autocorrelation function:
 \begin{equation} \label{eq:psd_calc}
 \begin{split}
-\text{PSD}(f) &= 2 \mathcal{F}(R_{nn}(t))) \\<br>
+\text{PSD}(f) &= 2 \mathcal{F}(R_{nn}(t))) \\
 &= 2 \int_{-\infty}^{+\infty}R_{nn}(\tau) e^{-if\tau}d\tau
 \end{split}
 \end{equation}</p>
@@ -278,11 +278,11 @@ $$R_{nn}(\tau)=\sigma^2\delta(\tau) $$</p>
 <strong>Derivation of the above PSD equation</strong> (<em>taken from Mike Lau&rsquo;s master&rsquo;s thesis</em>)
 \begin{equation} \label{eq:psd_derivation}
 \begin{split}
-\mathcal{F}(R_{nn}(t))) &= \langle \tilde{n}^*(f) \tilde{n}(f')\rangle\\<br>
-&= \iint^{\infty}_{-\infty} \langle {n}(t) {n}(t')\rangle e^{-2\pi i (ft-f&rsquo;t')} dt dt'\\<br>
-&{t'\to t+t'}\\<br>
-&=\iint^{\infty}_{-\infty} \langle {n}(t) {n}(t+t')\rangle e^{-2\pi i(f-f')t} e^{-2\pi if&rsquo;t'} dt dt'\\<br>
-&=\int^{\infty}_{-\infty} \langle {n}(t) {n}(t+t')\rangle e^{-2\pi if&rsquo;t'} dt' \delta(f-f') \\<br>
+\mathcal{F}(R_{nn}(t))) &= \langle \tilde{n}^*(f) \tilde{n}(f')\rangle\\
+&= \iint^{\infty}<em>{-\infty} \langle {n}(t) {n}(t')\rangle e^{-2\pi i (ft-f&rsquo;t')} dt dt'\\
+&{t'\to t+t'}\\
+&=\iint^{\infty}</em>{-\infty} \langle {n}(t) {n}(t+t')\rangle e^{-2\pi i(f-f')t} e^{-2\pi if&rsquo;t'} dt dt'\\
+&=\int^{\infty}_{-\infty} \langle {n}(t) {n}(t+t')\rangle e^{-2\pi if&rsquo;t'} dt' \delta(f-f') \\
 &= \frac{1}{2}\text{PSD}(f)\delta(f-f') \\ <br>
 \end{split}
 \end{equation}
@@ -297,11 +297,11 @@ $$\text{PSD}(f) = \lim_{\Delta t \to 0} 2\sigma^2 \Delta t$$</p>
 datapoints $\vec{n}$ from Guassian white noise is simplified to:
 \begin{equation} \label{eq:gaussian_prob}
 \begin{split}
-p_n(\vec{n}) &= \lim_{\Delta t \to 0}\frac{1}{(\sigma\sqrt{2\pi})^N}\ \text{exp}\left( \frac{-1}{2\sigma^2} \sum^{N-1}_{i=0} n_i^2\right) \\<br>
-&\propto \lim_{\Delta t \to 0} \text{exp}\left( \frac{-1}{2\sigma^2\Delta t} \sum^{N-1}_{i=0} n_i^2 \Delta t\right) \\<br>
-&\propto \text{exp}\left( \frac{-1}{\text{PSD}(f)} \int^{T}_{0} n(t)^2 dt\right) \\<br>
-&\propto \text{exp}\left( - \int^{\infty}_{-\infty} \frac{|n(f)|^2}{\text{PSD}(f)} df\right) \\<br>
-&\propto \text{exp}\left(-\frac{1}{2} 4 \int^{\infty}_{0} \frac{|n(f)|^2}{\text{PSD}(f)} df\right) \\<br>
+p_n(\vec{n}) &= \lim_{\Delta t \to 0}\frac{1}{(\sigma\sqrt{2\pi})^N}\ \text{exp}\left( \frac{-1}{2\sigma^2} \sum^{N-1}<em>{i=0} n_i^2\right) \\
+&\propto \lim</em>{\Delta t \to 0} \text{exp}\left( \frac{-1}{2\sigma^2\Delta t} \sum^{N-1}<em>{i=0} n_i^2 \Delta t\right) \\
+&\propto \text{exp}\left( \frac{-1}{\text{PSD}(f)} \int^{T}</em>{0} n(t)^2 dt\right) \\
+&\propto \text{exp}\left( - \int^{\infty}<em>{-\infty} \frac{|n(f)|^2}{\text{PSD}(f)} df\right) \\
+&\propto \text{exp}\left(-\frac{1}{2} 4 \int^{\infty}</em>{0} \frac{|n(f)|^2}{\text{PSD}(f)} df\right) \\
 \therefore p_n(\vec{n}) &\propto \text{e}^{-(n,n)/2}
 \end{split}
 \end{equation}</p>
@@ -311,9 +311,9 @@ p_n(\vec{n}) &= \lim_{\Delta t \to 0}\frac{1}{(\sigma\sqrt{2\pi})^N}\ \text{exp}
 The noise weighted inner product $(a,b)$ of two time-series $a(t)$ and $b(t)$ is defined as
 \begin{equation} \label{eq:inner_producs}
 \begin{split}
-(a,b) &= 4 \text{Re} \int_0^{\infty} \frac{\tilde{a}(f) \tilde{b}^*(f)}{\text{PSD}(f)}df\\<br>
-&= 2 \int_{-\infty}}^{\infty} \frac{\tilde{a}(f) \tilde{b}^*(f)}{\text{PSD}(|f|)}df\\<br>
-&= \int_{-\infty}}^{\infty} \frac{\tilde{a}(f) \tilde{b}^*(f) + \tilde{a}^*(f) \tilde{b}(f)}{\text{PSD}(|f|)}df,
+(a,b) &= 4 \text{Re} \int_0^{\infty} \frac{\tilde{a}(f) \tilde{b}^<em>(f)}{\text{PSD}(f)}df\\
+&= 2 \int_{-\infty}}^{\infty} \frac{\tilde{a}(f) \tilde{b}^</em>(f)}{\text{PSD}(|f|)}df\\
+&= \int_{-\infty}}^{\infty} \frac{\tilde{a}(f) \tilde{b}^<em>(f) + \tilde{a}^</em>(f) \tilde{b}(f)}{\text{PSD}(|f|)}df,
 \end{split}
 \end{equation}
 </div>
@@ -335,8 +335,8 @@ can be calculated:</p>
 <p>Finally, going off of the odd&rsquo;s ratio, we can calculate a likelihood ratio:</p>
 <p>\begin{equation} \label{eq:likelihood_ratio}
 \begin{split}
-\Lambda(\mathcal{H}<em>{GW}| s) &= \frac{p(s|\mathcal{H}</em>{GW}|s)}{ p(s|\mathcal{H}_{n})} \\<br>
-&= \frac{\text{e}^{-(s-h,s-h)/2}}{\text{e}^{-(s,s)/2} \\<br>
+\Lambda(\mathcal{H}<em>{GW}| s) &= \frac{p(s|\mathcal{H}</em>{GW}|s)}{ p(s|\mathcal{H}_{n})} \\
+&= \frac{\text{e}^{-(s-h,s-h)/2}}{\text{e}^{-(s,s)/2} \\
 &= \text{e}^{(s,h)}\text{e}^{-(h,h)/2}
 \end{split}
 \end{equation}</p>
