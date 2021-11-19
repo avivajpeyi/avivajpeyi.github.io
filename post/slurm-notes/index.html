@@ -30,7 +30,7 @@
 <meta property="og:description" content="Some notes on using slurm for HPC."><meta property="og:image" content="https://avivajpeyi.github.io/img/static/img/apex.png">
 <meta property="twitter:image" content="https://avivajpeyi.github.io/img/static/img/apex.png"><meta property="og:locale" content="en-us">
 <meta property="article:published_time" content="2021-10-20T00:20:45+10:00">
-<meta property="article:modified_time" content="2021-11-19T10:40:34+11:00">
+<meta property="article:modified_time" content="2021-11-19T14:37:44+11:00">
 <title>Slurm Notes | Avi Vajpeyi</title>
 </head>
 <body id=top data-spy=scroll data-offset=70 data-target=#TableOfContents>
@@ -138,7 +138,7 @@ Nov 19, 2021
 <p>If you want to test softwre that requires GUI, MPI/Parallel/Multiple threads using interactive jobs may be useful.
 Note that if you need a GUI &ndash; you&rsquo;ll need to <code>ssh</code> with <code>-X</code>.</p>
 <p>Run the following to start an interactive job:</p>
-<pre><code class=language-bash>sinteractive --ntasks 1 --nodes 1 --time 00:30:00 --mem 32GB
+<pre><code class=language-bash>sinteractive --ntasks 1 --nodes 1 --time 00:30:00 --mem 2GB
 </code></pre>
 <p>Once resources are allocated, you&rsquo;ll notice that you&rsquo;re on a different machine (allocated for your interactive session).</p>
 <h2 id=jupyter-notebooks--slurm>Jupyter notebooks + Slurm</h2>
@@ -165,7 +165,7 @@ jupyter-notebook --no-browser --port=$ipnport --ip=$ipnip
 <p>Local connection to interactive job</p>
 <ul>
 <li>run the command echoed above</li>
-<li>open the link to the jupyer notebook (also printed in the previous window)</li>
+<li>open the link to the jupyer notebook (printed in the previous window)</li>
 </ul>
 </li>
 <li>

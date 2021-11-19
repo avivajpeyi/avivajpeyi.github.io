@@ -10,7 +10,7 @@
 &lt;p>If you want to test softwre that requires GUI, MPI/Parallel/Multiple threads using interactive jobs may be useful.
 Note that if you need a GUI &amp;ndash; you&amp;rsquo;ll need to &lt;code>ssh&lt;/code> with &lt;code>-X&lt;/code>.&lt;/p>
 &lt;p>Run the following to start an interactive job:&lt;/p>
-&lt;pre>&lt;code class="language-bash">sinteractive --ntasks 1 --nodes 1 --time 00:30:00 --mem 32GB
+&lt;pre>&lt;code class="language-bash">sinteractive --ntasks 1 --nodes 1 --time 00:30:00 --mem 2GB
 &lt;/code>&lt;/pre>
 &lt;p>Once resources are allocated, you&amp;rsquo;ll notice that you&amp;rsquo;re on a different machine (allocated for your interactive session).&lt;/p>
 &lt;h2 id="jupyter-notebooks--slurm">Jupyter notebooks + Slurm&lt;/h2>
@@ -37,7 +37,7 @@ jupyter-notebook --no-browser --port=$ipnport --ip=$ipnip
 &lt;p>Local connection to interactive job&lt;/p>
 &lt;ul>
 &lt;li>run the command echoed above&lt;/li>
-&lt;li>open the link to the jupyer notebook (also printed in the previous window)&lt;/li>
+&lt;li>open the link to the jupyer notebook (printed in the previous window)&lt;/li>
 &lt;/ul>
 &lt;/li>
 &lt;li>
