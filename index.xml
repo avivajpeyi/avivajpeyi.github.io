@@ -1,4 +1,36 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Avi Vajpeyi</title><link>https://avivajpeyi.github.io/</link><atom:link href="https://avivajpeyi.github.io/index.xml" rel="self" type="application/rss+xml"/><description>Avi Vajpeyi</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Mon, 24 Oct 2022 00:00:00 +0000</lastBuildDate><image><url>https://avivajpeyi.github.io/media/icon_hu8bb3cd4a71e1097e37400a0f18d2a5e2_266862_512x512_fill_lanczos_center_3.png</url><title>Avi Vajpeyi</title><link>https://avivajpeyi.github.io/</link></image><item><title>Making a personal website workshop</title><link>https://avivajpeyi.github.io/posts/making_a_personal_website_workshop/</link><pubDate>Thu, 27 Apr 2023 21:54:48 +1200</pubDate><guid>https://avivajpeyi.github.io/posts/making_a_personal_website_workshop/</guid><description>&lt;p>Today we will use &lt;a href="https://wowchemy.com/docs/getting-started/hugo-github-quickstart/" target="_blank" rel="noopener">Hugo and Wowchemy&lt;/a> to make a personal website (hosted on github).&lt;/p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Avi Vajpeyi</title><link>https://avivajpeyi.github.io/</link><atom:link href="https://avivajpeyi.github.io/index.xml" rel="self" type="application/rss+xml"/><description>Avi Vajpeyi</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Mon, 24 Oct 2022 00:00:00 +0000</lastBuildDate><image><url>https://avivajpeyi.github.io/media/icon_hu8bb3cd4a71e1097e37400a0f18d2a5e2_266862_512x512_fill_lanczos_center_3.png</url><title>Avi Vajpeyi</title><link>https://avivajpeyi.github.io/</link></image><item><title>Making a personal website workshop</title><link>https://avivajpeyi.github.io/posts/making_a_personal_website_workshop/</link><pubDate>Thu, 27 Apr 2023 21:54:48 +1200</pubDate><guid>https://avivajpeyi.github.io/posts/making_a_personal_website_workshop/</guid><description>
+&lt;details class="toc-inpage d-print-none " open>
+&lt;summary class="font-weight-bold">Table of Contents&lt;/summary>
+&lt;nav id="TableOfContents">
+&lt;ul>
+&lt;li>&lt;a href="#introduction">Introduction&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#setting-up-your-website">Setting up your website&lt;/a>
+&lt;ul>
+&lt;li>&lt;a href="#0-pre-requisites">0. Pre-requisites&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#1-make-a-github-account">1. Make a github account&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#2-download-a-template-website">2. Download a template website&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#3-setup-website-repo">3. Setup website repo&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#4-copy-the-template-contents">4. Copy the template contents&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#5-view-your-website-locally">5. View your website locally&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#6-personalise">6. Personalise!&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#7-add-the-github-workflow-to-build-the-pages">7. Add the github-workflow to build the pages&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#8-push-your-changes-to-github">8. Push your changes to github&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#9-enable-github-pages">9. Enable github pages&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#tldr">TLDR&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;a href="#personalising-your-website">Personalising your website&lt;/a>
+&lt;ul>
+&lt;li>&lt;a href="#basic-edits">Basic edits&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#generating-a-publication-list-with-a-bib-file">Generating a publication list with a bib file&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#adding-blog-post-entries">Adding blog post entries&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;/nav>
+&lt;/details>
+&lt;h2 id="introduction">Introduction&lt;/h2>
+&lt;p>Today we will use &lt;a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo&lt;/a> and &lt;a href="https://wowchemy.com/" target="_blank" rel="noopener">wowchemy&lt;/a> to make a personal website (hosted on github).&lt;/p>
 &lt;p>By the end of this workshop, you all should have a website but may need to spend more time customising it to your liking.&lt;/p>
 &lt;div class="alert alert-note">
 &lt;div>
@@ -9,45 +41,154 @@
 &lt;/ul>
 &lt;/div>
 &lt;/div>
-&lt;p>One can now use &lt;a href="https://wowchemy.com/docs/getting-started/hugo-cms/" target="_blank" rel="noopener">netlify&lt;/a> and hugo&amp;rsquo;s &amp;ldquo;CMS&amp;rdquo; (whatever that stands for) to make a website without using git. However, I have not tried this yet, so I can&amp;rsquo;t help you with it. 😅&lt;/p>
-&lt;h2 id="lets-get-started">Lets get started!&lt;/h2>
-&lt;ol>
-&lt;li>Make a github account &amp;ndash; make sure to use a username that you are happy to have as part of your website url (e.g. &lt;a href="https://avivajpeyi.github.io/%29" target="_blank" rel="noopener">https://avivajpeyi.github.io/)&lt;/a>.&lt;/li>
-&lt;li>Download a &lt;a href="https://wowchemy.com/templates/" target="_blank" rel="noopener">hugo template&lt;/a>
+&lt;p>One can now use &lt;a href="https://wowchemy.com/docs/getting-started/hugo-cms/" target="_blank" rel="noopener">netlify&lt;/a> and &lt;a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo&lt;/a>&amp;rsquo;s &amp;ldquo;CMS&amp;rdquo; (whatever that stands for) to make a website without using git. However, I have not tried this yet, so I can&amp;rsquo;t help you with it. 😅&lt;/p>
+&lt;h2 id="setting-up-your-website">Setting up your website&lt;/h2>
+&lt;h3 id="0-pre-requisites">0. Pre-requisites&lt;/h3>
+&lt;p>&lt;strong>&lt;em>1. Get git&lt;/em>&lt;/strong>&lt;/p>
+&lt;p>First, check if running &lt;code>git status&lt;/code> in your terminal gives an error. If it does, you&amp;rsquo;ll need to install git.
+Here are instructions to install &lt;a href="https://github.com/git-guides/install-git" target="_blank" rel="noopener">git&lt;/a>.&lt;/p>
+&lt;p>&lt;strong>&lt;em>2. Setup ssh keys&lt;/em>&lt;/strong>&lt;/p>
+&lt;p>Next, you&amp;rsquo;ll need to &lt;a href="https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account" target="_blank" rel="noopener">setup ssh keys&lt;/a>
+so that you can push to github without having to enter your password every time.&lt;/p>
+&lt;p>Create an ssh key (I&amp;rsquo;d suggest not entering a passphrase)&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">ssh-keygen -t ed25519 -C &lt;span class="s2">&amp;#34;your_github_email@example.com&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">cat ~/.ssh/id_ed25519.pub
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Copy the output of the above command and paste it into the &lt;a href="https://github.com/settings/keys" target="_blank" rel="noopener">ssh keys section of your github account&lt;/a> (&lt;a href="https://github.com/settings/keys%29" target="_blank" rel="noopener">https://github.com/settings/keys)&lt;/a>.&lt;/p>
+&lt;p>&lt;strong>&lt;em>3. Install hugo&lt;/em>&lt;/strong>&lt;/p>
+&lt;p>You&amp;rsquo;ll need &lt;a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo&lt;/a> on your local machine.&lt;/p>
 &lt;ul>
-&lt;li>The &lt;a href="https://github.com/wowchemy/starter-academic.git" target="_blank" rel="noopener">&amp;lsquo;academic&amp;rsquo; template&lt;/a>&lt;/li>
+&lt;li>
+&lt;p>macOS&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">brew install hugo
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;li>
+&lt;p>Windows&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">choco install hugo-extended
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;li>
+&lt;p>Linux&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">sudo snap install hugo
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;/ul>
+&lt;h3 id="1-make-a-github-account">1. Make a github account&lt;/h3>
+&lt;p>Make sure to use a username that you are happy to have as part of your website url (e.g. &lt;a href="https://avivajpeyi.github.io/%29" target="_blank" rel="noopener">https://avivajpeyi.github.io/)&lt;/a>.&lt;/p>
+&lt;h3 id="2-download-a-template-website">2. Download a template website&lt;/h3>
+&lt;p>There are lots of &lt;a href="https://wowchemy.com/templates/" target="_blank" rel="noopener">template website&lt;/a>s to choose from. Here are some that I like:&lt;/p>
+&lt;ul>
+&lt;li>The &lt;a href="https://github.com/wowchemy/starter-hugo-academic" target="_blank" rel="noopener">&amp;lsquo;academic&amp;rsquo; template&lt;/a>&lt;/li>
 &lt;li>The &lt;a href="https://github.com/wowchemy/hugo-minimal-theme.git" target="_blank" rel="noopener">minimalist template&lt;/a>&lt;/li>
 &lt;/ul>
-&lt;/li>
-&lt;li>Make a repo called &lt;code>your_username.github.io&lt;/code> (e.g. &lt;code>avivajpeyi.github.io&lt;/code>) and clone it to your computer (e.g. &lt;code>git clone git@github.com:your_username/your_username.github.io.git&lt;/code>).&lt;/li>
-&lt;li>Copy the contents of the hugo template into your repo (e.g. &lt;code>cp -r starter-academic/* your_username.github.io.git/&lt;/code>).&lt;/li>
-&lt;li>Download and install &lt;a href="https://wowchemy.com/docs/getting-started/install-hugo-extended/#prerequisites" target="_blank" rel="noopener">Hugo&lt;/a>&lt;/li>
-&lt;li>&lt;code>cd your_username.github.io&lt;/code> and run &lt;code>hugo server&lt;/code> to see your website at &lt;code>localhost:1313&lt;/code> (or whatever port it says).&lt;/li>
-&lt;li>Edit the &lt;code>config.toml&lt;/code> file to change the title, etc. of your website and edit content from the demo site to make it your own. See &lt;a href="https://wowchemy.com/docs/getting-started/quick-start/" target="_blank" rel="noopener">here&lt;/a> for more details. The local build of the website should update automatically.&lt;/li>
-&lt;li>Add the &lt;a href="https://github.com/avivajpeyi/dev_site/blob/main/.github/workflows/deploy-pages.yml" target="_blank" rel="noopener">&lt;code>.github/workflows/deploy-pages.yml&lt;/code>&lt;/a> file to your repo. Take a look at the file and make the necessary changes (the main being where the website will be deployed to). This file will automatically deploy your website to github pages whenever you push your code (the site will be built in the &lt;code>gh_pages&lt;/code> branch).&lt;/li>
-&lt;li>Push your changes to github + activate &amp;lsquo;pages&amp;rsquo; in your repository settings on the &lt;code>gh_pages&lt;/code> branch: &lt;code>https://github.com/your_username/your_username.github.io/settings/pages&lt;/code>&lt;/li>
-&lt;li>Your website should now be live at &lt;code>https://your_username.github.io/&lt;/code>&lt;/li>
+&lt;h3 id="3-setup-website-repo">3. Setup website repo&lt;/h3>
+&lt;p>Make a repo called &lt;code>your_username.github.io&lt;/code> (e.g. &lt;code>avivajpeyi.github.io&lt;/code>) and clone it to your computer (e.g. &lt;code>git clone git@github.com:your_username/your_username.github.io.git&lt;/code>).&lt;/p>
+&lt;h3 id="4-copy-the-template-contents">4. Copy the template contents&lt;/h3>
+&lt;p>Copy the hugo template into your repo. Remember to also copy the &lt;code>.gitignore&lt;/code> file and &lt;code>.github&lt;/code> dir. &lt;strong>Do not copy the &lt;code>.git&lt;/code> dir&lt;/strong>.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">cp -r starter-academic/* your_username.github.io/
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">cp -r starter-academic/.gitignore your_username.github.io/
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">cp -r starter-academic/.github your_username.github.io/
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="5-view-your-website-locally">5. View your website locally&lt;/h3>
+&lt;p>Run the following, and you should see your website at &lt;a href="http://localhost:1313" target="_blank" rel="noopener">http://localhost:1313&lt;/a> (or whatever port it says).&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">&lt;span class="nb">cd&lt;/span> your_username.github.io
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">hugo server
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>If you get an error here, there must have been a problem with installing &lt;a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo&lt;/a>. 😢&lt;/p>
+&lt;h3 id="6-personalise">6. Personalise!&lt;/h3>
+&lt;p>Time to make your website your own! For now, lets just change the title of your website (we&amp;rsquo;ll do more edits &lt;a href="#personalising-your-website">later&lt;/a>).&lt;/p>
+&lt;p>Change the default name in the following two files&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">./config/_default/config.yaml
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">./content/authors/admin/_index.md
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Saving the files should automatically update &lt;a href="http://localhost:1313" target="_blank" rel="noopener">http://localhost:1313&lt;/a>.&lt;/p>
+&lt;h3 id="7-add-the-github-workflow-to-build-the-pages">7. Add the github-workflow to build the pages&lt;/h3>
+&lt;p>We&amp;rsquo;d like github to automatically build and deploy our website whenever we push changes to the &lt;code>main&lt;/code> branch. To do this, we need to add a github workflow.
+Here is a workflow that you can use:&lt;/p>
+&lt;script type="application/javascript" src="https://gist.github.com/avivajpeyi/b363e8228526f9dedaf28e0399f0444a.js">&lt;/script>
+&lt;p>Place &lt;a href="https://shorturl.at/elsDI" target="_blank" rel="noopener">this file&lt;/a> in the &lt;code>.github/workflows/deploy-pages.yml&lt;/code>.&lt;/p>
+&lt;h3 id="8-push-your-changes-to-github">8. Push your changes to github&lt;/h3>
+&lt;p>Time to commit and push your changes to github.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">git add -A
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">git commit -m &lt;span class="s2">&amp;#34;init website&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">git push origin main
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Go to your repo on github and check that the files have been pushed. You should see a new &lt;code>gh_pages&lt;/code> branch.&lt;/p>
+&lt;h3 id="9-enable-github-pages">9. Enable github pages&lt;/h3>
+&lt;p>You will also need to enable github pages. This is an optional setting in github repos telling github that you may want to host a website from this repo.&lt;/p>
+&lt;ol>
+&lt;li>Go to &lt;a href="https://github.com/your_username/your_username.github.io/settings/pages" target="_blank" rel="noopener">https://github.com/your_username/your_username.github.io/settings/pages&lt;/a>&lt;/li>
+&lt;li>Select &lt;code>gh_pages&lt;/code> as the source branch&lt;/li>
 &lt;/ol>
-&lt;p>Here is a small bash script that you may find helpful:&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">git clone https://github.com/wowchemy/starter-academic.git
+&lt;p>Your website should now be live at &lt;a href="https://your_username.github.io/" target="_blank" rel="noopener">https://your_username.github.io/&lt;/a>!&lt;/p>
+&lt;p>🎉 🎉 🎉&lt;/p>
+&lt;h3 id="tldr">TLDR&lt;/h3>
+&lt;p>Here is a small bash script that you may find helpful. Find-replace &lt;code>your_username&lt;/code> with your github username and run the following commands in your terminal:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">git clone https://github.com/wowchemy/starter-hugo-academic.git
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">git clone git@github.com:your_username/your_username.github.io.git
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">cp -r starter-academic/* your_username.github.io.git/
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">rm -rf starter-academic
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">cp -r starter-hugo-academic/* your_username.github.io/
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">cp -r starter-hugo-academic/.github your_username.github.io/
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">cp -r starter-hugo-academic/.gitignore your_username.github.io/
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">rm -rf starter-hugo-academic
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nb">cd&lt;/span> your_username.github.io
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">touch .github/workflows/deploy-pages.yml
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">wget https://raw.githubusercontent.com/avivajpeyi/dev_site/main/.github/workflows/deploy-pages.yml -O .github/workflows/deploy-pages.yml
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">wget https://shorturl.at/elsDI -O .github/workflows/deploy-pages.yml
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">git add -A
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">git commit -m &lt;span class="s1">&amp;#39;init website&amp;#39;&lt;/span>
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">git push
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nb">echo&lt;/span> &lt;span class="s2">&amp;#34;activate &amp;#39;pages&amp;#39; in https://github.com/your_username/your_username.github.io/settings/pages&amp;#34;&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nb">echo&lt;/span> &lt;span class="s2">&amp;#34;edit .github/workflows/deploy-pages.yml to change the deploy location &amp;amp; push&amp;#34;&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Now that you have a website, you can start making more changes to it&amp;rsquo;s contents. Over the course of the remaining workshop Amin and I will be available to help you with any issues you run into.&lt;/p>
-&lt;h2 id="generating-a-publication-list-with-a-bib-file">Generating a publication list with a bib file&lt;/h2>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="alert alert-note">
+&lt;div>
+Remember to &amp;lsquo;activate&amp;rsquo; github pages in your repo settings (see &lt;a href="#9-enable-github-pages">step 9&lt;/a> above).
+&lt;/div>
+&lt;/div>
+&lt;h2 id="personalising-your-website">Personalising your website&lt;/h2>
+&lt;p>&lt;a href="https://wowchemy.com/" target="_blank" rel="noopener">Wowchemy&lt;/a> guide:&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="https://wowchemy.com/docs/content/writing-markdown-latex/" target="_blank" rel="noopener">https://wowchemy.com/docs/content/writing-markdown-latex/&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://wowchemy.com/docs/getting-started/customization/" target="_blank" rel="noopener">https://wowchemy.com/docs/getting-started/customization/&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;p>Open up the project in your favourite text editor (vim, pycharm, Rstudio, etc.)&lt;/p>
+&lt;p>Your directory structure should look something like this:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">.
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">├── academic.Rproj
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">├── assets
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">│   └── jsconfig.json
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">├── config
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">│   └── _default
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">│   ├── config.yaml
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">│   ├── languages.yaml
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">│   ├── menus.yaml
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">│   └── params.yaml
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">├── content
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">│   ├── _index.md
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">│   ├── privacy.md
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">│   ├── terms.md
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">│   ├── admin
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">│   │   └── index.md
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">│   ├── authors
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">│   │   ├── admin
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">│   │   │   ├── avatar.png
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">│   │   │   └── _index.md
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">│   │   └── _index.md
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">...
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ul>
+&lt;li>&lt;code>content/_index.md&lt;/code> is the homepage (and where we will be making most of our edits today)&lt;/li>
+&lt;li>&lt;code>content/authors/admin/_index.md&lt;/code> is where your personal profile page lives&lt;/li>
+&lt;li>&lt;code>config/_default/config.yaml&lt;/code> is where you can change the title of your website, etc.&lt;/li>
+&lt;/ul>
+&lt;h3 id="basic-edits">Basic edits&lt;/h3>
+&lt;p>Try to make the following edits to your website:&lt;/p>
+&lt;ul>
+&lt;li>Change the title of your website (&lt;code>content/authors/admin/_index.md&lt;/code>)&lt;/li>
+&lt;li>Change the avatar picture (&lt;code>content/authors/admin/avatar.png&lt;/code>, or use &lt;a href="https://en.gravatar.com/" target="_blank" rel="noopener">gravatar&lt;/a>, &lt;code>config/_default/params.yaml&lt;/code> )&lt;/li>
+&lt;li>Change your website icon (&lt;code>assets/media/icon.png&lt;/code>)&lt;/li>
+&lt;li>Change the menu items (&lt;code>config/_default/menus.yaml&lt;/code>)&lt;/li>
+&lt;li>Add a link to your CV (&lt;code>static/uploads/cv.pdf&lt;/code>)&lt;/li>
+&lt;li>Edit your homepage (&lt;code>content/_index.md&lt;/code>)&lt;/li>
+&lt;/ul>
+&lt;p>Remember to keep checking &lt;a href="http://localhost:1313" target="_blank" rel="noopener">http://localhost:1313&lt;/a> to see your changes, and commiting your work!&lt;/p>
+&lt;h3 id="generating-a-publication-list-with-a-bib-file">Generating a publication list with a bib file&lt;/h3>
 &lt;p>Given a bib file with your publications (e.g. &lt;code>publications.bib&lt;/code>), you can autogenerate the publication list on your website using the &lt;code>academic&lt;/code> python package:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">pip3 install -U academic
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nb">cd&lt;/span> &amp;lt;your_website_repo&lt;span class="err">&amp;#39;&lt;/span>s root dir&amp;gt;
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nb">cd&lt;/span> your_username.github.io/
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">academic import --bibtex &amp;lt;path/to/publications.bib&amp;gt;
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>This will create a &lt;code>publication&lt;/code> folder with a markdown file for each publication. You can then edit these files to add a summary, etc. See &lt;a href="https://wowchemy.com/docs/content/publications/" target="_blank" rel="noopener">here&lt;/a> for more details.&lt;/p></description></item><item><title>Deep Follow-up for Gravitational-wave Inference: A Case Study with GW151226</title><link>https://avivajpeyi.github.io/publication/vajpeyi-2023-ap-j/</link><pubDate>Sat, 01 Apr 2023 00:00:00 +0000</pubDate><guid>https://avivajpeyi.github.io/publication/vajpeyi-2023-ap-j/</guid><description/></item><item><title>Bilby Workshop for NZ Gravity</title><link>https://avivajpeyi.github.io/posts/nz_gravity_bilby_workshop/</link><pubDate>Tue, 14 Feb 2023 21:48:13 +1200</pubDate><guid>https://avivajpeyi.github.io/posts/nz_gravity_bilby_workshop/</guid><description/></item><item><title>A follow-up on intermediate-mass black hole candidates in the second LIGO-Virgo observing run with the Bayes Coherence Ratio</title><link>https://avivajpeyi.github.io/publication/vajpeyi-2022-mnras/</link><pubDate>Tue, 01 Nov 2022 00:00:00 +0000</pubDate><guid>https://avivajpeyi.github.io/publication/vajpeyi-2022-mnras/</guid><description/></item><item><title>LIGO-Virgo correlations between mass ratio and effective inspiral spin: testing the active galactic nuclei channel</title><link>https://avivajpeyi.github.io/publication/mc-kernan-2022-mnras/</link><pubDate>Mon, 01 Aug 2022 00:00:00 +0000</pubDate><guid>https://avivajpeyi.github.io/publication/mc-kernan-2022-mnras/</guid><description/></item><item><title>Avi's Pbilby Setup Notes</title><link>https://avivajpeyi.github.io/posts/pbilby_setup_notes/</link><pubDate>Wed, 29 Jun 2022 00:20:45 +1000</pubDate><guid>https://avivajpeyi.github.io/posts/pbilby_setup_notes/</guid><description>&lt;details class="toc-inpage d-print-none " open>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>This will create a &lt;code>publication&lt;/code> folder with a markdown file for each publication. You can then edit these files to add a summary, etc. See &lt;a href="https://wowchemy.com/docs/content/publications/" target="_blank" rel="noopener">here&lt;/a> for more details.&lt;/p>
+&lt;h3 id="adding-blog-post-entries">Adding blog post entries&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">&lt;span class="nb">cd&lt;/span> your_username.github.io/
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">hugo new --kind post post/my-first-post
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>In place of &lt;code>post&lt;/code>, you can also use &lt;code>project&lt;/code>, or &lt;code>event&lt;/code>. See &lt;a href="https://wowchemy.com/docs/content/" target="_blank" rel="noopener">here&lt;/a> for more details.&lt;/p></description></item><item><title>Deep Follow-up for Gravitational-wave Inference: A Case Study with GW151226</title><link>https://avivajpeyi.github.io/publication/vajpeyi-2023-ap-j/</link><pubDate>Sat, 01 Apr 2023 00:00:00 +0000</pubDate><guid>https://avivajpeyi.github.io/publication/vajpeyi-2023-ap-j/</guid><description/></item><item><title>Bilby Workshop for NZ Gravity</title><link>https://avivajpeyi.github.io/posts/nz_gravity_bilby_workshop/</link><pubDate>Tue, 14 Feb 2023 21:48:13 +1200</pubDate><guid>https://avivajpeyi.github.io/posts/nz_gravity_bilby_workshop/</guid><description/></item><item><title>A follow-up on intermediate-mass black hole candidates in the second LIGO-Virgo observing run with the Bayes Coherence Ratio</title><link>https://avivajpeyi.github.io/publication/vajpeyi-2022-mnras/</link><pubDate>Tue, 01 Nov 2022 00:00:00 +0000</pubDate><guid>https://avivajpeyi.github.io/publication/vajpeyi-2022-mnras/</guid><description/></item><item><title>LIGO-Virgo correlations between mass ratio and effective inspiral spin: testing the active galactic nuclei channel</title><link>https://avivajpeyi.github.io/publication/mc-kernan-2022-mnras/</link><pubDate>Mon, 01 Aug 2022 00:00:00 +0000</pubDate><guid>https://avivajpeyi.github.io/publication/mc-kernan-2022-mnras/</guid><description/></item><item><title>Avi's Pbilby Setup Notes</title><link>https://avivajpeyi.github.io/posts/pbilby_setup_notes/</link><pubDate>Wed, 29 Jun 2022 00:20:45 +1000</pubDate><guid>https://avivajpeyi.github.io/posts/pbilby_setup_notes/</guid><description>&lt;details class="toc-inpage d-print-none " open>
 &lt;summary class="font-weight-bold">Table of Contents&lt;/summary>
 &lt;nav id="TableOfContents">
 &lt;ul>
