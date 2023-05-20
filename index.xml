@@ -34,9 +34,10 @@
 &lt;p>By the end of this workshop, you all should have a website but may need to spend more time customising it to your liking.&lt;/p>
 &lt;div class="alert alert-note">
 &lt;div>
-&lt;p>This will require some coding/usage of &lt;code>git&lt;/code>. Here are some non-git alternatives:&lt;/p>
+&lt;p>This will require some coding/usage of &lt;code>git&lt;/code>. Here are some no coding/git alternatives:&lt;/p>
 &lt;ul>
 &lt;li>&lt;a href="https://sites.google.com/" target="_blank" rel="noopener">https://sites.google.com/&lt;/a> (no coding necessary)&lt;/li>
+&lt;li>&lt;a href="https://www.journoportfolio.com/" target="_blank" rel="noopener">https://www.journoportfolio.com/&lt;/a>&lt;/li>
 &lt;li>&lt;a href="https://jsonresume.org/" target="_blank" rel="noopener">https://jsonresume.org/&lt;/a>&lt;/li>
 &lt;/ul>
 &lt;/div>
