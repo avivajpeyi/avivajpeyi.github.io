@@ -394,7 +394,7 @@ This means that you can submit a job with &lt;code>752&lt;/code> cores (if you r
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">└── submit
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> ├── analysis_GW150914_0.sh
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> └── bash_full.sh
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Slurm Notes</title><link>https://avivajpeyi.github.io/posts/slurm-notes/</link><pubDate>Wed, 20 Oct 2021 00:20:45 +1000</pubDate><guid>https://avivajpeyi.github.io/posts/slurm-notes/</guid><description>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Ozstar Notes</title><link>https://avivajpeyi.github.io/posts/ozstar-notes/</link><pubDate>Wed, 20 Oct 2021 00:20:45 +1000</pubDate><guid>https://avivajpeyi.github.io/posts/ozstar-notes/</guid><description>
 &lt;details class="toc-inpage d-print-none " open>
 &lt;summary class="font-weight-bold">Table of Contents&lt;/summary>
 &lt;nav id="TableOfContents">
@@ -402,17 +402,25 @@ This means that you can submit a job with &lt;code>752&lt;/code> cores (if you r
 &lt;li>&lt;a href="#interactive-jobs">Interactive Jobs&lt;/a>&lt;/li>
 &lt;li>&lt;a href="#jupyter-notebooks--slurm">Jupyter notebooks + Slurm&lt;/a>&lt;/li>
 &lt;li>&lt;a href="#plot-cpu-hours-used-for-jobs">Plot CPU hours used for jobs&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#downloadinguploading-data">Downloading/Uploading data&lt;/a>
+&lt;ul>
+&lt;li>&lt;a href="#slurm-job-with-data-download">Slurm job with data-download&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#rsync-data-fromto-ozstar">Rsync data from/to OzStar&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;a href="#sequential-jobs">Sequential jobs&lt;/a>&lt;/li>
 &lt;/ul>
 &lt;/nav>
 &lt;/details>
 &lt;h2 id="interactive-jobs">Interactive Jobs&lt;/h2>
-&lt;p>If you want to test softwre that requires GUI, MPI/Parallel/Multiple threads using interactive jobs may be useful.
+&lt;p>If you want to test software that requires GUI, MPI/Parallel/Multiple threads using interactive jobs may be useful.
 Note that if you need a GUI &amp;ndash; you&amp;rsquo;ll need to &lt;code>ssh&lt;/code> with &lt;code>-X&lt;/code>.&lt;/p>
 &lt;p>Run the following to start an interactive job:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">sinteractive --ntasks &lt;span class="m">1&lt;/span> --nodes &lt;span class="m">1&lt;/span> --time 00:30:00 --mem 2GB
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Once resources are allocated, you&amp;rsquo;ll notice that you&amp;rsquo;re on a different machine (allocated for your interactive session).&lt;/p>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Once resources are allocated, you&amp;rsquo;ll be placed in an alternative machine (for your interactive session).
+You will need to re-load your modules.&lt;/p>
 &lt;h2 id="jupyter-notebooks--slurm">Jupyter notebooks + Slurm&lt;/h2>
-&lt;p>Once are in an interactive job session you can open a &lt;code>jupyter&lt;/code> notebook with the following steps:&lt;/p>
+&lt;p>In an interactive job session you can open a &lt;code>jupyter&lt;/code> notebook with the following steps:&lt;/p>
 &lt;ol>
 &lt;li>
 &lt;p>Source envs for you interactive session
@@ -437,11 +445,11 @@ For example you may run the following:&lt;/p>
 &lt;/ul>
 &lt;/li>
 &lt;li>
-&lt;p>Run &lt;code>exit&lt;/code> when done!&lt;/p>
-&lt;p>Otherwise the job will keep running until it times out.&lt;/p>
+&lt;p>Run &lt;code>exit&lt;/code> when done&lt;/p>
+&lt;p>Otherwise the job will keep running, hogging resources, until it times out.&lt;/p>
 &lt;/li>
 &lt;/ol>
-&lt;p>For convenience I have added the following to my &lt;code>OzStar .bash_profile&lt;/code>&lt;/p>
+&lt;p>For convenience, I have added the following to my &lt;code>OzStar .bash_profile&lt;/code>&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># Interactive Jupter notebooks&lt;/span>
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nb">alias&lt;/span> &lt;span class="nv">start_ijob&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s2">&amp;#34;sinteractive --ntasks 2 --time 00:60:00 --mem 4GB&amp;#34;&lt;/span>
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">start_jupyter &lt;span class="o">()&lt;/span> &lt;span class="o">{&lt;/span>
@@ -452,9 +460,10 @@ For example you may run the following:&lt;/p>
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nv">jupcmd&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="k">$(&lt;/span>jupyter-notebook --no-browser --port&lt;span class="o">=&lt;/span>&lt;span class="nv">$ipnport&lt;/span> --ip&lt;span class="o">=&lt;/span>&lt;span class="nv">$ipnip&lt;/span>&lt;span class="k">)&lt;/span>
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="o">}&lt;/span>
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nb">export&lt;/span> -f start_jupyter
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Now I can start a interactive job by running &lt;code>start_ijob&lt;/code> and start the jupter notebook with &lt;code>start_jupyter&lt;/code>.&lt;/p>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>This allows me to start an interactive job with &lt;code>start_ijob&lt;/code> and start the jupter notebook with &lt;code>start_jupyter&lt;/code>.&lt;/p>
 &lt;h2 id="plot-cpu-hours-used-for-jobs">Plot CPU hours used for jobs&lt;/h2>
-&lt;p>The folowing creates a file &lt;code>jobstats.txt&lt;/code> that contains the CPU time (seconds) for each job run bw the start+end time specified.&lt;/p>
+&lt;p>Academics should try to be cognizant of the energy impact of their jobs.
+The following creates a file &lt;code>jobstats.txt&lt;/code> that contains the CPU time (seconds) for each job run bw the start+end time specified.&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">sacct -S 2021-01-01 -E 2021-10-06 -u avajpeyi -X -o &lt;span class="s2">&amp;#34;jobname%-40,cputimeraw&amp;#34;&lt;/span> --parsable2 &amp;gt; jobstats.txt
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>To plot the data you can use the following:
 &lt;script type="application/javascript" src="https://gist.github.com/avivajpeyi/3beed78d92cd5f3520b4a1a93eb97cea.js">&lt;/script>
@@ -462,16 +471,110 @@ For example you may run the following:&lt;/p>
 &lt;figure id="figure-total-cpu-hours-ive-used-19-22">
 &lt;div class="d-flex justify-content-center">
 &lt;div class="w-100" >&lt;img alt="Total CPU hours I&amp;#39;ve used (&amp;#39;19-&amp;#39;22) " srcset="
-/posts/slurm-notes/cpuhrs_hue501005abdd0d309a25415d2822d82f1_63641_c147d4e7e7c22f7621c8f61662fb14ac.webp 400w,
-/posts/slurm-notes/cpuhrs_hue501005abdd0d309a25415d2822d82f1_63641_ee678d6e41928e637360f61ad2b78744.webp 760w,
-/posts/slurm-notes/cpuhrs_hue501005abdd0d309a25415d2822d82f1_63641_1200x1200_fit_q75_h2_lanczos_3.webp 1200w"
-src="https://avivajpeyi.github.io/posts/slurm-notes/cpuhrs_hue501005abdd0d309a25415d2822d82f1_63641_c147d4e7e7c22f7621c8f61662fb14ac.webp"
+/posts/ozstar-notes/cpuhrs_hue501005abdd0d309a25415d2822d82f1_63641_c147d4e7e7c22f7621c8f61662fb14ac.webp 400w,
+/posts/ozstar-notes/cpuhrs_hue501005abdd0d309a25415d2822d82f1_63641_ee678d6e41928e637360f61ad2b78744.webp 760w,
+/posts/ozstar-notes/cpuhrs_hue501005abdd0d309a25415d2822d82f1_63641_1200x1200_fit_q75_h2_lanczos_3.webp 1200w"
+src="https://avivajpeyi.github.io/posts/ozstar-notes/cpuhrs_hue501005abdd0d309a25415d2822d82f1_63641_c147d4e7e7c22f7621c8f61662fb14ac.webp"
 width="760"
 height="760"
 loading="lazy" data-zoomable />&lt;/div>
 &lt;/div>&lt;figcaption>
 Total CPU hours I&amp;rsquo;ve used (&amp;lsquo;19-&amp;lsquo;22)
-&lt;/figcaption>&lt;/figure></description></item><item><title>Matched Filtering</title><link>https://avivajpeyi.github.io/posts/matched-filtering/</link><pubDate>Mon, 29 Jun 2020 00:20:45 +1000</pubDate><guid>https://avivajpeyi.github.io/posts/matched-filtering/</guid><description>&lt;details class="toc-inpage d-print-none " open>
+&lt;/figcaption>&lt;/figure>
+&lt;h2 id="downloadinguploading-data">Downloading/Uploading data&lt;/h2>
+&lt;h3 id="slurm-job-with-data-download">Slurm job with data-download&lt;/h3>
+&lt;p>The nodes with the fastest net speeds are the &lt;code>data-mover&lt;/code> nodes.
+The compute-nodes dont have internet connection, so any jobs that require data download sould be done as a pre-processing step on the &lt;code>data-mover&lt;/code> nodes.&lt;/p>
+&lt;p>For example:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">&lt;span class="cp">#!/bin/bash
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cp">&lt;/span>&lt;span class="c1">#&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">#SBATCH --job-name={{jobname}}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">#SBATCH --output={{log_dir}}/download_%A_%a.log&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">#SBATCH --ntasks=1&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">#SBATCH --time={{time}}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">#SBATCH --mem={{mem}}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">#SBATCH --cpus-per-task={{cpu_per_task}}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">#SBATCH --partition=datamover&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">#SBATCH --array=0-5&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">module load &lt;span class="o">{{&lt;/span>module_loads&lt;span class="o">}}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nb">source&lt;/span> &lt;span class="o">{{&lt;/span>python_env&lt;span class="o">}}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nv">ARRAY_ARGS&lt;/span>&lt;span class="o">=(&lt;/span>&lt;span class="m">0&lt;/span> &lt;span class="m">1&lt;/span> &lt;span class="m">2&lt;/span> &lt;span class="m">3&lt;/span> 4&lt;span class="o">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">srun download_dataset &lt;span class="si">${&lt;/span>&lt;span class="nv">ARRAY_ARGS&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="nv">$SLURM_ARRAY_TASK_ID&lt;/span>&lt;span class="p">]&lt;/span>&lt;span class="si">}&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="rsync-data-fromto-ozstar">Rsync data from/to OzStar&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">rsync -avPxH --no-g --chmod&lt;span class="o">=&lt;/span>Dg+s &amp;lt;LOCAL_PATH&amp;gt; avajpeyi@data-mover01.hpc.swin.edu.au:/fred/&amp;lt;OZ_PROJ&amp;gt;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="sequential-jobs">Sequential jobs&lt;/h2>
+&lt;p>Say you want to trigger sequential jobs (like a DAG), you will need to use the JobID for this and &lt;code>--dependnecy=afterany:&amp;lt;JOBID&amp;gt;&lt;/code>. For example:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">&lt;span class="o">==&lt;/span>&amp;gt; submit.sh &amp;lt;&lt;span class="o">==&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">#!/bin/bash&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nv">ANALYSIS_FN&lt;/span>&lt;span class="o">=(&lt;/span>&lt;span class="s1">&amp;#39;slurm_analysis_0.sh&amp;#39;&lt;/span> &lt;span class="s1">&amp;#39;slurm_analysis_1.sh&amp;#39;&lt;/span>&lt;span class="o">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nv">POST_FN&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s1">&amp;#39;slurm_post.sh&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nv">JOB_IDS&lt;/span>&lt;span class="o">=()&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="k">for&lt;/span> index in &lt;span class="si">${&lt;/span>&lt;span class="p">!ANALYSIS_FN[*]&lt;/span>&lt;span class="si">}&lt;/span>&lt;span class="p">;&lt;/span> &lt;span class="k">do&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nb">echo&lt;/span> &lt;span class="s2">&amp;#34;Submitting &lt;/span>&lt;span class="si">${&lt;/span>&lt;span class="nv">ANALYSIS_FN&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="nv">$index&lt;/span>&lt;span class="p">]&lt;/span>&lt;span class="si">}&lt;/span>&lt;span class="s2">&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nv">JOB_ID&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="k">$(&lt;/span>sbatch --parsable &lt;span class="si">${&lt;/span>&lt;span class="nv">ANALYSIS_FN&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="nv">$index&lt;/span>&lt;span class="p">]&lt;/span>&lt;span class="si">}&lt;/span>&lt;span class="k">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nv">JOB_IDS&lt;/span>&lt;span class="o">+=(&lt;/span>JOB_ID&lt;span class="o">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="k">done&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nv">IDS&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s2">&amp;#34;&lt;/span>&lt;span class="si">${&lt;/span>&lt;span class="nv">JOB_IDS&lt;/span>&lt;span class="p">[@]&lt;/span>&lt;span class="si">}&lt;/span>&lt;span class="s2">&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nv">IDFORMATTED&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="si">${&lt;/span>&lt;span class="nv">IDS&lt;/span>&lt;span class="p">// /:&lt;/span>&lt;span class="si">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nb">echo&lt;/span> &lt;span class="s2">&amp;#34;Submitting &lt;/span>&lt;span class="si">${&lt;/span>&lt;span class="nv">POST_FN&lt;/span>&lt;span class="si">}&lt;/span>&lt;span class="s2">&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nb">echo&lt;/span> &lt;span class="s2">&amp;#34;sbatch --dependnecy=afterany:&lt;/span>&lt;span class="si">${&lt;/span>&lt;span class="nv">IDFORMATTED&lt;/span>&lt;span class="si">}&lt;/span>&lt;span class="s2"> &lt;/span>&lt;span class="si">${&lt;/span>&lt;span class="nv">POST_FN&lt;/span>&lt;span class="si">}&lt;/span>&lt;span class="s2">&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">sbatch --dependency&lt;span class="o">=&lt;/span>afterany:&lt;span class="nv">$IDFORMATTED&lt;/span> &lt;span class="nv">$POST_FN&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">squeue -u &lt;span class="nv">$USER&lt;/span> -o &lt;span class="s1">&amp;#39;%.4u %.20j %.10A %.4C %.10E %R&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;details class="spoiler " id="spoiler-3">
+&lt;summary>Click to view the submission scripts&lt;/summary>
+&lt;p>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">&lt;span class="o">==&lt;/span>&amp;gt; slurm_analysis_0.sh &amp;lt;&lt;span class="o">==&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">#!/bin/bash&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">#&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">#SBATCH --job-name=analysis_0&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">#SBATCH --output=out.log&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">#&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">#SBATCH --ntasks=1&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">#SBATCH --time=0:01:00&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">#SBATCH --mem=100MB&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">#SBATCH --cpus-per-task=1&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">module load git/2.18.0 gcc/9.2.0 openmpi/4.0.2 python/3.8.5
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nb">echo&lt;/span> &lt;span class="s2">&amp;#34;analysis 0&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">&lt;span class="o">==&lt;/span>&amp;gt; slurm_analysis_1.sh &amp;lt;&lt;span class="o">==&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">#!/bin/bash&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">#&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">#SBATCH --job-name=analysis_1&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">#SBATCH --output=out.log&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">#&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">#SBATCH --ntasks=1&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">#SBATCH --time=0:01:00&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">#SBATCH --mem=100MB&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">#SBATCH --cpus-per-task=1&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">module load git/2.18.0 gcc/9.2.0 openmpi/4.0.2 python/3.8.5
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nb">echo&lt;/span> &lt;span class="s2">&amp;#34;analysis 1&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">&lt;span class="o">==&lt;/span>&amp;gt; slurm_post.sh &amp;lt;&lt;span class="o">==&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">#!/bin/bash&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">#&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">#SBATCH --job-name=post&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">#SBATCH --output=out.log&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">#&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">#SBATCH --ntasks=1&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">#SBATCH --time=0:01:00&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">#SBATCH --mem=100MB&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">#SBATCH --cpus-per-task=1&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">module load git/2.18.0 gcc/9.2.0 openmpi/4.0.2 python/3.8.5
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nb">echo&lt;/span> &lt;span class="s2">&amp;#34;post&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/p>
+&lt;/details></description></item><item><title>Matched Filtering</title><link>https://avivajpeyi.github.io/posts/matched-filtering/</link><pubDate>Mon, 29 Jun 2020 00:20:45 +1000</pubDate><guid>https://avivajpeyi.github.io/posts/matched-filtering/</guid><description>&lt;details class="toc-inpage d-print-none " open>
 &lt;summary class="font-weight-bold">Table of Contents&lt;/summary>
 &lt;nav id="TableOfContents">
 &lt;ul>
@@ -916,5 +1019,5 @@ O(n^4)
 Where do we get the waveform datafiles from again?
 &lt;/div>
 &lt;/div>
-&lt;h2 id="test-install-with-the-following-script">Test install with the following script&lt;/h2>
+&lt;h2 id="test-installation-steps-with-the-following-script">Test installation steps with the following script&lt;/h2>
 &lt;script type="application/javascript" src="https://gist.github.com/avivajpeyi/030a544b097fcb4508055d73fa3fa895.js">&lt;/script></description></item></channel></rss>
