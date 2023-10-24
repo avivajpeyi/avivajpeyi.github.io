@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Avi Vajpeyi</title><link>https://avivajpeyi.github.io/</link><atom:link href="https://avivajpeyi.github.io/index.xml" rel="self" type="application/rss+xml"/><description>Avi Vajpeyi</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Mon, 24 Oct 2022 00:00:00 +0000</lastBuildDate><image><url>https://avivajpeyi.github.io/media/icon_hu8bb3cd4a71e1097e37400a0f18d2a5e2_266862_512x512_fill_lanczos_center_3.png</url><title>Avi Vajpeyi</title><link>https://avivajpeyi.github.io/</link></image><item><title>Making a personal website workshop</title><link>https://avivajpeyi.github.io/posts/making_a_personal_website_workshop/</link><pubDate>Thu, 27 Apr 2023 21:54:48 +1200</pubDate><guid>https://avivajpeyi.github.io/posts/making_a_personal_website_workshop/</guid><description>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Avi Vajpeyi</title><link>https://avivajpeyi.github.io/</link><atom:link href="https://avivajpeyi.github.io/index.xml" rel="self" type="application/rss+xml"/><description>Avi Vajpeyi</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Mon, 24 Oct 2022 00:00:00 +0000</lastBuildDate><image><url>https://avivajpeyi.github.io/media/icon_hu8bb3cd4a71e1097e37400a0f18d2a5e2_266862_512x512_fill_lanczos_center_3.png</url><title>Avi Vajpeyi</title><link>https://avivajpeyi.github.io/</link></image><item><title>Analysis of GWTC-3 with fully precessing numerical relativity surrogate models</title><link>https://avivajpeyi.github.io/publication/islam-2023/</link><pubDate>Fri, 01 Sep 2023 00:00:00 +0000</pubDate><guid>https://avivajpeyi.github.io/publication/islam-2023/</guid><description/></item><item><title>Making a personal website workshop</title><link>https://avivajpeyi.github.io/posts/making_a_personal_website_workshop/</link><pubDate>Thu, 27 Apr 2023 21:54:48 +1200</pubDate><guid>https://avivajpeyi.github.io/posts/making_a_personal_website_workshop/</guid><description>
 &lt;details class="toc-inpage d-print-none " open>
 &lt;summary class="font-weight-bold">Table of Contents&lt;/summary>
 &lt;nav id="TableOfContents">
@@ -1020,4 +1020,307 @@ Where do we get the waveform datafiles from again?
 &lt;/div>
 &lt;/div>
 &lt;h2 id="test-installation-steps-with-the-following-script">Test installation steps with the following script&lt;/h2>
-&lt;script type="application/javascript" src="https://gist.github.com/avivajpeyi/030a544b097fcb4508055d73fa3fa895.js">&lt;/script></description></item><item><title>Enhancing confidence in the detection of gravitational waves from compact binaries using signal coherence</title><link>https://avivajpeyi.github.io/publication/isi-2018-ph-rv-d/</link><pubDate>Wed, 01 Aug 2018 00:00:00 +0000</pubDate><guid>https://avivajpeyi.github.io/publication/isi-2018-ph-rv-d/</guid><description/></item><item><title/><link>https://avivajpeyi.github.io/admin/config.yml</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://avivajpeyi.github.io/admin/config.yml</guid><description/></item></channel></rss>
+&lt;script type="application/javascript" src="https://gist.github.com/avivajpeyi/030a544b097fcb4508055d73fa3fa895.js">&lt;/script></description></item><item><title>Enhancing confidence in the detection of gravitational waves from compact binaries using signal coherence</title><link>https://avivajpeyi.github.io/publication/isi-2018-ph-rv-d/</link><pubDate>Wed, 01 Aug 2018 00:00:00 +0000</pubDate><guid>https://avivajpeyi.github.io/publication/isi-2018-ph-rv-d/</guid><description/></item><item><title/><link>https://avivajpeyi.github.io/admin/config.yml</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://avivajpeyi.github.io/admin/config.yml</guid><description/></item><item><title>SBI for SGBW</title><link>https://avivajpeyi.github.io/slides/journal_club/sbi_for_sgwb/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://avivajpeyi.github.io/slides/journal_club/sbi_for_sgwb/</guid><description>&lt;h2 id="sbi-for-sgwb">SBI for SGWB&lt;/h2>
+&lt;p>&lt;em>Simulation based infernce for Stochastic GW background Analysis&lt;/em>
+(Alvey et al, 2023)&lt;/p>
+&lt;p>&lt;a href="https://arxiv.org/pdf/2309.07954.pdf" target="_blank" rel="noopener">arxiv&lt;/a> | &lt;a href="https://github.com/undark-lab/swyft" target="_blank" rel="noopener">swyft&lt;/a>&lt;/p>
+&lt;p>NZ Gravity Journal Club&lt;/p>
+&lt;p>Oct 26th, 2023&lt;/p>
+&lt;hr>
+&lt;h2 id="summary">Summary&lt;/h2>
+&lt;ol>
+&lt;li>Sim based inference&lt;/li>
+&lt;li>Alvey et al&amp;rsquo;s LISA SGWB model&lt;/li>
+&lt;li>Results + future work&lt;/li>
+&lt;li>Some other SBI applications in GW (if time)&lt;/li>
+&lt;/ol>
+&lt;hr>
+&lt;section data-shortcode-section>
+&lt;h2 id="sbi-intro">SBI Intro&lt;/h2>
+&lt;hr>
+&lt;h3 id="traditional-problem">Traditional problem&lt;/h3>
+&lt;p>$$
+p(\theta|d) = \frac{\mathcal{L}(d|\theta)\pi(\theta)}{\color{red}{Z(d)}}= \frac{\mathcal{L}(d|\theta)\pi(\theta)}{\color{red}{\int_{\theta}\mathcal{L}(d|\theta)\pi(\theta) d\theta}}
+$$&lt;/p>
+&lt;ul>
+&lt;li>&lt;em>Monte Carlo&lt;/em>: e.g. Rejection sampling&lt;/li>
+&lt;li>&lt;em>Markov-chain MC&lt;/em>: e.g. Metropolis-Hastings, NUTS&lt;/li>
+&lt;li>&lt;em>Variational Inference&lt;/em>: surrogate $p(\theta|d)$&lt;/li>
+&lt;/ul>
+&lt;p>&lt;mark>What if we dont have $\mathcal{L}(d|\theta)$ ?&lt;/mark>&lt;/p>
+&lt;hr>
+&lt;h3 id="simulation-based-inference">Simulation based inference:&lt;/h3>
+&lt;p>New term for:&lt;/p>
+&lt;ul>
+&lt;li>Approximate Bayes Computation,&lt;/li>
+&lt;li>Likelihood free inference,&lt;/li>
+&lt;li>Indirect inference,&lt;/li>
+&lt;li>Synthetic likelihood&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h3 id="algorithm">Algorithm&lt;/h3>
+&lt;figure >
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img src="https://miro.medium.com/v2/1*oer83KfCCI1AnoqsRtYlRg.png" alt="" loading="lazy" data-zoomable width="400" height="400" />&lt;/div>
+&lt;/div>&lt;/figure>
+&lt;p>Compare the &amp;lsquo;simulated&amp;rsquo; data to the &amp;rsquo;true&amp;rsquo; data&lt;/p>
+&lt;aside class="notes">
+&lt;ul>
+&lt;li>Marginal inference &amp;ndash; SBI its possible to directly target specific parameters for inference, ignore other parameters while still dealing correctly with the ones we dont care about&lt;/li>
+&lt;li>Amortized &amp;ndash; SBI once trained &amp;ndash; we can get answers of the posteriors very quickly&lt;/li>
+&lt;/ul>
+&lt;/aside>
+&lt;hr>
+&lt;h3 id="different-sbi-methods">Different SBI methods:&lt;/h3>
+&lt;ul>
+&lt;li>&lt;strong>Classical&lt;/strong>: Rejection ABC (&amp;lsquo;97), MCMC-ABC (&amp;lsquo;03)&lt;/li>
+&lt;li>&lt;strong>Neural density&lt;/strong>:
+&lt;ul>
+&lt;li>Neural posterior estimator&lt;/li>
+&lt;li>Neural likelihood estimator&lt;/li>
+&lt;li>Neural &lt;em>ratio&lt;/em> estimator (Lnl/evid)&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;strong>Types of NN:&lt;/strong>
+&lt;ul>
+&lt;li>Mixture density networks&lt;/li>
+&lt;li>Normalising flows&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h3 id="goals-for-nn--sbi">Goals for NN + SBI:&lt;/h3>
+&lt;ul>
+&lt;li>&lt;em>Speed&lt;/em>: Training faster than MCMC&lt;/li>
+&lt;li>&lt;em>Scalability&lt;/em>: Doesn&amp;rsquo;t fall apart with high D&lt;/li>
+&lt;li>&lt;em>Pre-existing research&lt;/em>: Leverage modern ML tools (flows, NNs &amp;hellip;)&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h3 id="mcmc-vi-sbi">MCMC, VI, SBI&lt;/h3>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>&lt;/th>
+&lt;th>MCMC&lt;/th>
+&lt;th>VI&lt;/th>
+&lt;th>SBI&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>Explicit Likelihood&lt;/td>
+&lt;td>✅&lt;/td>
+&lt;td>✅&lt;/td>
+&lt;td>❌&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Requires gradients&lt;/td>
+&lt;td>✅&lt;/td>
+&lt;td>(✅)&lt;/td>
+&lt;td>❌&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Targeted inference&lt;/td>
+&lt;td>✅&lt;/td>
+&lt;td>✅&lt;/td>
+&lt;td>❌&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Amortized&lt;/td>
+&lt;td>❌&lt;/td>
+&lt;td>(✅)&lt;/td>
+&lt;td>✅&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Specialised architechture&lt;/td>
+&lt;td>❌&lt;/td>
+&lt;td>✅&lt;/td>
+&lt;td>✅&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Requires data summaries&lt;/td>
+&lt;td>❌&lt;/td>
+&lt;td>❌&lt;/td>
+&lt;td>✅&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>Marginal inference&lt;/td>
+&lt;td>❌&lt;/td>
+&lt;td>❌&lt;/td>
+&lt;td>✅&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;aside class="notes">
+Amortized posterior is one that is not focused on any particular observation
+&lt;/aside>
+&lt;hr>
+&lt;h3 id="end-of-section">END OF SECTION&lt;/h3>
+&lt;/section>
+&lt;hr>
+&lt;section data-shortcode-section>
+&lt;h2 id="sbi-math">SBI Math&lt;/h2>
+&lt;p>&lt;strong>Skipping this, can come back if folks interested&lt;/strong>&lt;/p>
+&lt;aside class="notes">
+&lt;p>Library: swyft
+Simulation efficient marginal posterior estimation&lt;/p>
+&lt;p>Target: X&lt;/p>
+&lt;ul>
+&lt;li>say there are lots of parameters $\theta$&lt;/li>
+&lt;li>Only parameter values that plausiablly generate X will contribut to marginaliation&lt;/li>
+&lt;li>NESTED RATIO ESTIMATION finds this region by iteratively cnstraining the initial prior based on 1D marginal posteriors from previous iterations&lt;/li>
+&lt;li>this method approximates the likelihood-to-evidence ratio by zeroing in on the high-likelihood regions&lt;/li>
+&lt;li>method inspired by nested sampling&lt;/li>
+&lt;li>After a few iteraintins &amp;ndash; some 1D marginals will be mre constrained than others&lt;/li>
+&lt;/ul>
+&lt;p>&lt;a href="https://pbs.twimg.com/media/E65qN0dWEAAxXCW?format=png&amp;amp;name=900x900" target="_blank" rel="noopener">https://pbs.twimg.com/media/E65qN0dWEAAxXCW?format=png&amp;name=900x900&lt;/a>&lt;/p>
+&lt;/aside>
+&lt;hr>
+&lt;h3 id="d_kl-loss-function-for-training">$D_{KL}$ &amp;ldquo;Loss&amp;rdquo; function for training&lt;/h3>
+&lt;p>$$D_{\rm KL}(\tilde{p}, p) = \int \tilde{p}(x) \log \frac{\tilde{p}(x)}{p(x)}\ dx$$&lt;/p>
+&lt;p>$D_{KL}$ is &lt;em>not&lt;/em> symmetric&lt;/p>
+&lt;ul>
+&lt;li>$D_{\rm KL}(\tilde{p}, p)$: Variational inference (LnL based)&lt;/li>
+&lt;li>$D_{\rm KL}(p, \tilde{p})$: NPE (Simulation based)&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>PROBLEM:&lt;/strong> how do we avoid evaluating the $p(\theta|d)$?&lt;/p>
+&lt;hr>
+&lt;h3 id="kl-divergence-and-vi">KL-Divergence and VI&lt;/h3>
+&lt;p>$$D_{\rm KL} [\tilde{p}, p] (\theta) \sim \mathbb{E}_{\theta\sim\tilde{p}(\theta|d)} \log \left[ \frac{\tilde{p}(\theta|d)}{\mathcal{L}(d|\theta)\pi(\theta)} \right] + C$$&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>PROBLEM:&lt;/strong> $p(\theta|d)$ is $$$&lt;/li>
+&lt;li>&lt;strong>SOLUTION:&lt;/strong>
+&lt;ul>
+&lt;li>$p(\theta|d) \sim \mathcal{L}(d|\theta)\pi(\theta)$&lt;/li>
+&lt;li>$0\leq D_{\rm KL} [\tilde{p}, p]\leq Z(d)$&lt;/li>
+&lt;li>Train $\tilde{p}(\theta|d)$&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h3 id="kl-divergence-and-sbi">KL-Divergence and SBI&lt;/h3>
+&lt;p>$$D_{\rm KL}[p, \tilde{p}] (\theta, d) \sim -\mathbb{E}_{(\theta,d)\sim p(\theta,d)} \log \tilde{p}(\theta| d) + C $$&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>PROBLEM:&lt;/strong> $p(\theta|d)$ is $$$&lt;/li>
+&lt;li>&lt;strong>SOLUTION:&lt;/strong>
+&lt;ul>
+&lt;li>sample from $p_{\rm joint}(\theta, d) = \mathcal{L}(d|\theta)\pi(\theta)$&lt;/li>
+&lt;li>Train $\tilde{p}(\theta|d)$&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h3 id="marginal-sbi-vs-vi">Marginal SBI vs VI&lt;/h3>
+&lt;p>&lt;strong>Variatinal inference&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>variational posterior $\tilde{p}(\vec{\theta}|d)$ must conver &lt;em>all&lt;/em> params likelihoodd model condditioned on&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>SBI Marginal inference&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>Can replace $\tilde{p}(\vec{\theta}|d)$ for $\tilde{p}(\theta_1|d)$ without need of doing integrals&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h3 id="end-of-section-1">END OF SECTION&lt;/h3>
+&lt;/section>
+&lt;hr>
+&lt;section data-noprocess data-shortcode-slide
+data-background-image="https://user-images.githubusercontent.com/15642823/277592172-be608f89-4e27-489f-b3ab-48011968790d.jpeg"
+>
+&lt;h2 id="marginal-inference">&amp;ldquo;Marginal&amp;rdquo; inference&lt;/h2>
+&lt;p>$${\color{red}p(\theta_{\rm Waldo}| \rm{image})} =$$
+$$\int {\color{blue}p(\theta_{A}, \theta_{B} &amp;hellip; \theta_{\rm Waldo}| \rm{image})}\ d\theta_A\ d\theta_B\ d\theta_{\rm Waldo} $$&lt;/p>
+&lt;ul>
+&lt;li>VI: have to learn &lt;em>whole&lt;/em> $\color{blue}p(\vec{\theta}|d)$&lt;/li>
+&lt;li>SBI: can focus on specific params $\color{red}p(\theta_{\rm Waldo}|d)$&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h2 id="code-highlighting">Code Highlighting&lt;/h2>
+&lt;p>Inline code: &lt;code>variable&lt;/code>&lt;/p>
+&lt;p>Code block:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="n">porridge&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="s2">&amp;#34;blueberry&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="k">if&lt;/span> &lt;span class="n">porridge&lt;/span> &lt;span class="o">==&lt;/span> &lt;span class="s2">&amp;#34;blueberry&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nb">print&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s2">&amp;#34;Eating...&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h2 id="math">Math&lt;/h2>
+&lt;p>In-line math: $x + y = z$&lt;/p>
+&lt;p>Block math:&lt;/p>
+&lt;p>$$
+f\left( x \right) = ;\frac{{2\left( {x + 4} \right)\left( {x - 4} \right)}}{{\left( {x + 4} \right)\left( {x + 1} \right)}}
+$$&lt;/p>
+&lt;hr>
+&lt;h2 id="fragments">Fragments&lt;/h2>
+&lt;p>Make content appear incrementally&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">{{&amp;lt; fragment &amp;gt;}} $\mathbf{y} = $ {{&amp;lt; /fragment &amp;gt;}}
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">{{&amp;lt; fragment &amp;gt;}} $X\boldsymbol\beta$ {{&amp;lt; /fragment &amp;gt;}}
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">{{&amp;lt; fragment &amp;gt;}} $+ \boldsymbol\varepsilon$ {{&amp;lt; /fragment &amp;gt;}}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Press &lt;code>Space&lt;/code> to play!&lt;/p>
+&lt;p>&lt;span class="fragment " >
+$\mathbf{y} = $
+&lt;/span>
+&lt;span class="fragment " >
+$X\boldsymbol\beta$
+&lt;/span>
+&lt;span class="fragment " >
+$+ \boldsymbol\varepsilon$
+&lt;/span>&lt;/p>
+&lt;hr>
+&lt;p>A fragment can accept two optional parameters:&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>class&lt;/code>: use a custom style (requires definition in custom CSS)&lt;/li>
+&lt;li>&lt;code>weight&lt;/code>: sets the order in which a fragment appears&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h2 id="speaker-notes">Speaker Notes&lt;/h2>
+&lt;p>Add speaker notes to your presentation&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-markdown" data-lang="markdown">&lt;span class="line">&lt;span class="cl">{{% speaker_note %}}
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="k">-&lt;/span> Only the speaker can read these notes
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="k">-&lt;/span> Press &lt;span class="sb">`S`&lt;/span> key to view
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">{{% /speaker_note %}}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Press the &lt;code>S&lt;/code> key to view the speaker notes!&lt;/p>
+&lt;aside class="notes">
+&lt;ul>
+&lt;li>Only the speaker can read these notes&lt;/li>
+&lt;li>Press &lt;code>S&lt;/code> key to view&lt;/li>
+&lt;/ul>
+&lt;/aside>
+&lt;hr>
+&lt;h2 id="themes">Themes&lt;/h2>
+&lt;ul>
+&lt;li>black: Black background, white text, blue links (default)&lt;/li>
+&lt;li>white: White background, black text, blue links&lt;/li>
+&lt;li>league: Gray background, white text, blue links&lt;/li>
+&lt;li>beige: Beige background, dark text, brown links&lt;/li>
+&lt;li>sky: Blue background, thin dark text, blue links&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;ul>
+&lt;li>night: Black background, thick white text, orange links&lt;/li>
+&lt;li>serif: Cappuccino background, gray text, brown links&lt;/li>
+&lt;li>simple: White background, black text, blue links&lt;/li>
+&lt;li>solarized: Cream-colored background, dark green text, blue links&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;section data-noprocess data-shortcode-slide
+data-background-image="boards.webp"
+>
+&lt;h2 id="custom-slide">Custom Slide&lt;/h2>
+&lt;p>Customize the slide style and background&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-markdown" data-lang="markdown">&lt;span class="line">&lt;span class="cl">{{&lt;span class="p">&amp;lt;&lt;/span> &lt;span class="nt">slide&lt;/span> &lt;span class="na">background-image&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s">&amp;#34;boards.webp&amp;#34;&lt;/span> &lt;span class="p">&amp;gt;&lt;/span>}}
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">{{&lt;span class="p">&amp;lt;&lt;/span> &lt;span class="nt">slide&lt;/span> &lt;span class="na">background-color&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s">&amp;#34;#0000FF&amp;#34;&lt;/span> &lt;span class="p">&amp;gt;&lt;/span>}}
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">{{&lt;span class="p">&amp;lt;&lt;/span> &lt;span class="nt">slide&lt;/span> &lt;span class="na">class&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s">&amp;#34;my-style&amp;#34;&lt;/span> &lt;span class="p">&amp;gt;&lt;/span>}}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h2 id="custom-css-example">Custom CSS Example&lt;/h2>
+&lt;p>Let&amp;rsquo;s make headers navy colored.&lt;/p>
+&lt;p>Create &lt;code>assets/css/reveal_custom.css&lt;/code> with:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-css" data-lang="css">&lt;span class="line">&lt;span class="cl">&lt;span class="p">.&lt;/span>&lt;span class="nc">reveal&lt;/span> &lt;span class="nt">section&lt;/span> &lt;span class="nt">h1&lt;/span>&lt;span class="o">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">.&lt;/span>&lt;span class="nc">reveal&lt;/span> &lt;span class="nt">section&lt;/span> &lt;span class="nt">h2&lt;/span>&lt;span class="o">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">.&lt;/span>&lt;span class="nc">reveal&lt;/span> &lt;span class="nt">section&lt;/span> &lt;span class="nt">h3&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">color&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="kc">navy&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h2 id="questions">Questions?&lt;/h2>
+&lt;p>&lt;a href="https://discord.gg/z8wNYzb" target="_blank" rel="noopener">Ask&lt;/a>&lt;/p>
+&lt;p>&lt;a href="https://wowchemy.com/docs/content/slides/" target="_blank" rel="noopener">Documentation&lt;/a>&lt;/p>
+&lt;hr></description></item></channel></rss>
