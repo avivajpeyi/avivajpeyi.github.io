@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Journal Club | Avi Vajpeyi</title><link>https://avivajpeyi.github.io/tag/journal-club/</link><atom:link href="https://avivajpeyi.github.io/tag/journal-club/index.xml" rel="self" type="application/rss+xml"/><description>Journal Club</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><image><url>https://avivajpeyi.github.io/media/icon_hu8bb3cd4a71e1097e37400a0f18d2a5e2_266862_512x512_fill_lanczos_center_3.png</url><title>Journal Club</title><link>https://avivajpeyi.github.io/tag/journal-club/</link></image><item><title>SBI for SGBW</title><link>https://avivajpeyi.github.io/slides/journal_club/sbi_for_sgwb/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://avivajpeyi.github.io/slides/journal_club/sbi_for_sgwb/</guid><description>&lt;h2 id="sbi-for-sgwb">SBI for SGWB&lt;/h2>
 &lt;p>&lt;em>Simulation based infernce for Stochastic GW background Analysis&lt;/em>
 (Alvey et al, 2023)&lt;/p>
-&lt;p>&lt;a href="https://arxiv.org/pdf/2309.07954.pdf" target="_blank" rel="noopener">arxiv&lt;/a> | &lt;a href="https://github.com/undark-lab/swyft" target="_blank" rel="noopener">swyft&lt;/a>&lt;/p>
+&lt;p>&lt;a href="https://arxiv.org/pdf/2309.07954.pdf" target="_blank" rel="noopener">arxiv&lt;/a> | &lt;a href="https://github.com/undark-lab/swyft" target="_blank" rel="noopener">swyft&lt;/a> | &lt;a href="https://github.com/avivajpeyi/dev_site/edit/main/content/slides/journal_club/sbi_for_sgwb/index.md" target="_blank" rel="noopener">edit&lt;/a>&lt;/p>
 &lt;p>NZ Gravity Journal Club&lt;/p>
 &lt;p>Oct 26th, 2023&lt;/p>
 &lt;hr>
 &lt;h2 id="summary">Summary&lt;/h2>
 &lt;ol>
 &lt;li>Sim based inference&lt;/li>
+&lt;li>LISA &amp;ldquo;Global fit&amp;rdquo; + GW background&lt;/li>
 &lt;li>Alvey et al&amp;rsquo;s LISA SGWB model&lt;/li>
-&lt;li>Results + future work&lt;/li>
-&lt;li>Some other SBI applications in GW (if time)&lt;/li>
+&lt;li>Results, Discussion + future work&lt;/li>
 &lt;/ol>
 &lt;hr>
 &lt;section data-shortcode-section>
@@ -212,93 +212,163 @@ $$\int {\color{blue}p(\theta_{A}, \theta_{B} &amp;hellip; \theta_{\rm Waldo}| \r
 &lt;li>SBI: can focus on specific params $\color{red}p(\theta_{\rm Waldo}|d)$&lt;/li>
 &lt;/ul>
 &lt;hr>
-&lt;h2 id="code-highlighting">Code Highlighting&lt;/h2>
-&lt;p>Inline code: &lt;code>variable&lt;/code>&lt;/p>
-&lt;p>Code block:&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="n">porridge&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="s2">&amp;#34;blueberry&amp;#34;&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="k">if&lt;/span> &lt;span class="n">porridge&lt;/span> &lt;span class="o">==&lt;/span> &lt;span class="s2">&amp;#34;blueberry&amp;#34;&lt;/span>&lt;span class="p">:&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nb">print&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s2">&amp;#34;Eating...&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;section data-shortcode-section>
+&lt;h2 id="truncated-marginal-neural-ratio-estimation-tmnre">Truncated Marginal Neural Ratio Estimation (TMNRE)&lt;/h2>
+&lt;hr>
+&lt;h3 id="goal">Goal&lt;/h3>
+&lt;ul>
+&lt;li>Leverage the marginal inference property of SBI&lt;/li>
+&lt;li>Compress the simulated data into a few summary statistics (similar to variational encoder)&lt;/li>
+&lt;li>&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h3 id="active-learning-loop">Active learning loop&lt;/h3>
+&lt;p>
+&lt;figure >
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img src="https://user-images.githubusercontent.com/15642823/277889707-8e9f5955-b8ac-44e0-8067-808a5ad189d2.png" alt="loop" loading="lazy" data-zoomable />&lt;/div>
+&lt;/div>&lt;/figure>
+&lt;/p>
+&lt;hr>
+&lt;h3 id="network-architecture">Network architecture&lt;/h3>
+&lt;p>
+&lt;figure >
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img src="https://user-images.githubusercontent.com/15642823/277868586-284becb9-8f47-4ed9-9a92-6a3e7683470d.png" alt="network" loading="lazy" data-zoomable />&lt;/div>
+&lt;/div>&lt;/figure>
+&lt;/p>
+&lt;hr>
+&lt;h3 id="truncation-example">Truncation example&lt;/h3>
+&lt;p>
+&lt;figure >
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img src="https://user-images.githubusercontent.com/15642823/277902380-7807ed9e-99ae-40c4-b242-b7e9328306ec.png" alt="trunc" loading="lazy" data-zoomable />&lt;/div>
+&lt;/div>&lt;/figure>
+&lt;/p>
+&lt;hr>
+&lt;h3 id="end-of-section-2">END OF SECTION&lt;/h3>
+&lt;/section>
+&lt;hr>
+&lt;section data-shortcode-section>
+&lt;h2 id="lisa-data-analysis">LISA Data analysis&lt;/h2>
+&lt;hr>
+&lt;h3 id="global-fit">Global Fit&lt;/h3>
+&lt;hr>
+&lt;h3 id="sgwb-estimation-methods">SGWB estimation methods&lt;/h3>
+&lt;hr>
+&lt;h3 id="end-of-section-3">END OF SECTION&lt;/h3>
+&lt;/section>
+&lt;hr>
+&lt;section data-shortcode-section>
+&lt;h2 id="alvey-et-als-sgwb-fit">Alvey et al&amp;rsquo;s SGWB fit&lt;/h2>
+&lt;hr>
+&lt;h3 id="signal-and-noise-model">Signal and noise model&lt;/h3>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th style="text-align:center">&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td style="text-align:center">
+&lt;figure >
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img src="https://user-images.githubusercontent.com/15642823/277888868-c7ac02f7-a2f1-4e49-ada3-f72c0e2eb71f.png" alt="Signal" loading="lazy" data-zoomable />&lt;/div>
+&lt;/div>&lt;/figure>
+&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:center">
+&lt;figure >
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img src="https://user-images.githubusercontent.com/15642823/277888887-50a16f75-854a-4098-b3d4-ca7a829a6324.png" alt="Noise" loading="lazy" data-zoomable />&lt;/div>
+&lt;/div>&lt;/figure>
+&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;hr>
+&lt;h3 id="base-model-consists-of">BASE Model consists of&lt;/h3>
+&lt;ul>
+&lt;li>Data:
+&lt;ul>
+&lt;li>2 paramter instrumental noise model (only amplitude &amp;ndash; shape of noise curve is fixed)&lt;/li>
+&lt;li>SGWB model, either (a) or (b)&lt;/li>
+&lt;li>data(t) = noise(t) + Sum_signals s_i(t)&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Single TDI channel&lt;/li>
+&lt;li>12 days of data (split into 100 segments, 1 segment ~ 2.9 hours)&lt;/li>
+&lt;li>Freq resolution 1/2.9Hours ~ 0.1 mHz&lt;/li>
+&lt;/ul>
+&lt;p>Note: this is ~1% of the full LISA mission duration&lt;/p>
+&lt;hr>
+&lt;h3 id="model-with-transients">Model with transients:&lt;/h3>
+&lt;ul>
+&lt;li>Same as BASE mode&lt;/li>
+&lt;li>In each segement Inject 1 massive BH merger (priors below) if U[0,1] &amp;lt; p&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl"> &lt;span class="n">Mc&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">U&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="mf">8e5&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mf">9e5&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">eta&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">U&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="mf">0.16&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mf">0.25&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">chi1&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">U&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="mf">1.0&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mf">1.0&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">chi2&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">U&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="mf">1.0&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mf">1.0&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">dist_mpc&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">U&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="mf">5e4&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mf">1e5&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">tc&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="mf">0.0&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">phic&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="mf">0.0&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
-&lt;h2 id="math">Math&lt;/h2>
-&lt;p>In-line math: $x + y = z$&lt;/p>
-&lt;p>Block math:&lt;/p>
-&lt;p>$$
-f\left( x \right) = ;\frac{{2\left( {x + 4} \right)\left( {x - 4} \right)}}{{\left( {x + 4} \right)\left( {x + 1} \right)}}
-$$&lt;/p>
-&lt;hr>
-&lt;h2 id="fragments">Fragments&lt;/h2>
-&lt;p>Make content appear incrementally&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">{{&amp;lt; fragment &amp;gt;}} $\mathbf{y} = $ {{&amp;lt; /fragment &amp;gt;}}
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">{{&amp;lt; fragment &amp;gt;}} $X\boldsymbol\beta$ {{&amp;lt; /fragment &amp;gt;}}
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">{{&amp;lt; fragment &amp;gt;}} $+ \boldsymbol\varepsilon$ {{&amp;lt; /fragment &amp;gt;}}
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Press &lt;code>Space&lt;/code> to play!&lt;/p>
-&lt;p>&lt;span class="fragment " >
-$\mathbf{y} = $
-&lt;/span>
-&lt;span class="fragment " >
-$X\boldsymbol\beta$
-&lt;/span>
-&lt;span class="fragment " >
-$+ \boldsymbol\varepsilon$
-&lt;/span>&lt;/p>
-&lt;hr>
-&lt;p>A fragment can accept two optional parameters:&lt;/p>
+&lt;h3 id="mla-training">MLA training:&lt;/h3>
+&lt;p>&amp;ldquo;Several numerical settings should be chosen for the general structure of the algorithm as well as the network architechture&amp;rdquo;&lt;/p>
 &lt;ul>
-&lt;li>&lt;code>class&lt;/code>: use a custom style (requires definition in custom CSS)&lt;/li>
-&lt;li>&lt;code>weight&lt;/code>: sets the order in which a fragment appears&lt;/li>
+&lt;li>500K simulations (9:1 train:val split)&lt;/li>
+&lt;li>50 epochs (512 batch size)&lt;/li>
+&lt;li>save model weights with the lowest validation loss&lt;/li>
 &lt;/ul>
 &lt;hr>
-&lt;h2 id="speaker-notes">Speaker Notes&lt;/h2>
-&lt;p>Add speaker notes to your presentation&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-markdown" data-lang="markdown">&lt;span class="line">&lt;span class="cl">{{% speaker_note %}}
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="k">-&lt;/span> Only the speaker can read these notes
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="k">-&lt;/span> Press &lt;span class="sb">`S`&lt;/span> key to view
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">{{% /speaker_note %}}
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Press the &lt;code>S&lt;/code> key to view the speaker notes!&lt;/p>
-&lt;aside class="notes">
-&lt;ul>
-&lt;li>Only the speaker can read these notes&lt;/li>
-&lt;li>Press &lt;code>S&lt;/code> key to view&lt;/li>
-&lt;/ul>
-&lt;/aside>
+&lt;h3 id="end-of-section-4">END OF SECTION&lt;/h3>
+&lt;/section>
 &lt;hr>
-&lt;h2 id="themes">Themes&lt;/h2>
+&lt;section data-shortcode-section>
+&lt;h2 id="alvey-et-als-results--discussion">Alvey et al&amp;rsquo;s Results + Discussion&lt;/h2>
+&lt;hr>
+&lt;h3 id="mcmc-vs-sbi-fit">MCMC vs SBI fit&lt;/h3>
+&lt;p>
+&lt;figure >
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img src="https://user-images.githubusercontent.com/15642823/277888874-1ab882f7-e3d1-47a9-a542-96101b8b92b5.png" alt="corner" loading="lazy" data-zoomable />&lt;/div>
+&lt;/div>&lt;/figure>
+&lt;/p>
+&lt;hr>
+&lt;h3 id="future-work">Future work&lt;/h3>
 &lt;ul>
-&lt;li>black: Black background, white text, blue links (default)&lt;/li>
-&lt;li>white: White background, black text, blue links&lt;/li>
-&lt;li>league: Gray background, white text, blue links&lt;/li>
-&lt;li>beige: Beige background, dark text, brown links&lt;/li>
-&lt;li>sky: Blue background, thin dark text, blue links&lt;/li>
+&lt;li>comples noise model&lt;/li>
+&lt;li>longer data duration&lt;/li>
+&lt;li>other &amp;ldquo;SBI&amp;rdquo; blocks for the global fit&lt;/li>
 &lt;/ul>
 &lt;hr>
+&lt;h3 id="sbi-thoughts">SBI thoughts&lt;/h3>
 &lt;ul>
-&lt;li>night: Black background, thick white text, orange links&lt;/li>
-&lt;li>serif: Cappuccino background, gray text, brown links&lt;/li>
-&lt;li>simple: White background, black text, blue links&lt;/li>
-&lt;li>solarized: Cream-colored background, dark green text, blue links&lt;/li>
+&lt;li>Focused analysis and &amp;lsquo;implicit marginalisation&amp;rsquo; is neat!&lt;/li>
+&lt;li>Fewer evaluations of the model needed &amp;ndash; good in sitations where the model is expensive to evaluate&lt;/li>
+&lt;li>doest use gradient information for lnL&amp;hellip; sometimes we know the Lnl&lt;/li>
+&lt;li>How does SBI perform if all params are important?&lt;/li>
+&lt;li>What if the model for noise/SGWB is not the best?
+&lt;ul>
+&lt;li>How would this work with a non-parametric model?&lt;/li>
+&lt;/ul>
+&lt;/li>
 &lt;/ul>
 &lt;hr>
-&lt;section data-noprocess data-shortcode-slide
-data-background-image="boards.webp"
->
-&lt;h2 id="custom-slide">Custom Slide&lt;/h2>
-&lt;p>Customize the slide style and background&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-markdown" data-lang="markdown">&lt;span class="line">&lt;span class="cl">{{&lt;span class="p">&amp;lt;&lt;/span> &lt;span class="nt">slide&lt;/span> &lt;span class="na">background-image&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s">&amp;#34;boards.webp&amp;#34;&lt;/span> &lt;span class="p">&amp;gt;&lt;/span>}}
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">{{&lt;span class="p">&amp;lt;&lt;/span> &lt;span class="nt">slide&lt;/span> &lt;span class="na">background-color&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s">&amp;#34;#0000FF&amp;#34;&lt;/span> &lt;span class="p">&amp;gt;&lt;/span>}}
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">{{&lt;span class="p">&amp;lt;&lt;/span> &lt;span class="nt">slide&lt;/span> &lt;span class="na">class&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s">&amp;#34;my-style&amp;#34;&lt;/span> &lt;span class="p">&amp;gt;&lt;/span>}}
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
-&lt;h2 id="custom-css-example">Custom CSS Example&lt;/h2>
-&lt;p>Let&amp;rsquo;s make headers navy colored.&lt;/p>
-&lt;p>Create &lt;code>assets/css/reveal_custom.css&lt;/code> with:&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-css" data-lang="css">&lt;span class="line">&lt;span class="cl">&lt;span class="p">.&lt;/span>&lt;span class="nc">reveal&lt;/span> &lt;span class="nt">section&lt;/span> &lt;span class="nt">h1&lt;/span>&lt;span class="o">,&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">.&lt;/span>&lt;span class="nc">reveal&lt;/span> &lt;span class="nt">section&lt;/span> &lt;span class="nt">h2&lt;/span>&lt;span class="o">,&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">.&lt;/span>&lt;span class="nc">reveal&lt;/span> &lt;span class="nt">section&lt;/span> &lt;span class="nt">h3&lt;/span> &lt;span class="p">{&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">color&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="kc">navy&lt;/span>&lt;span class="p">;&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">}&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
-&lt;h2 id="questions">Questions?&lt;/h2>
-&lt;p>&lt;a href="https://discord.gg/z8wNYzb" target="_blank" rel="noopener">Ask&lt;/a>&lt;/p>
-&lt;p>&lt;a href="https://wowchemy.com/docs/content/slides/" target="_blank" rel="noopener">Documentation&lt;/a>&lt;/p>
+&lt;h3 id="end-of-section-5">END OF SECTION&lt;/h3>
+&lt;/section>
+&lt;hr>
+&lt;h2 id="other-related-papers">Other related papers&lt;/h2>
+&lt;ul>
+&lt;li>&lt;a href="https://iopscience.iop.org/article/10.1088/1475-7516/2022/09/004/meta" target="_blank" rel="noopener">Fast and credible likelihood-free cosmology with TMNRE&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://arxiv.org/abs/2009.11845" target="_blank" rel="noopener">Improved reconstruction of a stochastic gravitational wave background with LISA&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://arxiv.org/abs/2107.01214" target="_blank" rel="noopener">Truncated Marginal Neural Ratio Estimation&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://arxiv.org/abs/2308.08597" target="_blank" rel="noopener">Scalable inference with Autoregressive Neural Ratio Estimation&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://arxiv.org/pdf/2309.08430.pdf" target="_blank" rel="noopener">Fast Likelihood-free Reconstruction of Gravitational Wave Backgrounds&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://github.com/avivajpeyi/dev_site/wiki/Materials-for-SBI-journal-club-presentation" target="_blank" rel="noopener">More plots&lt;/a>&lt;/li>
+&lt;/ul>
 &lt;hr></description></item></channel></rss>
