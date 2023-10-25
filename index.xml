@@ -1022,18 +1022,151 @@ Where do we get the waveform datafiles from again?
 &lt;h2 id="test-installation-steps-with-the-following-script">Test installation steps with the following script&lt;/h2>
 &lt;script type="application/javascript" src="https://gist.github.com/avivajpeyi/030a544b097fcb4508055d73fa3fa895.js">&lt;/script></description></item><item><title>Enhancing confidence in the detection of gravitational waves from compact binaries using signal coherence</title><link>https://avivajpeyi.github.io/publication/isi-2018-ph-rv-d/</link><pubDate>Wed, 01 Aug 2018 00:00:00 +0000</pubDate><guid>https://avivajpeyi.github.io/publication/isi-2018-ph-rv-d/</guid><description/></item><item><title/><link>https://avivajpeyi.github.io/admin/config.yml</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://avivajpeyi.github.io/admin/config.yml</guid><description/></item><item><title>SBI for SGBW</title><link>https://avivajpeyi.github.io/slides/journal_club/sbi_for_sgwb/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://avivajpeyi.github.io/slides/journal_club/sbi_for_sgwb/</guid><description>&lt;h2 id="sbi-for-sgwb">SBI for SGWB&lt;/h2>
 &lt;p>&lt;em>Simulation based infernce for Stochastic GW background Analysis&lt;/em>
-(Alvey et al, 2023)&lt;/p>
+(Alvey+, 2023)&lt;/p>
 &lt;p>&lt;a href="https://arxiv.org/pdf/2309.07954.pdf" target="_blank" rel="noopener">arxiv&lt;/a> | &lt;a href="https://github.com/undark-lab/swyft" target="_blank" rel="noopener">swyft&lt;/a> | &lt;a href="https://github.com/avivajpeyi/dev_site/edit/main/content/slides/journal_club/sbi_for_sgwb/index.md" target="_blank" rel="noopener">edit&lt;/a>&lt;/p>
 &lt;p>NZ Gravity Journal Club&lt;/p>
 &lt;p>Oct 26th, 2023&lt;/p>
 &lt;hr>
 &lt;h2 id="summary">Summary&lt;/h2>
 &lt;ol>
-&lt;li>Sim based inference&lt;/li>
 &lt;li>LISA &amp;ldquo;Global fit&amp;rdquo; + GW background&lt;/li>
-&lt;li>Alvey et al&amp;rsquo;s LISA SGWB model&lt;/li>
+&lt;li>Alvey+&amp;rsquo;s LISA SGWB model&lt;/li>
+&lt;li>Sim based inference + TMNRE&lt;/li>
 &lt;li>Results, Discussion + future work&lt;/li>
 &lt;/ol>
+&lt;hr>
+&lt;section data-shortcode-section>
+&lt;h2 id="lisa-data-analysis">LISA Data analysis&lt;/h2>
+&lt;hr>
+&lt;h3 id="the-data">The data&lt;/h3>
+&lt;p>
+&lt;figure >
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img src="https://github.com/avivajpeyi/dev_site/assets/15642823/af1e82e7-f1bc-4306-856e-b11e245cadf3" alt="lisa_data" loading="lazy" data-zoomable />&lt;/div>
+&lt;/div>&lt;/figure>
+&lt;/p>
+&lt;hr>
+&lt;h3 id="the-global-fit">The &amp;ldquo;Global fit&amp;rdquo;&lt;/h3>
+&lt;p>Analyze all the data, simultaneously, block-by-block&lt;/p>
+&lt;figure >
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img src="https://github.com/avivajpeyi/dev_site/assets/15642823/1577656f-3c97-43e9-bc4d-7da09c6686ce" alt="" loading="lazy" data-zoomable width="1300" height="350" />&lt;/div>
+&lt;/div>&lt;/figure>
+&lt;p>$&amp;lt;10^5$ parameters in the full problem&lt;/p>
+&lt;hr>
+&lt;h3 id="sgwb-estimation-methods">SGWB estimation methods&lt;/h3>
+&lt;p>Some recent work in LISA SGWB estimation:&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Noise model&lt;/th>
+&lt;th>Signal model&lt;/th>
+&lt;th>Noise + Signal&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>&lt;a href="https://arxiv.org/abs/1906.09027" target="_blank" rel="noopener">Karnesis+ &amp;lsquo;19&lt;/a>&lt;/td>
+&lt;td>&lt;a href="https://arxiv.org/abs/2302.12573" target="_blank" rel="noopener">Baghi+ &amp;lsquo;23&lt;/a>&lt;/td>
+&lt;td>&lt;a href="https://arxiv.org/abs/2011.05055" target="_blank" rel="noopener">Boileau+ &amp;lsquo;20&lt;/a>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;a href="https://arxiv.org/abs/1906.09244" target="_blank" rel="noopener">Caprini+ &amp;lsquo;19&lt;/a>&lt;/td>
+&lt;td>&lt;a href="https://arxiv.org/abs/2308.01056" target="_blank" rel="noopener">Muratore+ &amp;lsquo;23&lt;/a>&lt;/td>
+&lt;td>&lt;a href="https://arxiv.org/abs/2303.15929" target="_blank" rel="noopener">Olaf+ &amp;lsquo;23&lt;/a>&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>&lt;a href="https://arxiv.org/abs/2004.01135" target="_blank" rel="noopener">Pieroni+ &amp;lsquo;20&lt;/a>&lt;/td>
+&lt;td>&lt;/td>
+&lt;td>Aimen+ (WIP)&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>A high precision reconstruction required to extract an SGWB signal&lt;/p>
+&lt;/section>
+&lt;hr>
+&lt;section data-shortcode-section>
+&lt;h2 id="alveys-sbi-approach">Alvey+&amp;rsquo;s SBI approach&lt;/h2>
+&lt;hr>
+&lt;h3 id="motivation-for-sbi">Motivation for SBI&lt;/h3>
+&lt;aside class="notes">
+&lt;ul>
+&lt;li>Current SGWB approaches use stochastic sampling methods (MCMC, Nested sampling)&lt;/li>
+&lt;li>These are not &lt;em>robust&lt;/em> to foreground transient signals (e.g. massive BH mergers)s&lt;/li>
+&lt;/ul>
+&lt;/aside>
+&lt;p>SBI for SGWB estimation motivations&lt;/p>
+&lt;ol>
+&lt;li>the &amp;lsquo;marginal inference&amp;rsquo; property&lt;/li>
+&lt;li>likelihood &amp;lsquo;free&amp;rsquo; inference&lt;/li>
+&lt;li>more robust to foreground transient signals (e.g. massive BH mergers)&lt;/li>
+&lt;/ol>
+&lt;hr>
+&lt;h3 id="signal-and-noise-model">Signal and noise model&lt;/h3>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th style="text-align:center">&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td style="text-align:center">
+&lt;figure >
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img src="https://user-images.githubusercontent.com/15642823/277888868-c7ac02f7-a2f1-4e49-ada3-f72c0e2eb71f.png" alt="Signal" loading="lazy" data-zoomable />&lt;/div>
+&lt;/div>&lt;/figure>
+&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:center">
+&lt;figure >
+&lt;div class="d-flex justify-content-center">
+&lt;div class="w-100" >&lt;img src="https://user-images.githubusercontent.com/15642823/277888887-50a16f75-854a-4098-b3d4-ca7a829a6324.png" alt="Noise" loading="lazy" data-zoomable />&lt;/div>
+&lt;/div>&lt;/figure>
+&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;hr>
+&lt;h3 id="base-model-consists-of">BASE Model consists of&lt;/h3>
+&lt;ul>
+&lt;li>Data:
+&lt;ul>
+&lt;li>2 paramter instrumental noise model (only amplitude &amp;ndash; shape of noise curve is fixed)&lt;/li>
+&lt;li>SGWB model, either (a) or (b)&lt;/li>
+&lt;li>data(t) = noise(t) + Sum_signals s_i(t)&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Single TDI channel&lt;/li>
+&lt;li>12 days of data (split into 100 segments, 1 segment ~ 2.9 hours)&lt;/li>
+&lt;li>Freq resolution 1/2.9Hours ~ 0.1 mHz&lt;/li>
+&lt;/ul>
+&lt;p>Note: this is ~1% of the full LISA mission duration&lt;/p>
+&lt;hr>
+&lt;h3 id="model-with-transients">Model with transients:&lt;/h3>
+&lt;ul>
+&lt;li>Same as BASE mode&lt;/li>
+&lt;li>In each segement Inject 1 massive BH merger (priors below) if U[0,1] &amp;lt; p&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl"> &lt;span class="n">Mc&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">U&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="mf">8e5&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mf">9e5&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">eta&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">U&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="mf">0.16&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mf">0.25&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">chi1&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">U&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="mf">1.0&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mf">1.0&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">chi2&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">U&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="mf">1.0&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mf">1.0&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">dist_mpc&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">U&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="mf">5e4&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mf">1e5&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">tc&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="mf">0.0&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">phic&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="mf">0.0&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
+&lt;h3 id="mla-training">MLA training:&lt;/h3>
+&lt;p>&amp;ldquo;Several numerical settings should be chosen for the general structure of the algorithm as well as the network architechture&amp;rdquo;&lt;/p>
+&lt;ul>
+&lt;li>500K simulations (9:1 train:val split)&lt;/li>
+&lt;li>50 epochs (512 batch size)&lt;/li>
+&lt;li>save model weights with the lowest validation loss&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h3 id="end-of-section">END OF SECTION&lt;/h3>
+&lt;/section>
 &lt;hr>
 &lt;section data-shortcode-section>
 &lt;h2 id="sbi-intro">SBI Intro&lt;/h2>
@@ -1155,7 +1288,7 @@ $$&lt;/p>
 Amortized posterior is one that is not focused on any particular observation
 &lt;/aside>
 &lt;hr>
-&lt;h3 id="end-of-section">END OF SECTION&lt;/h3>
+&lt;h3 id="end-of-section-1">END OF SECTION&lt;/h3>
 &lt;/section>
 &lt;hr>
 &lt;section data-shortcode-section>
@@ -1220,7 +1353,7 @@ Simulation efficient marginal posterior estimation&lt;/p>
 &lt;li>Can replace $\tilde{p}(\vec{\theta}|d)$ for $\tilde{p}(\theta_1|d)$ without need of doing integrals&lt;/li>
 &lt;/ul>
 &lt;hr>
-&lt;h3 id="end-of-section-1">END OF SECTION&lt;/h3>
+&lt;h3 id="end-of-section-2">END OF SECTION&lt;/h3>
 &lt;/section>
 &lt;hr>
 &lt;section data-noprocess data-shortcode-slide
@@ -1236,13 +1369,6 @@ $$\int {\color{blue}p(\theta_{A}, \theta_{B} &amp;hellip; \theta_{\rm Waldo}| \r
 &lt;hr>
 &lt;section data-shortcode-section>
 &lt;h2 id="truncated-marginal-neural-ratio-estimation-tmnre">Truncated Marginal Neural Ratio Estimation (TMNRE)&lt;/h2>
-&lt;hr>
-&lt;h3 id="goal">Goal&lt;/h3>
-&lt;ul>
-&lt;li>Leverage the marginal inference property of SBI&lt;/li>
-&lt;li>Compress the simulated data into a few summary statistics (similar to variational encoder)&lt;/li>
-&lt;li>&lt;/li>
-&lt;/ul>
 &lt;hr>
 &lt;h3 id="active-learning-loop">Active learning loop&lt;/h3>
 &lt;p>
@@ -1268,98 +1394,17 @@ $$\int {\color{blue}p(\theta_{A}, \theta_{B} &amp;hellip; \theta_{\rm Waldo}| \r
 &lt;/div>&lt;/figure>
 &lt;/p>
 &lt;hr>
-&lt;h3 id="end-of-section-2">END OF SECTION&lt;/h3>
-&lt;/section>
-&lt;hr>
-&lt;section data-shortcode-section>
-&lt;h2 id="lisa-data-analysis">LISA Data analysis&lt;/h2>
-&lt;hr>
-&lt;h3 id="global-fit">Global Fit&lt;/h3>
-&lt;hr>
-&lt;h3 id="sgwb-estimation-methods">SGWB estimation methods&lt;/h3>
-&lt;hr>
 &lt;h3 id="end-of-section-3">END OF SECTION&lt;/h3>
 &lt;/section>
 &lt;hr>
 &lt;section data-shortcode-section>
-&lt;h2 id="alvey-et-als-sgwb-fit">Alvey et al&amp;rsquo;s SGWB fit&lt;/h2>
-&lt;hr>
-&lt;h3 id="signal-and-noise-model">Signal and noise model&lt;/h3>
-&lt;table>
-&lt;thead>
-&lt;tr>
-&lt;th style="text-align:center">&lt;/th>
-&lt;/tr>
-&lt;/thead>
-&lt;tbody>
-&lt;tr>
-&lt;td style="text-align:center">
-&lt;figure >
-&lt;div class="d-flex justify-content-center">
-&lt;div class="w-100" >&lt;img src="https://user-images.githubusercontent.com/15642823/277888868-c7ac02f7-a2f1-4e49-ada3-f72c0e2eb71f.png" alt="Signal" loading="lazy" data-zoomable />&lt;/div>
-&lt;/div>&lt;/figure>
-&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td style="text-align:center">
-&lt;figure >
-&lt;div class="d-flex justify-content-center">
-&lt;div class="w-100" >&lt;img src="https://user-images.githubusercontent.com/15642823/277888887-50a16f75-854a-4098-b3d4-ca7a829a6324.png" alt="Noise" loading="lazy" data-zoomable />&lt;/div>
-&lt;/div>&lt;/figure>
-&lt;/td>
-&lt;/tr>
-&lt;/tbody>
-&lt;/table>
-&lt;hr>
-&lt;h3 id="base-model-consists-of">BASE Model consists of&lt;/h3>
-&lt;ul>
-&lt;li>Data:
-&lt;ul>
-&lt;li>2 paramter instrumental noise model (only amplitude &amp;ndash; shape of noise curve is fixed)&lt;/li>
-&lt;li>SGWB model, either (a) or (b)&lt;/li>
-&lt;li>data(t) = noise(t) + Sum_signals s_i(t)&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;li>Single TDI channel&lt;/li>
-&lt;li>12 days of data (split into 100 segments, 1 segment ~ 2.9 hours)&lt;/li>
-&lt;li>Freq resolution 1/2.9Hours ~ 0.1 mHz&lt;/li>
-&lt;/ul>
-&lt;p>Note: this is ~1% of the full LISA mission duration&lt;/p>
-&lt;hr>
-&lt;h3 id="model-with-transients">Model with transients:&lt;/h3>
-&lt;ul>
-&lt;li>Same as BASE mode&lt;/li>
-&lt;li>In each segement Inject 1 massive BH merger (priors below) if U[0,1] &amp;lt; p&lt;/li>
-&lt;/ul>
-&lt;div class="highlight">&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl"> &lt;span class="n">Mc&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">U&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="mf">8e5&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mf">9e5&lt;/span>&lt;span class="p">)&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">eta&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">U&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="mf">0.16&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mf">0.25&lt;/span>&lt;span class="p">)&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">chi1&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">U&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="mf">1.0&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mf">1.0&lt;/span>&lt;span class="p">)&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">chi2&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">U&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="mf">1.0&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mf">1.0&lt;/span>&lt;span class="p">)&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">dist_mpc&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">U&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="mf">5e4&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="mf">1e5&lt;/span>&lt;span class="p">)&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">tc&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="mf">0.0&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">phic&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="mf">0.0&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
-&lt;h3 id="mla-training">MLA training:&lt;/h3>
-&lt;p>&amp;ldquo;Several numerical settings should be chosen for the general structure of the algorithm as well as the network architechture&amp;rdquo;&lt;/p>
-&lt;ul>
-&lt;li>500K simulations (9:1 train:val split)&lt;/li>
-&lt;li>50 epochs (512 batch size)&lt;/li>
-&lt;li>save model weights with the lowest validation loss&lt;/li>
-&lt;/ul>
-&lt;hr>
-&lt;h3 id="end-of-section-4">END OF SECTION&lt;/h3>
-&lt;/section>
-&lt;hr>
-&lt;section data-shortcode-section>
-&lt;h2 id="alvey-et-als-results--discussion">Alvey et al&amp;rsquo;s Results + Discussion&lt;/h2>
+&lt;h2 id="results--discussion">Results + Discussion&lt;/h2>
 &lt;hr>
 &lt;h3 id="mcmc-vs-sbi-fit">MCMC vs SBI fit&lt;/h3>
-&lt;p>
 &lt;figure >
 &lt;div class="d-flex justify-content-center">
-&lt;div class="w-100" >&lt;img src="https://user-images.githubusercontent.com/15642823/277888874-1ab882f7-e3d1-47a9-a542-96101b8b92b5.png" alt="corner" loading="lazy" data-zoomable />&lt;/div>
+&lt;div class="w-100" >&lt;img src="https://user-images.githubusercontent.com/15642823/277888874-1ab882f7-e3d1-47a9-a542-96101b8b92b5.png" alt="" loading="lazy" data-zoomable width="500px" />&lt;/div>
 &lt;/div>&lt;/figure>
-&lt;/p>
 &lt;hr>
 &lt;h3 id="future-work">Future work&lt;/h3>
 &lt;ul>
@@ -1381,7 +1426,7 @@ $$\int {\color{blue}p(\theta_{A}, \theta_{B} &amp;hellip; \theta_{\rm Waldo}| \r
 &lt;/li>
 &lt;/ul>
 &lt;hr>
-&lt;h3 id="end-of-section-5">END OF SECTION&lt;/h3>
+&lt;h3 id="end-of-section-4">END OF SECTION&lt;/h3>
 &lt;/section>
 &lt;hr>
 &lt;h2 id="other-related-papers">Other related papers&lt;/h2>
