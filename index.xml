@@ -1323,8 +1323,6 @@ $$\int {\color{blue}p(\theta_{A}, \theta_{B} &amp;hellip; \theta_{\rm Waldo}| \r
 &lt;div class="w-100" >&lt;img src="https://user-images.githubusercontent.com/15642823/277902380-7807ed9e-99ae-40c4-b242-b7e9328306ec.png" alt="trunc" loading="lazy" data-zoomable />&lt;/div>
 &lt;/div>&lt;/figure>
 &lt;/p>
-&lt;hr>
-&lt;h3 id="end-of-section-2">END OF SECTION&lt;/h3>
 &lt;/section>
 &lt;hr>
 &lt;section data-shortcode-section>
@@ -1376,8 +1374,6 @@ this is ~1% of the full LISA mission duration
 &lt;li>50 epochs (512 batch size)&lt;/li>
 &lt;li>save model weights with the lowest validation loss&lt;/li>
 &lt;/ul>
-&lt;hr>
-&lt;h3 id="end-of-section-3">END OF SECTION&lt;/h3>
 &lt;/section>
 &lt;hr>
 &lt;section data-shortcode-section>
@@ -1397,17 +1393,17 @@ this is ~1% of the full LISA mission duration
 &lt;li>Fewer evaluations of the model needed!&lt;/li>
 &lt;/ul>
 &lt;/li>
-&lt;li>The ~bad~ not so good:
+&lt;li>The $\tiny{\rm bad}$ not so good:
 &lt;ul>
 &lt;li>Doest use LnL even when known (no gradients)&lt;/li>
-&lt;li>Requires robust models for noise (slow! &lt;a href="https://avivajpeyi.github.io/lisa_notes/_images/runtime.png" target="_blank" rel="noopener">look at this plot&lt;/a>)&lt;/li>
+&lt;li>Requires robust models for noise (&lt;a href="https://avivajpeyi.github.io/lisa_notes/_images/runtime.png" target="_blank" rel="noopener">slow!&lt;/a>)&lt;/li>
 &lt;li>Need to model &lt;em>all&lt;/em> signals in data generation?&lt;/li>
 &lt;li>MLA architecture&amp;hellip;&lt;/li>
 &lt;/ul>
 &lt;/li>
 &lt;li>The ugly:
 &lt;ul>
-&lt;li>MCMC comparison for data with transients unfair?&lt;/li>
+&lt;li>unfair MCMC comparison for data with transients&lt;/li>
 &lt;/ul>
 &lt;/li>
 &lt;/ul>
@@ -1419,8 +1415,6 @@ this is ~1% of the full LISA mission duration
 &lt;li>Additional data channels&lt;/li>
 &lt;li>other &amp;ldquo;SBI&amp;rdquo; blocks for the global fit&lt;/li>
 &lt;/ul>
-&lt;hr>
-&lt;h3 id="end-of-section-4">END OF SECTION&lt;/h3>
 &lt;/section>
 &lt;hr>
 &lt;h2 id="other-related-papers">Other related papers&lt;/h2>
