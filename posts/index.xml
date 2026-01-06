@@ -1,0 +1,1082 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Blog |</title><link>https://avivajpeyi.github.io/posts/</link><atom:link href="https://avivajpeyi.github.io/posts/index.xml" rel="self" type="application/rss+xml"/><description>Blog</description><generator>HugoBlox Kit (https://hugoblox.com)</generator><language>en-us</language><lastBuildDate>Thu, 27 Apr 2023 21:54:48 +1200</lastBuildDate><image><url>https://avivajpeyi.github.io/media/icon_hu_702a800cd775dbac.png</url><title>Blog</title><link>https://avivajpeyi.github.io/posts/</link></image><item><title>Making a personal website workshop</title><link>https://avivajpeyi.github.io/posts/making_a_personal_website_workshop/</link><pubDate>Thu, 27 Apr 2023 21:54:48 +1200</pubDate><guid>https://avivajpeyi.github.io/posts/making_a_personal_website_workshop/</guid><description>
+&lt;details class="print:hidden xl:hidden" &gt;
+&lt;summary&gt;Table of Contents&lt;/summary&gt;
+&lt;div class="text-sm"&gt;
+&lt;nav id="TableOfContents"&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="#introduction"&gt;Introduction&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#setting-up-your-website"&gt;Setting up your website&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="#0-pre-requisites"&gt;0. Pre-requisites&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#1-make-a-github-account"&gt;1. Make a github account&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#2-download-a-template-website"&gt;2. Download a template website&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#3-setup-website-repo"&gt;3. Setup website repo&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#4-copy-the-template-contents"&gt;4. Copy the template contents&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#5-view-your-website-locally"&gt;5. View your website locally&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#6-personalise"&gt;6. Personalise!&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#7-add-the-github-workflow-to-build-the-pages"&gt;7. Add the github-workflow to build the pages&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#8-push-your-changes-to-github"&gt;8. Push your changes to github&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#9-enable-github-pages"&gt;9. Enable github pages&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#tldr"&gt;TLDR&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href="#personalising-your-website"&gt;Personalising your website&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="#basic-edits"&gt;Basic edits&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#generating-a-publication-list-with-a-bib-file"&gt;Generating a publication list with a bib file&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#adding-blog-post-entries"&gt;Adding blog post entries&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/nav&gt;
+&lt;/div&gt;
+&lt;/details&gt;
+&lt;h2 id="introduction"&gt;Introduction&lt;/h2&gt;
+&lt;p&gt;Today we will use
+and
+to make a personal website (hosted on github).&lt;/p&gt;
+&lt;p&gt;By the end of this workshop, you all should have a website but may need to spend more time customising it to your liking.&lt;/p&gt;
+&lt;div class="callout flex px-4 py-3 mb-6 rounded-md border-l-4 bg-blue-100 dark:bg-blue-900 border-blue-500"
+data-callout="note"
+data-callout-metadata=""&gt;
+&lt;span class="callout-icon pr-3 pt-1 text-blue-600 dark:text-blue-300"&gt;
+&lt;svg height="24" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"&gt;&lt;path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="m16.862 4.487l1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L6.832 19.82a4.5 4.5 0 0 1-1.897 1.13l-2.685.8l.8-2.685a4.5 4.5 0 0 1 1.13-1.897zm0 0L19.5 7.125"/&gt;&lt;/svg&gt;
+&lt;/span&gt;
+&lt;div class="callout-content dark:text-neutral-300"&gt;
+&lt;div class="callout-title font-semibold mb-1"&gt;Note&lt;/div&gt;
+&lt;div class="callout-body"&gt;&lt;p&gt;This will require some coding/usage of &lt;code&gt;git&lt;/code&gt;. Here are some no coding/git alternatives:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+(no coding necessary)&lt;/li&gt;
+&lt;li&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;/li&gt;
+&lt;/ul&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;One can now use
+and
+&amp;rsquo;s &amp;ldquo;CMS&amp;rdquo; (whatever that stands for) to make a website without using git. However, I have not tried this yet, so I can&amp;rsquo;t help you with it. &amp;#x1f605;&lt;/p&gt;
+&lt;h2 id="setting-up-your-website"&gt;Setting up your website&lt;/h2&gt;
+&lt;h3 id="0-pre-requisites"&gt;0. Pre-requisites&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;1. Get git&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;First, check if running &lt;code&gt;git status&lt;/code&gt; in your terminal gives an error. If it does, you&amp;rsquo;ll need to install git.
+Here are instructions to install
+.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;2. Setup ssh keys&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Next, you&amp;rsquo;ll need to
+so that you can push to github without having to enter your password every time.&lt;/p&gt;
+&lt;p&gt;Create an ssh key (I&amp;rsquo;d suggest not entering a passphrase)&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;ssh-keygen -t ed25519 -C &lt;span class="s2"&gt;&amp;#34;your_github_email@example.com&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;cat ~/.ssh/id_ed25519.pub
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Copy the output of the above command and paste it into the
+(
+.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;3. Install hugo&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;You&amp;rsquo;ll need
+on your local machine.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;macOS&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;brew install hugo
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Windows&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;choco install hugo-extended
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Linux&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sudo snap install hugo
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="1-make-a-github-account"&gt;1. Make a github account&lt;/h3&gt;
+&lt;p&gt;Make sure to use a username that you are happy to have as part of your website url (e.g.
+.&lt;/p&gt;
+&lt;h3 id="2-download-a-template-website"&gt;2. Download a template website&lt;/h3&gt;
+&lt;p&gt;There are lots of
+s to choose from. Here are some that I like:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;The
+&lt;/li&gt;
+&lt;li&gt;The
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="3-setup-website-repo"&gt;3. Setup website repo&lt;/h3&gt;
+&lt;p&gt;Make a repo called &lt;code&gt;your_username.github.io&lt;/code&gt; (e.g. &lt;code&gt;avivajpeyi.github.io&lt;/code&gt;) and clone it to your computer (e.g. &lt;code&gt;git clone git@github.com:your_username/your_username.github.io.git&lt;/code&gt;).&lt;/p&gt;
+&lt;h3 id="4-copy-the-template-contents"&gt;4. Copy the template contents&lt;/h3&gt;
+&lt;p&gt;Copy the hugo template into your repo. Remember to also copy the &lt;code&gt;.gitignore&lt;/code&gt; file and &lt;code&gt;.github&lt;/code&gt; dir. &lt;strong&gt;Do not copy the &lt;code&gt;.git&lt;/code&gt; dir&lt;/strong&gt;.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;cp -r starter-academic/* your_username.github.io/
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;cp -r starter-academic/.gitignore your_username.github.io/
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;cp -r starter-academic/.github your_username.github.io/
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id="5-view-your-website-locally"&gt;5. View your website locally&lt;/h3&gt;
+&lt;p&gt;Run the following, and you should see your website at
+(or whatever port it says).&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nb"&gt;cd&lt;/span&gt; your_username.github.io
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;hugo server
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;If you get an error here, there must have been a problem with installing
+. &amp;#x1f622;&lt;/p&gt;
+&lt;h3 id="6-personalise"&gt;6. Personalise!&lt;/h3&gt;
+&lt;p&gt;Time to make your website your own! For now, lets just change the title of your website (we&amp;rsquo;ll do more edits
+).&lt;/p&gt;
+&lt;p&gt;Change the default name in the following two files&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-fallback" data-lang="fallback"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;./config/_default/config.yaml
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;./content/authors/admin/_index.md
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Saving the files should automatically update
+.&lt;/p&gt;
+&lt;h3 id="7-add-the-github-workflow-to-build-the-pages"&gt;7. Add the github-workflow to build the pages&lt;/h3&gt;
+&lt;p&gt;We&amp;rsquo;d like github to automatically build and deploy our website whenever we push changes to the &lt;code&gt;main&lt;/code&gt; branch. To do this, we need to add a github workflow.
+Here is a workflow that you can use:&lt;/p&gt;
+&lt;script src="https://gist.github.com/avivajpeyi/b363e8228526f9dedaf28e0399f0444a.js"&gt;&lt;/script&gt;
+&lt;p&gt;Place
+in the &lt;code&gt;.github/workflows/deploy-pages.yml&lt;/code&gt;.&lt;/p&gt;
+&lt;h3 id="8-push-your-changes-to-github"&gt;8. Push your changes to github&lt;/h3&gt;
+&lt;p&gt;Time to commit and push your changes to github.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;git add -A
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;git commit -m &lt;span class="s2"&gt;&amp;#34;init website&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;git push origin main
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Go to your repo on github and check that the files have been pushed. You should see a new &lt;code&gt;gh_pages&lt;/code&gt; branch.&lt;/p&gt;
+&lt;h3 id="9-enable-github-pages"&gt;9. Enable github pages&lt;/h3&gt;
+&lt;p&gt;You will also need to enable github pages. This is an optional setting in github repos telling github that you may want to host a website from this repo.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Go to
+&lt;/li&gt;
+&lt;li&gt;Select &lt;code&gt;gh_pages&lt;/code&gt; as the source branch&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Your website should now be live at
+!&lt;/p&gt;
+&lt;p&gt;&amp;#x1f389; &amp;#x1f389; &amp;#x1f389;&lt;/p&gt;
+&lt;h3 id="tldr"&gt;TLDR&lt;/h3&gt;
+&lt;p&gt;Here is a small bash script that you may find helpful. Find-replace &lt;code&gt;your_username&lt;/code&gt; with your github username and run the following commands in your terminal:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;git clone https://github.com/wowchemy/starter-hugo-academic.git
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;git clone git@github.com:your_username/your_username.github.io.git
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;cp -r starter-hugo-academic/* your_username.github.io/
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;cp -r starter-hugo-academic/.github your_username.github.io/
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;cp -r starter-hugo-academic/.gitignore your_username.github.io/
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;rm -rf starter-hugo-academic
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nb"&gt;cd&lt;/span&gt; your_username.github.io
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;wget https://shorturl.at/elsDI -O .github/workflows/deploy-pages.yml
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;git add -A
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;git commit -m &lt;span class="s1"&gt;&amp;#39;init website&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;git push
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class="callout flex px-4 py-3 mb-6 rounded-md border-l-4 bg-blue-100 dark:bg-blue-900 border-blue-500"
+data-callout="note"
+data-callout-metadata=""&gt;
+&lt;span class="callout-icon pr-3 pt-1 text-blue-600 dark:text-blue-300"&gt;
+&lt;svg height="24" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"&gt;&lt;path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="m16.862 4.487l1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L6.832 19.82a4.5 4.5 0 0 1-1.897 1.13l-2.685.8l.8-2.685a4.5 4.5 0 0 1 1.13-1.897zm0 0L19.5 7.125"/&gt;&lt;/svg&gt;
+&lt;/span&gt;
+&lt;div class="callout-content dark:text-neutral-300"&gt;
+&lt;div class="callout-title font-semibold mb-1"&gt;Note&lt;/div&gt;
+&lt;div class="callout-body"&gt;Remember to &amp;lsquo;activate&amp;rsquo; github pages in your repo settings (see
+above).&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;h2 id="personalising-your-website"&gt;Personalising your website&lt;/h2&gt;
+&lt;p&gt;
+guide:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Open up the project in your favourite text editor (vim, pycharm, Rstudio, etc.)&lt;/p&gt;
+&lt;p&gt;Your directory structure should look something like this:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;.
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;├── academic.Rproj
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;├── assets
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│   └── jsconfig.json
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;├── config
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│   └── _default
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│   ├── config.yaml
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│   ├── languages.yaml
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│   ├── menus.yaml
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│   └── params.yaml
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;├── content
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│   ├── _index.md
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│   ├── privacy.md
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│   ├── terms.md
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│   ├── admin
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│   │   └── index.md
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│   ├── authors
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│   │   ├── admin
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│   │   │   ├── avatar.png
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│   │   │   └── _index.md
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│   │   └── _index.md
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;...
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;content/_index.md&lt;/code&gt; is the homepage (and where we will be making most of our edits today)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;content/authors/admin/_index.md&lt;/code&gt; is where your personal profile page lives&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;config/_default/config.yaml&lt;/code&gt; is where you can change the title of your website, etc.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="basic-edits"&gt;Basic edits&lt;/h3&gt;
+&lt;p&gt;Try to make the following edits to your website:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Change the title of your website (&lt;code&gt;content/authors/admin/_index.md&lt;/code&gt;)&lt;/li&gt;
+&lt;li&gt;Change the avatar picture (&lt;code&gt;content/authors/admin/avatar.png&lt;/code&gt;, or use
+, &lt;code&gt;config/_default/params.yaml&lt;/code&gt; )&lt;/li&gt;
+&lt;li&gt;Change your website icon (&lt;code&gt;assets/media/icon.png&lt;/code&gt;)&lt;/li&gt;
+&lt;li&gt;Change the menu items (&lt;code&gt;config/_default/menus.yaml&lt;/code&gt;)&lt;/li&gt;
+&lt;li&gt;Add a link to your CV (&lt;code&gt;static/uploads/cv.pdf&lt;/code&gt;)&lt;/li&gt;
+&lt;li&gt;Edit your homepage (&lt;code&gt;content/_index.md&lt;/code&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Remember to keep checking
+to see your changes, and commiting your work!&lt;/p&gt;
+&lt;h3 id="generating-a-publication-list-with-a-bib-file"&gt;Generating a publication list with a bib file&lt;/h3&gt;
+&lt;p&gt;Given a bib file with your publications (e.g. &lt;code&gt;publications.bib&lt;/code&gt;), you can autogenerate the publication list on your website using the &lt;code&gt;academic&lt;/code&gt; python package:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;pip3 install -U academic
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nb"&gt;cd&lt;/span&gt; your_username.github.io/
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;academic import --bibtex &amp;lt;path/to/publications.bib&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;This will create a &lt;code&gt;publication&lt;/code&gt; folder with a markdown file for each publication. You can then edit these files to add a summary, etc. See
+for more details.&lt;/p&gt;
+&lt;h3 id="adding-blog-post-entries"&gt;Adding blog post entries&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nb"&gt;cd&lt;/span&gt; your_username.github.io/
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;hugo new --kind post post/my-first-post
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;In place of &lt;code&gt;post&lt;/code&gt;, you can also use &lt;code&gt;project&lt;/code&gt;, or &lt;code&gt;event&lt;/code&gt;. See
+for more details.&lt;/p&gt;</description></item><item><title>Bilby Workshop for NZ Gravity</title><link>https://avivajpeyi.github.io/posts/nz_gravity_bilby_workshop/</link><pubDate>Tue, 14 Feb 2023 21:48:13 +1200</pubDate><guid>https://avivajpeyi.github.io/posts/nz_gravity_bilby_workshop/</guid><description/></item><item><title>Avi's Pbilby Setup Notes</title><link>https://avivajpeyi.github.io/posts/pbilby_setup_notes/</link><pubDate>Wed, 29 Jun 2022 00:20:45 +1000</pubDate><guid>https://avivajpeyi.github.io/posts/pbilby_setup_notes/</guid><description>&lt;details class="print:hidden xl:hidden" &gt;
+&lt;summary&gt;Table of Contents&lt;/summary&gt;
+&lt;div class="text-sm"&gt;
+&lt;nav id="TableOfContents"&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="#do-you-really-need-pbilby-for-your-analysis"&gt;Do you really need &lt;code&gt;pBilby&lt;/code&gt; for your analysis?&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#setting-up-pbilby-on-ozstar"&gt;Setting up pbilby on Ozstar&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="#making-a-venv-for-analysis"&gt;Making a &lt;code&gt;venv&lt;/code&gt; for analysis&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#installing-pbilby"&gt;Installing &lt;code&gt;pBilby&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#local"&gt;Local&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href="#configuring-your-ini-file"&gt;Configuring your &lt;code&gt;ini&lt;/code&gt; file&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href="#submitting-jobs"&gt;Submitting jobs&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="#job-setup-step"&gt;Job setup step&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#starting-jobs-immediately"&gt;Starting jobs immediately:&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#starting-jobs-with-lots-of-cores"&gt;Starting jobs with lots of cores:&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href="#monitoring-jobs"&gt;Monitoring jobs&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="#checking-the-queue"&gt;Checking the queue&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#checking-the-job-output"&gt;Checking the job output&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/nav&gt;
+&lt;/div&gt;
+&lt;/details&gt;
+&lt;h2 id="do-you-really-need-pbilby-for-your-analysis"&gt;Do you really need &lt;code&gt;pBilby&lt;/code&gt; for your analysis?&lt;/h2&gt;
+&lt;p&gt;For most analysis, &lt;code&gt;bilby_pipe&lt;/code&gt; may be sufficient (and better suited!):&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;bilby_pipe&lt;/code&gt; has can easily download propritary LVK data.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;bilby_pipe&lt;/code&gt; is well configured to run many jobs in parallel.&lt;/li&gt;
+&lt;li&gt;Cluster-wait times for a &lt;code&gt;pbilby&lt;/code&gt; job can be longer than the time it takes to run &lt;code&gt;bilby_pipe&lt;/code&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;code&gt;pBilby&lt;/code&gt; should only be used if you want to run an expensive job (e.g. lots of live points, or expensive waveform model).&lt;/p&gt;
+&lt;h2 id="setting-up-pbilby-on-ozstar"&gt;Setting up pbilby on Ozstar&lt;/h2&gt;
+&lt;h3 id="making-a-venv-for-analysis"&gt;Making a &lt;code&gt;venv&lt;/code&gt; for analysis&lt;/h3&gt;
+&lt;p&gt;Before installing &lt;code&gt;pBilby&lt;/code&gt;, lets set up some virtual python environments.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&amp;lt;ssh into ozstar&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;module --force purge
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;module load git/2.18.0 git-lfs/2.4.0 gcc/9.2.0 openmpi/4.0.2 numpy/1.19.2-python-3.8.5 mpi4py/3.0.3-python-3.8.5 &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; module unload zlib
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;python -m venv pbilby_venv
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nb"&gt;source&lt;/span&gt; pbilby_venv/bin/activate
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class="callout flex px-4 py-3 mb-6 rounded-md border-l-4 bg-blue-100 dark:bg-blue-900 border-blue-500"
+data-callout="note"
+data-callout-metadata=""&gt;
+&lt;span class="callout-icon pr-3 pt-1 text-blue-600 dark:text-blue-300"&gt;
+&lt;svg height="24" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"&gt;&lt;path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="m16.862 4.487l1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L6.832 19.82a4.5 4.5 0 0 1-1.897 1.13l-2.685.8l.8-2.685a4.5 4.5 0 0 1 1.13-1.897zm0 0L19.5 7.125"/&gt;&lt;/svg&gt;
+&lt;/span&gt;
+&lt;div class="callout-content dark:text-neutral-300"&gt;
+&lt;div class="callout-title font-semibold mb-1"&gt;Note&lt;/div&gt;
+&lt;div class="callout-body"&gt;&lt;p&gt;&lt;strong&gt;Choosing a dir for your venv&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Your &lt;code&gt;venv&lt;/code&gt; will be faster to boot-up if you make it in your &lt;code&gt;/home/&lt;/code&gt; directory, rather than in &lt;code&gt;/fred/&lt;/code&gt; (as the latter is on a network drive).
+However, &lt;code&gt;/home/&lt;/code&gt; has a very small amount of storage space.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;You will need to load the same modules every time you want to use the &lt;code&gt;pbilby_venv&lt;/code&gt; environment. I recommend adding the following to your &lt;code&gt;.bashrc&lt;/code&gt; file:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nb"&gt;alias&lt;/span&gt; &lt;span class="nv"&gt;ligo_loads&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;module --force purge &amp;amp;&amp;amp; module load git/2.18.0 git-lfs/2.4.0 gcc/9.2.0 openmpi/4.0.2 numpy/1.19.2-python-3.8.5 mpi4py/3.0.3-python-3.8.5 &amp;amp;&amp;amp; module unload zlib &amp;amp;&amp;amp; source /fred/oz980/avajpeyi/envs/pbilby_venv/bin/activate&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Then, anytime you &lt;code&gt;ssh&lt;/code&gt; onto Ozstar, you can just type &lt;code&gt;ligo_loads&lt;/code&gt; to load the modules and activate the &lt;code&gt;pbilby_venv&lt;/code&gt; environment.&lt;/p&gt;
+&lt;h4 id="alternative-partitions"&gt;Alternative partitions&lt;/h4&gt;
+&lt;p&gt;If you want to use partitions other &lt;code&gt;skylake&lt;/code&gt;, eg &lt;code&gt;sstar/gstar&lt;/code&gt;, you&amp;rsquo;ll need to &lt;code&gt;ssh sstar&lt;/code&gt;/&lt;code&gt;ssh gstar&lt;/code&gt; and make a new &lt;code&gt;venv&lt;/code&gt; for each partiton you want to run on.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&amp;lt;ssh into ozstar&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;ssh sstar
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&amp;lt;same steps as above&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;A new &lt;code&gt;venv&lt;/code&gt; is needed is as each partition has custom architecture and cant use builds from other architectures.&lt;/p&gt;
+&lt;h4 id="why-not-use-conda"&gt;Why not use &lt;code&gt;conda&lt;/code&gt;?&lt;/h4&gt;
+&lt;p&gt;&lt;code&gt;conda&lt;/code&gt; has a large overhead compared to &lt;code&gt;venv&lt;/code&gt; (e.g. &lt;code&gt;conda&lt;/code&gt; takes 10s to load, while &lt;code&gt;venv&lt;/code&gt; takes 1s).
+&lt;figure &gt;
+&lt;div class="flex justify-center "&gt;
+&lt;div class="w-full" &gt;&lt;img src="https://git.ligo.org/lscsoft/parallel_bilby/uploads/d1c1d8c6357153fdf84cd8d28873cbe1/Screen_Shot_2020-09-16_at_11.18.29_am.png" alt="https://git.ligo.org/lscsoft/parallel_bilby/uploads/d1c1d8c6357153fdf84cd8d28873cbe1/Screen_Shot_2020-09-16_at_11.18.29_am.png" loading="lazy" data-zoomable /&gt;&lt;/div&gt;
+&lt;/div&gt;&lt;/figure&gt;
+The above &lt;code&gt;import parallel_bilby&lt;/code&gt; took several minutes on &lt;code&gt;Ozstar&lt;/code&gt; using &lt;code&gt;conda&lt;/code&gt;!&lt;/p&gt;
+&lt;h3 id="installing-pbilby"&gt;Installing &lt;code&gt;pBilby&lt;/code&gt;&lt;/h3&gt;
+&lt;p&gt;Now, we can install &lt;code&gt;pBilby&lt;/code&gt; (note &lt;code&gt;sstar/gstar&lt;/code&gt; dont have access to the internet, so you&amp;rsquo;ll need to install &lt;code&gt;pBilby&lt;/code&gt; when on &lt;code&gt;farnarkle&lt;/code&gt;):&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;pip install parallel_bilby
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;If you&amp;rsquo;re not doing a vanilla analysis, I would suggest the following method to install pbilby:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;git clone git@git.ligo.org:lscsoft/parallel_bilby.git
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nb"&gt;cd&lt;/span&gt; parallel_bilby
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;python setup.py develop
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;code&gt;develop&lt;/code&gt; mode is useful as it allows you to edit the source code and have the changes take effect immediately. This is useful if you want to make changes to &lt;code&gt;pBilby&lt;/code&gt;.&lt;/p&gt;
+&lt;h3 id="local"&gt;Local&lt;/h3&gt;
+&lt;p&gt;In addition to &lt;code&gt;Ozstar&lt;/code&gt;, I would suggest installing &lt;code&gt;pBilby&lt;/code&gt; on your local machine to help with debugging/making sure your analysis can actually start running.&lt;/p&gt;
+&lt;h2 id="configuring-your-ini-file"&gt;Configuring your &lt;code&gt;ini&lt;/code&gt; file&lt;/h2&gt;
+&lt;p&gt;The &lt;code&gt;pBilby&lt;/code&gt; ini is very similar to the &lt;code&gt;bilby_pipe&lt;/code&gt; ini, but with a few extra options. Here is an example ini for GW150914 analysis:
+&lt;script src="https://gist.github.com/avivajpeyi/22bc160785976a906613d3caaa4622c4.js"&gt;&lt;/script&gt;
+&lt;/p&gt;
+&lt;p&gt;You can remove the custom &lt;code&gt;pBilby&lt;/code&gt; options and run the analysis with &lt;code&gt;bilby_pipe&lt;/code&gt; to see if it works.
+Note that you will need to manually get the data and PSD files for the analysis to work.&lt;/p&gt;
+&lt;h4 id="data"&gt;Data:&lt;/h4&gt;
+&lt;p&gt;Here is a helper script to get the data:
+&lt;script src="https://gist.github.com/avivajpeyi/b2691d830103b2218657e3f2fcdbf52d.js"&gt;&lt;/script&gt;
+&lt;/p&gt;
+&lt;p&gt;The easiest way I find to get data is&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;On CIT: &lt;code&gt;ligo-proxy-init avi.vajpeyi &amp;amp;&amp;amp; kinit&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Run above &lt;code&gt;py&lt;/code&gt; srcipt&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;scp&lt;/code&gt; data &lt;code&gt;CIT--&amp;gt;Ozstar&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id="psd"&gt;PSD:&lt;/h4&gt;
+&lt;p&gt;You can get PSDs from the
+.
+Note that the PSDs have to be formatted in the same way as those for &lt;code&gt;bilby_pipe&lt;/code&gt; jobs.
+For GW150914 you can get away with downloading it from the
+&lt;/p&gt;
+&lt;h2 id="submitting-jobs"&gt;Submitting jobs&lt;/h2&gt;
+&lt;h3 id="job-setup-step"&gt;Job setup step&lt;/h3&gt;
+&lt;p&gt;Once you have your &lt;code&gt;ini&lt;/code&gt; and data/PSD files, you can submit a job to &lt;code&gt;Ozstar&lt;/code&gt; using the following command:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;parallel_bilby_generate &amp;lt;ini&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;This should generate a folder called &lt;code&gt;outdir&lt;/code&gt; (or whatever you specified in the &lt;code&gt;ini&lt;/code&gt; file) with a bunch of files in it.
+E.g. this is what my &lt;code&gt;dir&lt;/code&gt; looks like:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-fallback" data-lang="fallback"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;outdir_GW150914
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;├── data
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│   ├── GW150914_data_dump.pickle
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│   ├── GW150914_prior.json
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│   ├── H1_full_frequency_domain_data.png
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│   └── L1_full_frequency_domain_data.png
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;├── GW150914_config_complete.ini
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;├── log_data_analysis
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;├── log_data_generation
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;├── result
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;└── submit
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; ├── analysis_GW150914_0.sh
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; └── bash_GW150914.sh
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;The &lt;code&gt;submit&lt;/code&gt; folder contains the scripts that will be submitted to the &lt;code&gt;slurm&lt;/code&gt; queue.&lt;/p&gt;
+&lt;p&gt;To test if the job will run, you can try running the &lt;code&gt;analysis_GW150914_0.sh&lt;/code&gt; script locally. First, identify the execution command in the script. It should look something like this:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;mpirun parallel_bilby_analysis &amp;lt;...data_dump.pickle&amp;gt; ....
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;To run this locally, copy the above line, and run it like so:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;mpirun -n &lt;span class="m"&gt;2&lt;/span&gt; parallel_bilby_analysis &amp;lt;...data_dump.pickle&amp;gt; ....
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;This asks &lt;code&gt;mpi&lt;/code&gt; to run the &lt;code&gt;parallel_bilby_analysis&lt;/code&gt; script with 2 cores on the headnode. If this reaches the sampling stage ie if you see something like:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-fallback" data-lang="fallback"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;#:10|eff(%):4.744|logl*:-inf&amp;lt;11.8&amp;lt;inf|logz:7.1+/-0.1|dlogz:302.0&amp;gt;0.1
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;then you know that the job is configured correctly and will run on &lt;code&gt;Ozstar&lt;/code&gt;! Woohoo!&lt;/p&gt;
+&lt;p&gt;Now you can submit it on &lt;code&gt;Ozstar&lt;/code&gt;.&lt;/p&gt;
+&lt;h3 id="starting-jobs-immediately"&gt;Starting jobs immediately:&lt;/h3&gt;
+&lt;p&gt;Before submitting your job on &lt;code&gt;OzStar&lt;/code&gt;, run the following:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;$ showbf
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;skylake
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="m"&gt;2&lt;/span&gt; nodes &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="m"&gt;32&lt;/span&gt; core&lt;span class="o"&gt;)&lt;/span&gt; free &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="m"&gt;64&lt;/span&gt; cores total&lt;span class="o"&gt;)&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; 9:01:49 to Inf
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="m"&gt;1&lt;/span&gt; slot &lt;span class="k"&gt;for&lt;/span&gt; 28-core &lt;span class="nb"&gt;jobs&lt;/span&gt; free &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="m"&gt;28&lt;/span&gt; cores total&lt;span class="o"&gt;)&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; 23:59:59
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="m"&gt;1&lt;/span&gt; slot &lt;span class="k"&gt;for&lt;/span&gt; 26-core &lt;span class="nb"&gt;jobs&lt;/span&gt; free &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="m"&gt;26&lt;/span&gt; cores total&lt;span class="o"&gt;)&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; 41:00:46
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="m"&gt;2&lt;/span&gt; slots &lt;span class="k"&gt;for&lt;/span&gt; 20-core &lt;span class="nb"&gt;jobs&lt;/span&gt; free &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="m"&gt;40&lt;/span&gt; cores total&lt;span class="o"&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="m"&gt;1&lt;/span&gt; slot &lt;span class="k"&gt;for&lt;/span&gt; 18-core &lt;span class="nb"&gt;jobs&lt;/span&gt; free &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="m"&gt;18&lt;/span&gt; cores total&lt;span class="o"&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="m"&gt;1&lt;/span&gt; slot &lt;span class="k"&gt;for&lt;/span&gt; 17-core &lt;span class="nb"&gt;jobs&lt;/span&gt; free &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="m"&gt;17&lt;/span&gt; cores total&lt;span class="o"&gt;)&lt;/span&gt; &lt;span class="o"&gt;(&lt;/span&gt;low memory &lt;span class="nb"&gt;jobs&lt;/span&gt; only&lt;span class="o"&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="m"&gt;3&lt;/span&gt; slots &lt;span class="k"&gt;for&lt;/span&gt; 16-core &lt;span class="nb"&gt;jobs&lt;/span&gt; free &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="m"&gt;48&lt;/span&gt; cores total&lt;span class="o"&gt;)&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; 9:01:49 to Inf
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="m"&gt;1&lt;/span&gt; slot &lt;span class="k"&gt;for&lt;/span&gt; 12-core &lt;span class="nb"&gt;jobs&lt;/span&gt; free &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="m"&gt;12&lt;/span&gt; cores total&lt;span class="o"&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="m"&gt;1&lt;/span&gt; slot &lt;span class="k"&gt;for&lt;/span&gt; 10-core &lt;span class="nb"&gt;jobs&lt;/span&gt; free &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="m"&gt;10&lt;/span&gt; cores total&lt;span class="o"&gt;)&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; 11:30:53
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="m"&gt;2&lt;/span&gt; slots &lt;span class="k"&gt;for&lt;/span&gt; 8-core &lt;span class="nb"&gt;jobs&lt;/span&gt; free &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="m"&gt;16&lt;/span&gt; cores total&lt;span class="o"&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="m"&gt;1&lt;/span&gt; slot &lt;span class="k"&gt;for&lt;/span&gt; 6-core &lt;span class="nb"&gt;jobs&lt;/span&gt; free &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="m"&gt;6&lt;/span&gt; cores total&lt;span class="o"&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="m"&gt;1&lt;/span&gt; slot &lt;span class="k"&gt;for&lt;/span&gt; 2-core &lt;span class="nb"&gt;jobs&lt;/span&gt; free &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="m"&gt;2&lt;/span&gt; cores total&lt;span class="o"&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="m"&gt;2&lt;/span&gt; slots &lt;span class="k"&gt;for&lt;/span&gt; 1-core &lt;span class="nb"&gt;jobs&lt;/span&gt; free &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="m"&gt;2&lt;/span&gt; cores total&lt;span class="o"&gt;)&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; 11:30:53 to 44:11:07
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sstar
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="m"&gt;1&lt;/span&gt; node &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="m"&gt;32&lt;/span&gt; core&lt;span class="o"&gt;)&lt;/span&gt; free &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="m"&gt;32&lt;/span&gt; cores total&lt;span class="o"&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="m"&gt;47&lt;/span&gt; nodes &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="m"&gt;16&lt;/span&gt; core&lt;span class="o"&gt;)&lt;/span&gt; free &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="m"&gt;752&lt;/span&gt; cores total&lt;span class="o"&gt;)&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; 48:14:50
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="m"&gt;1&lt;/span&gt; slot &lt;span class="k"&gt;for&lt;/span&gt; 14-core &lt;span class="nb"&gt;jobs&lt;/span&gt; free &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="m"&gt;14&lt;/span&gt; cores total&lt;span class="o"&gt;)&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; 48:14:50
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;gstar
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;knl
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;This shows you the current state of the &lt;code&gt;Ozstar&lt;/code&gt; queue. If you see a lot of free slots, you may be able to submit your job immediatly!
+(BTW Conrad Chan made this
+.)&lt;/p&gt;
+&lt;p&gt;Notice that &lt;code&gt;sstar&lt;/code&gt; has &lt;code&gt;47&lt;/code&gt; nodes with &lt;code&gt;16&lt;/code&gt; cores each free for 48Hrs.
+This means that you can submit a job with &lt;code&gt;752&lt;/code&gt; cores (if you request the runtime to be less than 48Hrs).&lt;/p&gt;
+&lt;p&gt;To do this, edit the &lt;code&gt;analysis_GW150914_0.sh&lt;/code&gt; script and change the following:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;#SBATCH --time=48:00:00&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;#SBATCH --nodes=47&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;#SBATCH --ntasks-per-node=16&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Then submit the job using&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;bash outdir_GW150914/submit/bash_GW150914.sh
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;OR&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sbatch outdir_GW150914/submit/bash_GW150914.sh
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id="starting-jobs-with-lots-of-cores"&gt;Starting jobs with lots of cores:&lt;/h3&gt;
+&lt;p&gt;If you&amp;rsquo;re unlucky and see that there really arnt that many cores free, you can&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Submit a job with less cores&lt;/li&gt;
+&lt;li&gt;Look at the &lt;code&gt;Ozstar&lt;/code&gt; queue to figure out which nodes will be free in the near future&lt;/li&gt;
+&lt;li&gt;Submit a job with more cores on those nodes&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;code&gt;#SBATCH --dependency=singleton&lt;/code&gt; is a useful flag to use when submitting jobs. This tells &lt;code&gt;slurm&lt;/code&gt; to wait for the job to finish before submitting the next one.&lt;/p&gt;
+&lt;h2 id="monitoring-jobs"&gt;Monitoring jobs&lt;/h2&gt;
+&lt;h3 id="checking-the-queue"&gt;Checking the queue&lt;/h3&gt;
+&lt;p&gt;To check the status of your job, run:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;scontrol show job &amp;lt;job_id&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;To check the status of all your jobs and display how long they have been running:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;watch -n &lt;span class="m"&gt;1&lt;/span&gt; squeue --me -o &lt;span class="se"&gt;\&amp;#39;&lt;/span&gt;%.4C %.2t %.7M %j&lt;span class="se"&gt;\&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id="checking-the-job-output"&gt;Checking the job output&lt;/h3&gt;
+&lt;p&gt;To check the output of your job, run:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;tail -f outdir_*/log_data_*/analysis_*.log
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;On completing a job, the dir will look something like this:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-fallback" data-lang="fallback"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;outdir_GW150914
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;├── data
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│   ├── GW150914_data_dump.pickle
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│   ├── GW150914_prior.json
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│   ├── H1_full_frequency_domain_data.png
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│   └── L1_full_frequency_domain_data.png
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;├── GW150914_config_complete.ini
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;├── log_data_analysis
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│   └── 0_GW150914.log
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;├── log_data_generation
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│   └── GW150914.log
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;├── result
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│   ├── GW150914_0_checkpoint_resume.pickle
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│   ├── GW150914_0_checkpoint_run.png
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│   ├── GW150914_0_checkpoint_stats.png
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│   ├── GW150914_0_checkpoint_trace.png
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│   ├── GW150914_0_corner.png
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│   ├── GW150914_0_result.json
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;│   └── GW150914_0_samples.dat
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;└── submit
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; ├── analysis_GW150914_0.sh
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; └── bash_full.sh
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description></item><item><title>Ozstar Notes</title><link>https://avivajpeyi.github.io/posts/ozstar-notes/</link><pubDate>Wed, 20 Oct 2021 00:20:45 +1000</pubDate><guid>https://avivajpeyi.github.io/posts/ozstar-notes/</guid><description>
+&lt;details class="print:hidden xl:hidden" &gt;
+&lt;summary&gt;Table of Contents&lt;/summary&gt;
+&lt;div class="text-sm"&gt;
+&lt;nav id="TableOfContents"&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="#interactive-jobs"&gt;Interactive Jobs&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#jupyter-notebooks--slurm"&gt;Jupyter notebooks + Slurm&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#plot-cpu-hours-used-for-jobs"&gt;Plot CPU hours used for jobs&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#downloadinguploading-data"&gt;Downloading/Uploading data&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="#slurm-job-with-data-download"&gt;Slurm job with data-download&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#rsync-data-fromto-ozstar"&gt;Rsync data from/to OzStar&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href="#sequential-jobs"&gt;Sequential jobs&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/nav&gt;
+&lt;/div&gt;
+&lt;/details&gt;
+&lt;h2 id="interactive-jobs"&gt;Interactive Jobs&lt;/h2&gt;
+&lt;p&gt;If you want to test software that requires GUI, MPI/Parallel/Multiple threads using interactive jobs may be useful.
+Note that if you need a GUI &amp;ndash; you&amp;rsquo;ll need to &lt;code&gt;ssh&lt;/code&gt; with &lt;code&gt;-X&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Run the following to start an interactive job:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sinteractive --ntasks &lt;span class="m"&gt;1&lt;/span&gt; --nodes &lt;span class="m"&gt;1&lt;/span&gt; --time 00:30:00 --mem 2GB
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Once resources are allocated, you&amp;rsquo;ll be placed in an alternative machine (for your interactive session).
+You will need to re-load your modules.&lt;/p&gt;
+&lt;h2 id="jupyter-notebooks--slurm"&gt;Jupyter notebooks + Slurm&lt;/h2&gt;
+&lt;p&gt;In an interactive job session you can open a &lt;code&gt;jupyter&lt;/code&gt; notebook with the following steps:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Source envs for you interactive session
+For example you may run the following:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nb"&gt;source&lt;/span&gt; ~/.bash_profile
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;module load git/2.18.0 gcc/9.2.0 openmpi/4.0.2 python/3.8.5
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nb"&gt;source&lt;/span&gt; venv/bin/activate
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Setup tunnel + jupyter instance on cluster&lt;/p&gt;
+&lt;p&gt;To do this run the following:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nv"&gt;ipnport&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt;shuf -i8000-9999 -n1&lt;span class="k"&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nv"&gt;ipnip&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt;hostname -i&lt;span class="k"&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;Run on local &amp;gt;&amp;gt;&amp;gt; ssh -N -L &lt;/span&gt;&lt;span class="nv"&gt;$ipnport&lt;/span&gt;&lt;span class="s2"&gt;:&lt;/span&gt;&lt;span class="nv"&gt;$ipnip&lt;/span&gt;&lt;span class="s2"&gt;:&lt;/span&gt;&lt;span class="nv"&gt;$ipnport&lt;/span&gt;&lt;span class="s2"&gt; avajpeyi@ozstar.swin.edu.au&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;jupyter-notebook --no-browser --port&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;$ipnport&lt;/span&gt; --ip&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;$ipnip&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Local connection to interactive job&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;run the command echoed above&lt;/li&gt;
+&lt;li&gt;open the link to the jupyer notebook (printed in the previous window)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Run &lt;code&gt;exit&lt;/code&gt; when done&lt;/p&gt;
+&lt;p&gt;Otherwise the job will keep running, hogging resources, until it times out.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;For convenience, I have added the following to my &lt;code&gt;OzStar .bash_profile&lt;/code&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# Interactive Jupter notebooks&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nb"&gt;alias&lt;/span&gt; &lt;span class="nv"&gt;start_ijob&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;#34;sinteractive --ntasks 2 --time 00:60:00 --mem 4GB&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;start_jupyter &lt;span class="o"&gt;()&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nv"&gt;ipnport&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt;shuf -i8000-9999 -n1&lt;span class="k"&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nv"&gt;ipnip&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt;hostname -i&lt;span class="k"&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;Run on local &amp;gt;&amp;gt;&amp;gt;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;ssh -N -L &lt;/span&gt;&lt;span class="nv"&gt;$ipnport&lt;/span&gt;&lt;span class="s2"&gt;:&lt;/span&gt;&lt;span class="nv"&gt;$ipnip&lt;/span&gt;&lt;span class="s2"&gt;:&lt;/span&gt;&lt;span class="nv"&gt;$ipnport&lt;/span&gt;&lt;span class="s2"&gt; avajpeyi@ozstar.swin.edu.au&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nv"&gt;jupcmd&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt;jupyter-notebook --no-browser --port&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;$ipnport&lt;/span&gt; --ip&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;$ipnip&lt;/span&gt;&lt;span class="k"&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="o"&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nb"&gt;export&lt;/span&gt; -f start_jupyter
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;This allows me to start an interactive job with &lt;code&gt;start_ijob&lt;/code&gt; and start the jupter notebook with &lt;code&gt;start_jupyter&lt;/code&gt;.&lt;/p&gt;
+&lt;h2 id="plot-cpu-hours-used-for-jobs"&gt;Plot CPU hours used for jobs&lt;/h2&gt;
+&lt;p&gt;Academics should try to be cognizant of the energy impact of their jobs.
+The following creates a file &lt;code&gt;jobstats.txt&lt;/code&gt; that contains the CPU time (seconds) for each job run bw the start+end time specified.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sacct -S 2021-01-01 -E 2021-10-06 -u avajpeyi -X -o &lt;span class="s2"&gt;&amp;#34;jobname%-40,cputimeraw&amp;#34;&lt;/span&gt; --parsable2 &amp;gt; jobstats.txt
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;To plot the data you can use the following:
+&lt;script src="https://gist.github.com/avivajpeyi/3beed78d92cd5f3520b4a1a93eb97cea.js"&gt;&lt;/script&gt;
+&lt;/p&gt;
+&lt;figure&gt;&lt;img src="https://avivajpeyi.github.io/posts/ozstar-notes/cpuhrs.png"&gt;&lt;figcaption&gt;
+&lt;h4&gt;Total CPU hours I&amp;#39;ve used (&amp;#39;19-&amp;#39;22) &lt;/h4&gt;
+&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;h2 id="downloadinguploading-data"&gt;Downloading/Uploading data&lt;/h2&gt;
+&lt;h3 id="slurm-job-with-data-download"&gt;Slurm job with data-download&lt;/h3&gt;
+&lt;p&gt;The nodes with the fastest net speeds are the &lt;code&gt;data-mover&lt;/code&gt; nodes.
+The compute-nodes dont have internet connection, so any jobs that require data download sould be done as a pre-processing step on the &lt;code&gt;data-mover&lt;/code&gt; nodes.&lt;/p&gt;
+&lt;p&gt;For example:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="cp"&gt;#!/bin/bash
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;#&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;#SBATCH --job-name={{jobname}}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;#SBATCH --output={{log_dir}}/download_%A_%a.log&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;#SBATCH --ntasks=1&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;#SBATCH --time={{time}}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;#SBATCH --mem={{mem}}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;#SBATCH --cpus-per-task={{cpu_per_task}}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;#SBATCH --partition=datamover&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;#SBATCH --array=0-5&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;module load &lt;span class="o"&gt;{{&lt;/span&gt;module_loads&lt;span class="o"&gt;}}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nb"&gt;source&lt;/span&gt; &lt;span class="o"&gt;{{&lt;/span&gt;python_env&lt;span class="o"&gt;}}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nv"&gt;ARRAY_ARGS&lt;/span&gt;&lt;span class="o"&gt;=(&lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt; &lt;span class="m"&gt;1&lt;/span&gt; &lt;span class="m"&gt;2&lt;/span&gt; &lt;span class="m"&gt;3&lt;/span&gt; 4&lt;span class="o"&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;srun download_dataset &lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;ARRAY_ARGS&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="nv"&gt;$SLURM_ARRAY_TASK_ID&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id="rsync-data-fromto-ozstar"&gt;Rsync data from/to OzStar&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;rsync -avPxH --no-g --chmod&lt;span class="o"&gt;=&lt;/span&gt;Dg+s &amp;lt;LOCAL_PATH&amp;gt; avajpeyi@data-mover01.hpc.swin.edu.au:/fred/&amp;lt;OZ_PROJ&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id="sequential-jobs"&gt;Sequential jobs&lt;/h2&gt;
+&lt;p&gt;Say you want to trigger sequential jobs (like a DAG), you will need to use the JobID for this and &lt;code&gt;--dependnecy=afterany:&amp;lt;JOBID&amp;gt;&lt;/code&gt;. For example:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="o"&gt;==&lt;/span&gt;&amp;gt; submit.sh &amp;lt;&lt;span class="o"&gt;==&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;#!/bin/bash&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nv"&gt;ANALYSIS_FN&lt;/span&gt;&lt;span class="o"&gt;=(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;slurm_analysis_0.sh&amp;#39;&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;slurm_analysis_1.sh&amp;#39;&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nv"&gt;POST_FN&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;slurm_post.sh&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nv"&gt;JOB_IDS&lt;/span&gt;&lt;span class="o"&gt;=()&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="k"&gt;for&lt;/span&gt; index in &lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="p"&gt;!ANALYSIS_FN[*]&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="k"&gt;do&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;Submitting &lt;/span&gt;&lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;ANALYSIS_FN&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="nv"&gt;$index&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;&lt;span class="s2"&gt;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nv"&gt;JOB_ID&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt;sbatch --parsable &lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;ANALYSIS_FN&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="nv"&gt;$index&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;&lt;span class="k"&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nv"&gt;JOB_IDS&lt;/span&gt;&lt;span class="o"&gt;+=(&lt;/span&gt;JOB_ID&lt;span class="o"&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="k"&gt;done&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nv"&gt;IDS&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;#34;&lt;/span&gt;&lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;JOB_IDS&lt;/span&gt;&lt;span class="p"&gt;[@]&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;&lt;span class="s2"&gt;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nv"&gt;IDFORMATTED&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;IDS&lt;/span&gt;&lt;span class="p"&gt;// /:&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;Submitting &lt;/span&gt;&lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;POST_FN&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;&lt;span class="s2"&gt;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;sbatch --dependnecy=afterany:&lt;/span&gt;&lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;IDFORMATTED&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;&lt;span class="s2"&gt; &lt;/span&gt;&lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;POST_FN&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;&lt;span class="s2"&gt;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;sbatch --dependency&lt;span class="o"&gt;=&lt;/span&gt;afterany:&lt;span class="nv"&gt;$IDFORMATTED&lt;/span&gt; &lt;span class="nv"&gt;$POST_FN&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;squeue -u &lt;span class="nv"&gt;$USER&lt;/span&gt; -o &lt;span class="s1"&gt;&amp;#39;%.4u %.20j %.10A %.4C %.10E %R&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;details class="spoiler " id="spoiler-3"&gt;
+&lt;summary class="cursor-pointer"&gt;Click to view the submission scripts&lt;/summary&gt;
+&lt;div class="rounded-lg bg-neutral-50 dark:bg-neutral-800 p-2"&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="o"&gt;==&lt;/span&gt;&amp;gt; slurm_analysis_0.sh &amp;lt;&lt;span class="o"&gt;==&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;#!/bin/bash&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;#&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;#SBATCH --job-name=analysis_0&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;#SBATCH --output=out.log&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;#&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;#SBATCH --ntasks=1&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;#SBATCH --time=0:01:00&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;#SBATCH --mem=100MB&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;#SBATCH --cpus-per-task=1&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;module load git/2.18.0 gcc/9.2.0 openmpi/4.0.2 python/3.8.5
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;analysis 0&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="o"&gt;==&lt;/span&gt;&amp;gt; slurm_analysis_1.sh &amp;lt;&lt;span class="o"&gt;==&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;#!/bin/bash&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;#&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;#SBATCH --job-name=analysis_1&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;#SBATCH --output=out.log&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;#&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;#SBATCH --ntasks=1&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;#SBATCH --time=0:01:00&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;#SBATCH --mem=100MB&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;#SBATCH --cpus-per-task=1&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;module load git/2.18.0 gcc/9.2.0 openmpi/4.0.2 python/3.8.5
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;analysis 1&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="o"&gt;==&lt;/span&gt;&amp;gt; slurm_post.sh &amp;lt;&lt;span class="o"&gt;==&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;#!/bin/bash&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;#&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;#SBATCH --job-name=post&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;#SBATCH --output=out.log&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;#&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;#SBATCH --ntasks=1&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;#SBATCH --time=0:01:00&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;#SBATCH --mem=100MB&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;#SBATCH --cpus-per-task=1&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;module load git/2.18.0 gcc/9.2.0 openmpi/4.0.2 python/3.8.5
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;post&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/details&gt;</description></item><item><title>Matched Filtering</title><link>https://avivajpeyi.github.io/posts/matched-filtering/</link><pubDate>Mon, 29 Jun 2020 00:20:45 +1000</pubDate><guid>https://avivajpeyi.github.io/posts/matched-filtering/</guid><description>&lt;details class="print:hidden xl:hidden" &gt;
+&lt;summary&gt;Table of Contents&lt;/summary&gt;
+&lt;div class="text-sm"&gt;
+&lt;nav id="TableOfContents"&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="#a-conceptual-discussion"&gt;A Conceptual Discussion&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="#matched-filtering-in-human-brains"&gt;Matched filtering in human brains&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#matched-filtering-in-ligo-data"&gt;Matched filtering in LIGO data&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href="#the-maths"&gt;The maths&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="#optimal-detection-statistic"&gt;Optimal detection statistic&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#gaussian-noise"&gt;Gaussian noise&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#matched-filter"&gt;Matched-Filter&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href="#the-code"&gt;The code&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="#defining-signals-and-noise"&gt;Defining signals and noise&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#defining-the-matched-filtering-code"&gt;Defining the matched-filtering code&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#examples-of-matched-filtering"&gt;Examples of matched-filtering&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#code-for-demo"&gt;Code for demo&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/nav&gt;
+&lt;/div&gt;
+&lt;/details&gt;
+&lt;h2 id="a-conceptual-discussion"&gt;A Conceptual Discussion&lt;/h2&gt;
+&lt;h3 id="matched-filtering-in-human-brains"&gt;Matched filtering in human brains&lt;/h3&gt;
+&lt;p&gt;Human brains do a form of matched filtering when brains classify certain sounds as &amp;lsquo;words&amp;rsquo;. Eardrums are vibrated by sound
+waves and brains compare these sound waves to other template sound waves that are known. In the case of words, brains
+compare the sound waves with a bank of sound waves from learned words. This process is similar to how LIGO data analysts use
+matched filtering to find gravitational waves in LIGO data.&lt;/p&gt;
+&lt;h3 id="matched-filtering-in-ligo-data"&gt;Matched filtering in LIGO data&lt;/h3&gt;
+&lt;p&gt;Compact binary coalesence (CBC) searches like
+use &lt;em&gt;matched filtering&lt;/em&gt; to find gravitational wave signals in LIGO strain data. This method compares a gravitational wave template (numerical values representing one perticular gravitational wave) to strain data. Before the strain data is compared to the gravitational wave template, the data is weighed based on the detector&amp;rsquo;s sensitivity (lower the weight of the data that comes from a region where the detector is not sensitive). The output of matched-filtering is a signal-to-noise ratio (SNR) that can be used to determine if the data contains something interesting (a potential gravitational wave candidate) or just noise.&lt;/p&gt;
+&lt;p&gt;There are many possible gravitational wave templates (gravitational waves from CBCs can have 15 parameters that can describe them hence there are $O(n^{15})$ possible templates). To compute a matched-filter SNR for each of these templates with the LIGO data is computationally expensive. Hence, instead of match-filtering with all templates, only a subset of templates to be used in matched-filtering is selected and stored in a &lt;em&gt;template bank&lt;/em&gt;. The bank is created to cover as much of the parameter space as possible by storing only the unique looking templates.&lt;/p&gt;
+&lt;figure&gt;&lt;img src="https://avivajpeyi.github.io/posts/matched-filtering/example_bank.png"&gt;&lt;figcaption&gt;
+&lt;h4&gt;An example template bank used by LIGO searches.&lt;/h4&gt;
+&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;h2 id="the-maths"&gt;The maths&lt;/h2&gt;
+&lt;h3 id="optimal-detection-statistic"&gt;Optimal detection statistic&lt;/h3&gt;
+&lt;p&gt;The first question LIGO data analysts ask when they receive LIGO strain data $s(t)$ is:&lt;/p&gt;
+&lt;blockquote class="border-l-4 border-neutral-300 dark:border-neutral-600 pl-4 italic text-neutral-600 dark:text-neutral-400 my-6"&gt;
+&lt;p&gt;Does the $s(t)$ consist only of noise $n(t)$ or does $s(t)$ contain a gravitational wave signal $h(t)$ hidden in the noise?&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;The two situations are two different hypotheses about the strain data:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Null Hypothesis, $\mathcal{H}_{n}: n(t) = s(t)$, and&lt;/li&gt;
+&lt;li&gt;GW Hypothesis, $\mathcal{H}_{GW}: n(t) = s(t) - h(t)$.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;
+can answer which of the two hypotheses are favoured by the data with an odds ratio:
+\begin{equation} \label{eq:odds}
+\begin{split}
+\mathcal{O}(\mathcal{H}&lt;em&gt;{GW}| s) &amp;amp; = \frac{P(\mathcal{H}&lt;/em&gt;{GW}|s)}{ P(\mathcal{H}_{n} | s)} .
+\end{split}
+\end{equation}&lt;/p&gt;
+&lt;p&gt;This odds ratio is the &lt;em&gt;optimal detection statistic&lt;/em&gt; that expresses the value of the probability
+that the data contains the anticipated signal be calculated when&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;the statistical properties of the noise process are known&lt;/li&gt;
+&lt;li&gt;the exact form of the signal is known&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;The following subsections describe in detail the statistical properties of the noise and signal that permit LIGO data analysts to calculate $\mathcal{O}(\mathcal{H}| s)$.&lt;/p&gt;
+&lt;h3 id="gaussian-noise"&gt;Gaussian noise&lt;/h3&gt;
+&lt;p&gt;To simplify the ability to make a detection, noise $n(t)$ is assumed to be [stationary Gaussian white noise].
+For Gaussian white noise time series data that is sampled at regular intervals of $\Delta t$, the probability of collecting a set of $N$
+datapoints $\vec{n}$, where
+&lt;/p&gt;
+$$\vec{n} = \\{n_0(t=0), n_1(t=\Delta t), n_2(t=2 \Delta t), ..., n_{N-1}(t= (N-1) \Delta t) \\}$$&lt;p&gt;
+from $0\leq t\leq T$, can be written as:
+\begin{equation} \label{eq:gaussian}
+\begin{split}
+p_n(\vec{n}) &amp;amp;= \prod^{N-1}&lt;em&gt;0 \frac{1}{\sigma\sqrt{2\pi}}\ \text{exp}\left( \frac{-1}{2\sigma&lt;sup&gt;2} n_i&lt;/sup&gt;2 \right) \\
+&amp;amp;= \frac{1}{(\sigma\sqrt{2\pi})&lt;sup&gt;N}\ \text{exp}\left( \frac{-1}{2\sigma&lt;/sup&gt;2} \sum^{N-1}&lt;/em&gt;{i=0} n_i^2 \right)
+\end{split}
+\end{equation}
+the following subsections delve into the maths required to simplify this.&lt;/p&gt;
+&lt;h4 id="summing-samples"&gt;Summing samples&lt;/h4&gt;
+&lt;p&gt;For $\\lim {\Delta t \to 0}$, $\sum^{N}_{i=1} n_i^2$ turns into an integral:&lt;/p&gt;
+&lt;p&gt;\begin{equation} \label{eq:gauss_limit}
+\begin{split}
+\lim_{\Delta t \to 0} \sum^{N}&lt;em&gt;{i=1} n_i&lt;sup&gt;2 \Delta t &amp;amp;= \int&lt;/sup&gt;T_0 n&lt;sup&gt;2(t) dt \\
+&amp;amp;= \text{(Parseval&amp;rsquo;s Theorem and assume $0 \to T$ very large?)} \\
+&amp;amp;\approx \int&lt;/sup&gt;{-\infty}&lt;/em&gt;{+\infty} |\widetilde{n}(f)|^2 df
+\end{split}
+\end{equation}&lt;/p&gt;
+&lt;h4 id="autocorrelation-function-for-gaussian-noise"&gt;Autocorrelation function for Gaussian Noise&lt;/h4&gt;
+&lt;p&gt;Additionally, as $\\lim {\Delta t \to 0}$, we can also get an expression for the &lt;em&gt;autocorrelation function&lt;/em&gt;.&lt;/p&gt;
+&lt;div class="callout flex px-4 py-3 mb-6 rounded-md border-l-4 bg-blue-100 dark:bg-blue-900 border-blue-500"
+data-callout="note"
+data-callout-metadata=""&gt;
+&lt;span class="callout-icon pr-3 pt-1 text-blue-600 dark:text-blue-300"&gt;
+&lt;svg height="24" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"&gt;&lt;path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="m16.862 4.487l1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L6.832 19.82a4.5 4.5 0 0 1-1.897 1.13l-2.685.8l.8-2.685a4.5 4.5 0 0 1 1.13-1.897zm0 0L19.5 7.125"/&gt;&lt;/svg&gt;
+&lt;/span&gt;
+&lt;div class="callout-content dark:text-neutral-300"&gt;
+&lt;div class="callout-title font-semibold mb-1"&gt;Note&lt;/div&gt;
+&lt;div class="callout-body"&gt;&lt;p&gt;&lt;strong&gt;Autocorrelation Function:&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;The autocorrelation function is a tools used to find patterns in time-series data. There are two types:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Ensemble autocorrelation: quantifies correclation between points after repeated trials&lt;/li&gt;
+&lt;li&gt;Temporal autocorrelation: quantifies correlation between points separated by various time lags in the same time-series&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;As points become more separated, typically the temporal autocorrelation function should go to 0 (since it is difficult to to forecast further into the future from a given set of data).&lt;/p&gt;
+&lt;p&gt;For a continuous-time signal $y(t)$ and a lag of $\tau$, the temporal autocorreclation $R^T_{yy}(\tau)$ is given by:
+&lt;/p&gt;
+$$ R^T_{yy}(\tau) = \int^{+\infty}_{-\infty} y(t) y^*(t-\tau)\ ,$$&lt;p&gt;
+and the ensemble autocorrelation $R^E_{yy}(\tau)$ is given by:
+&lt;/p&gt;
+$$ R^E_{yy}(\tau) = \langle y(t)|y(t-\tau)\rangle. $$&lt;p&gt;If the signal is &lt;em&gt;erodic&lt;/em&gt; (ie the signal&amp;rsquo;s statistical properties can be deduced from a long set of random samples), then
+&lt;/p&gt;
+$$ R^T_{yy}(\tau) =\lim_{T\to \infty} \frac{1}{T} \int^{T}_{0} y(t) y^*(t-\tau)dt = R^E_{yy}(\tau) .$$&lt;p&gt;Finally, note that the units ot $R$ are that of power! Hence, this can be used in the calculation of
+a power spectral density.&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;At $\\lim {\Delta t \to 0}$, the autocorrelation function for $n(t)$ becomes
+\begin{equation} \label{eq:gauss_autocorrelation_temporal}
+\begin{split}
+R&lt;sup&gt;T_{nn}(\tau=\Delta t) &amp;amp;= \lim_{T\to \infty} \frac{1}{T} \int&lt;/sup&gt;{T}&lt;em&gt;{0} n(t) n^*(t-\Delta t)dt \\
+&amp;amp;= \lim&lt;/em&gt;{T\to \infty} \frac{1}{T} \int^{T}_{0} |n(t)|^2 dt \\
+&amp;amp;= A\delta(\tau)
+\end{split}
+\end{equation}&lt;/p&gt;
+&lt;p&gt;To determine $A$, we need to consider $R^E_{nn}$. Note for a random process $x(\theta)$,
+&lt;/p&gt;
+$$ \langle x(\theta)|x(\theta) \rangle = \mu$$&lt;p&gt;
+&lt;/p&gt;
+$$ \langle (x(\theta)-\mu)^2| (x(\theta)-\mu)^2 \rangle = \sigma^2$$&lt;p&gt;
+Hence, for Gaussian white noise where $\mu=0$,&lt;/p&gt;
+&lt;p&gt;\begin{equation} \label{eq:gauss_autocorrelation_ensemble}
+\begin{split}
+\sigma&lt;sup&gt;2 &amp;amp;= \langle (n(t)-\mu)&lt;sup&gt;2| (n(t)-\mu)&lt;sup&gt;2 \rangle\rangle \\
+&amp;amp;= \langle n&lt;/sup&gt;2(t)| n&lt;/sup&gt;2(t) \rangle\rangle \\
+&amp;amp;= R&lt;/sup&gt;E_{nn}(\tau) \\
+&amp;amp;= A
+\end{split}
+\end{equation}&lt;/p&gt;
+&lt;p&gt;Thus,
+&lt;/p&gt;
+$$R_{nn}(\tau)=\sigma^2\delta(\tau) $$&lt;h4 id="power-spectral-density-from-autocorrelation"&gt;Power spectral density from autocorrelation&lt;/h4&gt;
+&lt;p&gt;The one-sided power spectral density $\text{PSD}(f)$ (of a signal $n(t)$) is defined as twice the Fourier transform of the noise autocorrelation function:
+\begin{equation} \label{eq:psd_calc}
+\begin{split}
+\text{PSD}(f) &amp;amp;= 2 \mathcal{F}(R_{nn}(t))) \\
+&amp;amp;= 2 \int_{-\infty}&lt;sup&gt;{+\infty}R_{nn}(\tau) e&lt;/sup&gt;{-if\tau}d\tau
+\end{split}
+\end{equation}&lt;/p&gt;
+&lt;div class="callout flex px-4 py-3 mb-6 rounded-md border-l-4 bg-blue-100 dark:bg-blue-900 border-blue-500"
+data-callout="note"
+data-callout-metadata=""&gt;
+&lt;span class="callout-icon pr-3 pt-1 text-blue-600 dark:text-blue-300"&gt;
+&lt;svg height="24" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"&gt;&lt;path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="m16.862 4.487l1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L6.832 19.82a4.5 4.5 0 0 1-1.897 1.13l-2.685.8l.8-2.685a4.5 4.5 0 0 1 1.13-1.897zm0 0L19.5 7.125"/&gt;&lt;/svg&gt;
+&lt;/span&gt;
+&lt;div class="callout-content dark:text-neutral-300"&gt;
+&lt;div class="callout-title font-semibold mb-1"&gt;Note&lt;/div&gt;
+&lt;div class="callout-body"&gt;&lt;strong&gt;Derivation of the above PSD equation&lt;/strong&gt; (&lt;em&gt;taken from Mike Lau&amp;rsquo;s master&amp;rsquo;s thesis&lt;/em&gt;)
+\begin{equation} \label{eq:psd_derivation}
+\begin{split}
+\mathcal{F}(R_{nn}(t))) &amp;amp;= \langle \tilde{n}&lt;sup&gt;*(f) \tilde{n}(f&amp;rsquo;)\rangle\\
+&amp;amp;= \iint&lt;/sup&gt;{\infty}&lt;em&gt;{-\infty} \langle {n}(t) {n}(t&amp;rsquo;)\rangle e^{-2\pi i (ft-f&amp;rsquo;t&amp;rsquo;)} dt dt&amp;rsquo;\\
+&amp;amp;{t&amp;rsquo;\to t+t&amp;rsquo;}\\
+&amp;amp;=\iint^{\infty}&lt;/em&gt;{-\infty} \langle {n}(t) {n}(t+t&amp;rsquo;)\rangle e^{-2\pi i(f-f&amp;rsquo;)t} e^{-2\pi if&amp;rsquo;t&amp;rsquo;} dt dt&amp;rsquo;\\
+&amp;amp;=\int^{\infty}_{-\infty} \langle {n}(t) {n}(t+t&amp;rsquo;)\rangle e^{-2\pi if&amp;rsquo;t&amp;rsquo;} dt&amp;rsquo; \delta(f-f&amp;rsquo;) \\
+&amp;amp;= \frac{1}{2}\text{PSD}(f)\delta(f-f&amp;rsquo;) \\ &lt;br&gt;
+\end{split}
+\end{equation}&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;In the case where $\\lim {\Delta t \to 0}$,
+&lt;/p&gt;
+$$R_{nn}(\tau)=\sigma^2\delta(\tau) = R_{nn}(f), $$&lt;p&gt;
+hence,
+&lt;/p&gt;
+$$\text{PSD}(f) = \\lim_{\Delta t \to 0} 2\sigma^2 \Delta t$$&lt;h4 id="gaussian-noise-at"&gt;Gaussian noise at $\\lim {\Delta t \to 0}$&lt;/h4&gt;
+&lt;p&gt;Finally, putting the above together, the probability of collecting a set of $N$
+datapoints $\vec{n}$ from Guassian white noise is simplified to:
+\begin{equation} \label{eq:gaussian_prob}
+\begin{split}
+p_n(\vec{n}) &amp;amp;= \lim_{\Delta t \to 0}\frac{1}{(\sigma\sqrt{2\pi})&lt;sup&gt;N}\ \text{exp}\left( \frac{-1}{2\sigma&lt;/sup&gt;2} \sum^{N-1}&lt;em&gt;{i=0} n_i^2\right) \\
+&amp;amp;\propto \lim&lt;/em&gt;{\Delta t \to 0} \text{exp}\left( \frac{-1}{2\sigma&lt;sup&gt;2\Delta t} \sum&lt;/sup&gt;{N-1}&lt;em&gt;{i=0} n_i&lt;sup&gt;2 \Delta t\right) \\
+&amp;amp;\propto \text{exp}\left( \frac{-1}{\text{PSD}(f)} \int&lt;/sup&gt;{T}&lt;/em&gt;{0} n(t)&lt;sup&gt;2 dt\right) \\
+&amp;amp;\propto \text{exp}\left( - \int&lt;/sup&gt;{\infty}&lt;em&gt;{-\infty} \frac{|n(f)|&lt;sup&gt;2}{\text{PSD}(f)} df\right) \\
+&amp;amp;\propto \text{exp}\left(-\frac{1}{2} 4 \int&lt;/sup&gt;{\infty}&lt;/em&gt;{0} \frac{|n(f)|&lt;sup&gt;2}{\text{PSD}(f)} df\right) \\
+\therefore p_n(\vec{n}) &amp;amp;\propto \text{e}&lt;/sup&gt;{-(n,n)/2}
+\end{split}
+\end{equation}&lt;/p&gt;
+&lt;div class="callout flex px-4 py-3 mb-6 rounded-md border-l-4 bg-blue-100 dark:bg-blue-900 border-blue-500"
+data-callout="note"
+data-callout-metadata=""&gt;
+&lt;span class="callout-icon pr-3 pt-1 text-blue-600 dark:text-blue-300"&gt;
+&lt;svg height="24" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"&gt;&lt;path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="m16.862 4.487l1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L6.832 19.82a4.5 4.5 0 0 1-1.897 1.13l-2.685.8l.8-2.685a4.5 4.5 0 0 1 1.13-1.897zm0 0L19.5 7.125"/&gt;&lt;/svg&gt;
+&lt;/span&gt;
+&lt;div class="callout-content dark:text-neutral-300"&gt;
+&lt;div class="callout-title font-semibold mb-1"&gt;Note&lt;/div&gt;
+&lt;div class="callout-body"&gt;**Noise Weighted Inner product of two time-series **
+The noise weighted inner product $(a,b)$ of two time-series $a(t)$ and $b(t)$ is defined as
+\begin{equation} \label{eq:inner_producs}
+\begin{split}
+(a,b) &amp;amp;= 4 \text{Re} \int_0^{\infty} \frac{\tilde{a}(f) \tilde{b}&lt;sup&gt;*(f)}{\text{PSD}(f)}df\\
+&amp;amp;= 2 \int_{-\infty}}&lt;/sup&gt;{\infty} \frac{\tilde{a}(f) \tilde{b}&lt;sup&gt;*(f)}{\text{PSD}(|f|)}df\\
+&amp;amp;= \int_{-\infty}}&lt;/sup&gt;{\infty} \frac{\tilde{a}(f) \tilde{b}&lt;sup&gt;*(f) + \tilde{a}&lt;/sup&gt;*(f) \tilde{b}(f)}{\text{PSD}(|f|)}df,
+\end{split}
+\end{equation}&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+where
+* $\text{PSD}(f) is the one-sided power spectral density of noise, and
+* $\tilde{y}(-f) = \tilde{y}^*(f)$ .
+&lt;h3 id="matched-filter"&gt;Matched-Filter&lt;/h3&gt;
+&lt;p&gt;The above section provides a mathematical perscription to calculate the probability desnsity that
+a collection of time-series data comes from stationary Gaussian white noise. Using this,
+the probability density of getting some data given $\matchcal{H}_{n}$ and the probability density of getting some data given $\matchcal{H}_{GW}$
+can be calculated:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;$p(s|\mathcal{H}_{n}:n=s) \propto \text{e}^{-(s,s)/2}$&lt;/li&gt;
+&lt;li&gt;$p(s|\mathcal{H}_{GW}:s=s-h) \propto \text{e}^{-(s-h,s-h)/2}$&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Finally, going off of the odd&amp;rsquo;s ratio, we can calculate a likelihood ratio:&lt;/p&gt;
+&lt;p&gt;\begin{equation} \label{eq:likelihood_ratio}
+\begin{split}
+\Lambda(\mathcal{H}&lt;em&gt;{GW}| s) &amp;amp;= \frac{p(s|\mathcal{H}&lt;/em&gt;{GW}|s)}{ p(s|\mathcal{H}_{n})} \\
+&amp;amp;= \frac{\text{e}&lt;sup&gt;{-(s-h,s-h)/2}}{\text{e}&lt;/sup&gt;{-(s,s)/2} \\
+&amp;amp;= \text{e}&lt;sup&gt;{(s,h)}\text{e}&lt;/sup&gt;{-(h,h)/2}
+\end{split}
+\end{equation}&lt;/p&gt;
+&lt;p&gt;Note that:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;$\Lambda(\mathcal{H}_{GW}| s)$ depends on the data $s(t)$ only through $(s, h)$&lt;/li&gt;
+&lt;li&gt;$\Lambda(\mathcal{H}_{GW}| s)$ is a monotonically increasing function of this $(s, h)$.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;$\therefore (s,h)$ is the &lt;em&gt;optimal detection statistic&lt;/em&gt;: any choice of threshold on the required odds ratio for accepting the alternative hypothesis can be translated to a threshold on the value of $(s, h)$. This inner produc is the &lt;em&gt;matched filter&lt;/em&gt; since it is a noise-weighted correlation of the anticipated signal with the data.&lt;/p&gt;
+&lt;h2 id="the-code"&gt;The code&lt;/h2&gt;
+&lt;p&gt;As discussed above, one method of searching for a specific signal in a noisy data is via a matched filter. The code for this is illustrated in this section.&lt;/p&gt;
+&lt;h3 id="defining-signals-and-noise"&gt;Defining signals and noise&lt;/h3&gt;
+&lt;p&gt;Here is the python code to generate Gaussain pulses, square pulses and noise.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-python" data-lang="python"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;get_gaussian_pulse_signal&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;time&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;ndarray&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;-&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;ndarray&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="n"&gt;sig&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;scipy&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;signal&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;gausspulse&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;t&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;time&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;fc&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="n"&gt;sig&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;abs&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;sig&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&lt;/span&gt; &lt;span class="mf"&gt;1e-2&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;sig&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;get_square_pulse_signal&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;time&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;ndarray&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;-&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;ndarray&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="n"&gt;idx_to_one&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;abs&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;time&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;=&lt;/span&gt; &lt;span class="mf"&gt;0.5&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="n"&gt;sig&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;array&lt;/span&gt;&lt;span class="p"&gt;([&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt; &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;one&lt;/span&gt; &lt;span class="k"&gt;else&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;one&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;idx_to_one&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;sig&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;get_noise&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;time&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;ndarray&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;noise_factor&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;Optional&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="nb"&gt;float&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;-&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;ndarray&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="n"&gt;noise&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;random&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;randn&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nb"&gt;len&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;time&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="n"&gt;noise_factor&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;noise&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;The data generated from Gaussian noise and a Gaussian Pulse signal is shown in the following image.
+&lt;figure&gt;&lt;img src="https://avivajpeyi.github.io/posts/matched-filtering/data.png"&gt;&lt;figcaption&gt;
+&lt;h4&gt;A demonstrative image showing what happens to a Gaussian Pulse signal when some noise is added to it.&lt;/h4&gt;
+&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;/p&gt;
+&lt;h3 id="defining-the-matched-filtering-code"&gt;Defining the matched-filtering code&lt;/h3&gt;
+&lt;p&gt;Here is a rudimentary implementation of a matched-filter method, where the data is multiplied with the template, and the convolution is summed.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-python" data-lang="python"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;perform_matched_filter&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="n"&gt;time&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;ndarray&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="n"&gt;data&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;ndarray&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="n"&gt;template_func&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;Callable&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;-&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;Dict&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="n"&gt;match_filter_values&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="n"&gt;template&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;move_template_to_lowest_time&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;t&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;template_func&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;time&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;i&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="nb"&gt;range&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nb"&gt;len&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;data&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt; &lt;span class="mi"&gt;10&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="n"&gt;current_template&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;roll&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;template&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;shift&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="n"&gt;matched_filter&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;sum&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;data&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="n"&gt;current_template&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="n"&gt;match_filter_values&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;append&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;dict&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="n"&gt;matched_filter&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;matched_filter&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="n"&gt;time&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;time&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="n"&gt;template&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;current_template&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="p"&gt;))&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;match_filter_values&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id="examples-of-matched-filtering"&gt;Examples of matched-filtering&lt;/h3&gt;
+&lt;h4 id="finding-a-gaussian-pulse-with-a-gaussian-pulse-template"&gt;Finding a Gaussian Pulse with a Gaussian Pulse Template&lt;/h4&gt;
+&lt;div class="fixed-wrapper"&gt;
+&lt;iframe style="height: 700px; width: 100%; min-width: 360px; max-width: 590px;" frameborder="0" allowtransparency="true" scrolling="no" src="gaussian_pulse.html"&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+&lt;h4 id="finding-a-gaussian-pulse-with-a-square-template"&gt;Finding a Gaussian Pulse with a Square Template&lt;/h4&gt;
+&lt;div class="fixed-wrapper"&gt;
+&lt;iframe style="height: 700px; width: 100%; min-width: 360px; max-width: 590px;" frameborder="0" allowtransparency="true" scrolling="no" src="square.html"&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+&lt;h4 id="finding-a-square-with-a-gaussian-pulse-template"&gt;Finding a Square with a Gaussian Pulse Template&lt;/h4&gt;
+&lt;div class="fixed-wrapper"&gt;
+&lt;iframe style="height: 700px; width: 100%; min-width: 360px; max-width: 590px;" frameborder="0" allowtransparency="true" scrolling="no" src="gaussian_pulse_to_find_square.html"&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+&lt;h3 id="code-for-demo"&gt;Code for demo&lt;/h3&gt;
+&lt;p&gt;The entire code for the demo can be found here:
+&lt;script src="https://gist.github.com/avivajpeyi/c5fbcdabc5a52b3fd039075f98fcd563.js"&gt;&lt;/script&gt;
+&lt;/p&gt;</description></item><item><title>Understanding exoplanet transits</title><link>https://avivajpeyi.github.io/posts/understanding-exoplanet-transits/</link><pubDate>Mon, 29 Jun 2020 00:20:45 +1000</pubDate><guid>https://avivajpeyi.github.io/posts/understanding-exoplanet-transits/</guid><description>&lt;p&gt;Here are some of my note written on
+:&lt;/p&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;title&gt;&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;h1&gt;&lt;/h1&gt;
+&lt;iframe src="understanding_exoplanet_transits.pdf" width="100%" height="500px"&gt;
+&lt;/iframe&gt;
+&lt;/body&gt;
+&lt;/html&gt;</description></item><item><title>Colorblind Palette for Plotting</title><link>https://avivajpeyi.github.io/posts/colorblind-palette-for-plotting/</link><pubDate>Fri, 19 Jun 2020 00:20:45 +1000</pubDate><guid>https://avivajpeyi.github.io/posts/colorblind-palette-for-plotting/</guid><description>&lt;script src="https://gist.github.com/avivajpeyi/6cafec9c0ffa70b0bd72b7ee85e995d1.js"&gt;&lt;/script&gt;
+&lt;figure&gt;&lt;img src="https://avivajpeyi.github.io/posts/colorblind-palette-for-plotting/example_colorblind_cols.png"&gt;&lt;figcaption&gt;
+&lt;h4&gt;20 colorblind cols. Note the colors are very similar after ~10.&lt;/h4&gt;
+&lt;/figcaption&gt;
+&lt;/figure&gt;</description></item><item><title>Python Big-O Examples</title><link>https://avivajpeyi.github.io/posts/python-big-o-examples/</link><pubDate>Fri, 19 Jun 2020 00:20:45 +1000</pubDate><guid>https://avivajpeyi.github.io/posts/python-big-o-examples/</guid><description>&lt;h1 id="what-are-the-big-o-for-the-following"&gt;What are the Big-O for the following?&lt;/h1&gt;
+&lt;p&gt;Some students in an Algorithms class I am teaching are having trouble with
+Big-O notation. Here are some practice problems:&lt;/p&gt;
+&lt;h2 id="qs-1"&gt;Qs 1&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-python" data-lang="python"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;i&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="nb"&gt;range&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nb"&gt;sum&lt;/span&gt;&lt;span class="o"&gt;++&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class="container"&gt;
+&lt;a href="#qs1" class="btn btn-info" data-toggle="collapse"&gt;Answer&lt;/a&gt;
+&lt;div id="qs1" class="collapse"&gt;
+O(n)
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;h2 id="qs-2"&gt;Qs 2&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-python" data-lang="python"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;i&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="nb"&gt;range&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;j&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="nb"&gt;range&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nb"&gt;sum&lt;/span&gt;&lt;span class="o"&gt;+=&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class="container"&gt;
+&lt;a href="#qs2" class="btn btn-info" data-toggle="collapse"&gt;Answer&lt;/a&gt;
+&lt;div id="qs2" class="collapse"&gt;
+O(n)
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;h2 id="qs-3"&gt;Qs 3&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-python" data-lang="python"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;i&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="nb"&gt;range&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nb"&gt;sum&lt;/span&gt; &lt;span class="o"&gt;+=&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class="container"&gt;
+&lt;a href="#qs3" class="btn btn-info" data-toggle="collapse"&gt;Answer&lt;/a&gt;
+&lt;div id="qs3" class="collapse"&gt;
+O(n^2)
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;h2 id="qs-4"&gt;Qs 4&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-python" data-lang="python"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="n"&gt;i&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="k"&gt;while&lt;/span&gt; &lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="n"&gt;i&lt;/span&gt; &lt;span class="o"&gt;*=&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class="container"&gt;
+&lt;a href="#qs4" class="btn btn-info" data-toggle="collapse"&gt;Answer&lt;/a&gt;
+&lt;div id="qs4" class="collapse"&gt;
+O(2^n)
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;h2 id="qs-5"&gt;Qs 5&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-python" data-lang="python"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="n"&gt;i&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;n&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="k"&gt;while&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&lt;/span&gt; &lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="n"&gt;i&lt;/span&gt; &lt;span class="o"&gt;++&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class="container"&gt;
+&lt;a href="#qs5" class="btn btn-info" data-toggle="collapse"&gt;Answer&lt;/a&gt;
+&lt;div id="qs5" class="collapse"&gt;
+O(1)
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;h2 id="qs-6"&gt;Qs 6&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-python" data-lang="python"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;fibonacci&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;n&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;=&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt; &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;n&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="k"&gt;else&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="k"&gt;return&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;fibonacci&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;n&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="n"&gt;fibonacci&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;n&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class="container"&gt;
+&lt;a href="#qs6" class="btn btn-info" data-toggle="collapse"&gt;Answer&lt;/a&gt;
+&lt;div id="qs6" class="collapse"&gt;
+O(2^n)
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;h2 id="qs-7"&gt;Qs 7&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-python" data-lang="python"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="n"&gt;i&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="k"&gt;while&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt; &lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="n"&gt;i&lt;/span&gt; &lt;span class="o"&gt;*=&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class="container"&gt;
+&lt;a href="#qs7" class="btn btn-info" data-toggle="collapse"&gt;Answer&lt;/a&gt;
+&lt;div id="qs7" class="collapse"&gt;
+O(1)
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;h2 id="qs-8"&gt;Qs 8&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-python" data-lang="python"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="k"&gt;for&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;int&lt;/span&gt; &lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="o"&gt;/=&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="k"&gt;for&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;int&lt;/span&gt; &lt;span class="n"&gt;j&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="n"&gt;j&lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="n"&gt;j&lt;/span&gt;&lt;span class="o"&gt;++&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="n"&gt;count&lt;/span&gt;&lt;span class="o"&gt;++&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class="container"&gt;
+&lt;a href="#qs8" class="btn btn-info" data-toggle="collapse"&gt;Answer&lt;/a&gt;
+&lt;div id="qs8" class="collapse"&gt;
+O(n)
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;h2 id="qs-9"&gt;Qs 9&lt;/h2&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-python" data-lang="python"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="k"&gt;for&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;int&lt;/span&gt; &lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="o"&gt;++&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="k"&gt;for&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;int&lt;/span&gt; &lt;span class="n"&gt;j&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="n"&gt;j&lt;/span&gt;&lt;span class="err"&gt;≤&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="n"&gt;j&lt;/span&gt;&lt;span class="o"&gt;++&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="k"&gt;for&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;int&lt;/span&gt; &lt;span class="n"&gt;k&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="n"&gt;k&lt;/span&gt;&lt;span class="err"&gt;≤&lt;/span&gt; &lt;span class="mi"&gt;6&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="n"&gt;k&lt;/span&gt;&lt;span class="o"&gt;++&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nb"&gt;sum&lt;/span&gt; &lt;span class="o"&gt;++&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class="container"&gt;
+&lt;a href="#qs9" class="btn btn-info" data-toggle="collapse"&gt;Answer&lt;/a&gt;
+&lt;div id="qs9" class="collapse"&gt;
+O(n^4)
+&lt;/div&gt;
+&lt;/div&gt;</description></item><item><title>PhD Reports</title><link>https://avivajpeyi.github.io/posts/phd-reports/</link><pubDate>Fri, 10 Apr 2020 00:20:45 +1000</pubDate><guid>https://avivajpeyi.github.io/posts/phd-reports/</guid><description>&lt;p&gt;For my PhD canditure I have to produce some reports documenting my progress:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;6 months:
+&lt;/li&gt;
+&lt;li&gt;12 months:
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Note: to view these documents you may have to click on &amp;ldquo;Advanced &amp;gt; Proceed&amp;rdquo;.&lt;/p&gt;</description></item><item><title>Installing LalSuite from Source</title><link>https://avivajpeyi.github.io/posts/installing-lalsuite-from-source/</link><pubDate>Thu, 19 Sep 2019 00:20:45 +1000</pubDate><guid>https://avivajpeyi.github.io/posts/installing-lalsuite-from-source/</guid><description>&lt;h2 id="steps"&gt;Steps&lt;/h2&gt;
+&lt;h3 id="step-0-requirements"&gt;Step 0: Requirements&lt;/h3&gt;
+&lt;p&gt;Module loads/things you might need:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;module load git/2.18.0
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;module load git-lfs/2.4.0
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;module load anaconda3/5.1.0
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;module load gcc/6.4.0
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;module load openmpi/3.0.0
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;module load fftw/3.3.7
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;module load swig/3.0.12-python-3.6.4
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;module load framel/8.30
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;module load metaio/8.4.0
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;module load gsl/2.4
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id="step-1-install-lal"&gt;Step 1: Install lal&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;git clone git@git.ligo.org:lscsoft/lalsuite.git
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;mkdir lal_install_dir
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nb"&gt;cd&lt;/span&gt; lalsuite/lal
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;./00boot &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; ./configure --prefix&lt;span class="o"&gt;=&lt;/span&gt;/&amp;lt;path to&amp;gt;/lal_install_dir/ &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; make &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; make install
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;. &amp;lt;path to&amp;gt;/lal_install_dir/etc/lal-user-env.sh
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id="step-2-install-lalsimulation"&gt;Step 2: Install lalsimulation&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nb"&gt;cd&lt;/span&gt; ../lalsimulation
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;./00boot &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; ./configure --prefix&lt;span class="o"&gt;=&lt;/span&gt;/&amp;lt;path to&amp;gt;/lal_install_dir/ &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; make &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; make install
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&amp;lt;path to&amp;gt;/lal_install_dir/etc/lalsimulation-user-env.sh
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;At this point, the installation &lt;em&gt;should(?)&lt;/em&gt; work. Test it out in python:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nb"&gt;cd&lt;/span&gt; ~
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;python
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&amp;gt;&amp;gt;&amp;gt; import lalsimulation
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id="step-3-get-waveform-data"&gt;Step 3: Get waveform data&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nb"&gt;cd&lt;/span&gt; ~/ &lt;span class="p"&gt;&amp;amp;&lt;/span&gt; mkdir waveform_data
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;export LAL_DATA_PATH=/&amp;lt;path_to_wave_data_dir&amp;gt;&amp;#34;&lt;/span&gt; &amp;gt;&amp;gt; .bash_profile
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Copy the waveform data files and place them into this the &lt;code&gt;waveform_data/&lt;/code&gt; dir&lt;/p&gt;
+&lt;div class="callout flex px-4 py-3 mb-6 rounded-md border-l-4 bg-orange-100 dark:bg-orange-900 border-orange-500"
+data-callout="warning"
+data-callout-metadata=""&gt;
+&lt;span class="callout-icon pr-3 pt-1 text-orange-600 dark:text-orange-300"&gt;
+&lt;svg height="24" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"&gt;&lt;path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0zM12 15.75h.007v.008H12z"/&gt;&lt;/svg&gt;
+&lt;/span&gt;
+&lt;div class="callout-content dark:text-neutral-300"&gt;
+&lt;div class="callout-title font-semibold mb-1"&gt;Warning&lt;/div&gt;
+&lt;div class="callout-body"&gt;Where do we get the waveform datafiles from again?&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;h2 id="test-installation-steps-with-the-following-script"&gt;Test installation steps with the following script&lt;/h2&gt;
+&lt;script src="https://gist.github.com/avivajpeyi/030a544b097fcb4508055d73fa3fa895.js"&gt;&lt;/script&gt;</description></item></channel></rss>
