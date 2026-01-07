@@ -1,6 +1,6 @@
 (() => {
   // ns-hugo-params:<stdin>
-  var slides = { highlight_style: "github-light", theme: "white" };
+  var slides = { diagram: true, highlight_style: "dracula", reveal_options: { controls: true, hash: true, progress: true, slidenumber: true }, theme: "black" };
 
   // <stdin>
   var enabledPlugins = [RevealMarkdown, RevealSearch, RevealNotes, RevealMath.KaTeX, RevealZoom];
