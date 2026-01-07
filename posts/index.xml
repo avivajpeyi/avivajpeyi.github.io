@@ -159,7 +159,8 @@ in the &lt;code&gt;.github/workflows/deploy-pages.yml&lt;/code&gt;.&lt;/p&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;git add -A
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;git commit -m &lt;span class="s1"&gt;&amp;#39;init website&amp;#39;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;git push
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class="callout flex px-4 py-3 mb-6 rounded-md border-l-4 bg-blue-100 dark:bg-blue-900 border-blue-500"
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class="callout flex px-4 py-3 mb-6 rounded-md border-l-4 bg-blue-100 dark:bg-blue-900 border-blue-500"
 data-callout="note"
 data-callout-metadata=""&gt;
 &lt;span class="callout-icon pr-3 pt-1 text-blue-600 dark:text-blue-300"&gt;
@@ -167,8 +168,8 @@ data-callout-metadata=""&gt;
 &lt;/span&gt;
 &lt;div class="callout-content dark:text-neutral-300"&gt;
 &lt;div class="callout-title font-semibold mb-1"&gt;Note&lt;/div&gt;
-&lt;div class="callout-body"&gt;Remember to &amp;lsquo;activate&amp;rsquo; github pages in your repo settings (see
-above).&lt;/div&gt;
+&lt;div class="callout-body"&gt;&lt;p&gt;Remember to &amp;lsquo;activate&amp;rsquo; github pages in your repo settings (see
+above).&lt;/p&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;h2 id="personalising-your-website"&gt;Personalising your website&lt;/h2&gt;
@@ -284,7 +285,8 @@ for more details.&lt;/p&gt;</description></item><item><title>Bilby Workshop for 
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;module load git/2.18.0 git-lfs/2.4.0 gcc/9.2.0 openmpi/4.0.2 numpy/1.19.2-python-3.8.5 mpi4py/3.0.3-python-3.8.5 &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; module unload zlib
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;python -m venv pbilby_venv
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nb"&gt;source&lt;/span&gt; pbilby_venv/bin/activate
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class="callout flex px-4 py-3 mb-6 rounded-md border-l-4 bg-blue-100 dark:bg-blue-900 border-blue-500"
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class="callout flex px-4 py-3 mb-6 rounded-md border-l-4 bg-blue-100 dark:bg-blue-900 border-blue-500"
 data-callout="note"
 data-callout-metadata=""&gt;
 &lt;span class="callout-icon pr-3 pt-1 text-blue-600 dark:text-blue-300"&gt;
@@ -294,8 +296,7 @@ data-callout-metadata=""&gt;
 &lt;div class="callout-title font-semibold mb-1"&gt;Note&lt;/div&gt;
 &lt;div class="callout-body"&gt;&lt;p&gt;&lt;strong&gt;Choosing a dir for your venv&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;Your &lt;code&gt;venv&lt;/code&gt; will be faster to boot-up if you make it in your &lt;code&gt;/home/&lt;/code&gt; directory, rather than in &lt;code&gt;/fred/&lt;/code&gt; (as the latter is on a network drive).
-However, &lt;code&gt;/home/&lt;/code&gt; has a very small amount of storage space.&lt;/p&gt;
-&lt;/div&gt;
+However, &lt;code&gt;/home/&lt;/code&gt; has a very small amount of storage space.&lt;/p&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;p&gt;You will need to load the same modules every time you want to use the &lt;code&gt;pbilby_venv&lt;/code&gt; environment. I recommend adding the following to your &lt;code&gt;.bashrc&lt;/code&gt; file:&lt;/p&gt;
@@ -742,8 +743,7 @@ and the ensemble autocorrelation $R^E_{yy}(\tau)$ is given by:
 $$ R^E_{yy}(\tau) = \langle y(t)|y(t-\tau)\rangle. $$&lt;p&gt;If the signal is &lt;em&gt;erodic&lt;/em&gt; (ie the signal&amp;rsquo;s statistical properties can be deduced from a long set of random samples), then
 &lt;/p&gt;
 $$ R^T_{yy}(\tau) =\lim_{T\to \infty} \frac{1}{T} \int^{T}_{0} y(t) y^*(t-\tau)dt = R^E_{yy}(\tau) .$$&lt;p&gt;Finally, note that the units ot $R$ are that of power! Hence, this can be used in the calculation of
-a power spectral density.&lt;/p&gt;
-&lt;/div&gt;
+a power spectral density.&lt;/p&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;p&gt;At $\\lim {\Delta t \to 0}$, the autocorrelation function for $n(t)$ becomes
@@ -786,7 +786,7 @@ data-callout-metadata=""&gt;
 &lt;/span&gt;
 &lt;div class="callout-content dark:text-neutral-300"&gt;
 &lt;div class="callout-title font-semibold mb-1"&gt;Note&lt;/div&gt;
-&lt;div class="callout-body"&gt;&lt;strong&gt;Derivation of the above PSD equation&lt;/strong&gt; (&lt;em&gt;taken from Mike Lau&amp;rsquo;s master&amp;rsquo;s thesis&lt;/em&gt;)
+&lt;div class="callout-body"&gt;&lt;p&gt;&lt;strong&gt;Derivation of the above PSD equation&lt;/strong&gt; (&lt;em&gt;taken from Mike Lau&amp;rsquo;s master&amp;rsquo;s thesis&lt;/em&gt;)
 \begin{equation} \label{eq:psd_derivation}
 \begin{split}
 \mathcal{F}(R_{nn}(t))) &amp;amp;= \langle \tilde{n}&lt;sup&gt;*(f) \tilde{n}(f&amp;rsquo;)\rangle\\
@@ -796,7 +796,7 @@ data-callout-metadata=""&gt;
 &amp;amp;=\int^{\infty}_{-\infty} \langle {n}(t) {n}(t+t&amp;rsquo;)\rangle e^{-2\pi if&amp;rsquo;t&amp;rsquo;} dt&amp;rsquo; \delta(f-f&amp;rsquo;) \\
 &amp;amp;= \frac{1}{2}\text{PSD}(f)\delta(f-f&amp;rsquo;) \\ &lt;br&gt;
 \end{split}
-\end{equation}&lt;/div&gt;
+\end{equation}&lt;/p&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;p&gt;In the case where $\\lim {\Delta t \to 0}$,
@@ -825,7 +825,7 @@ data-callout-metadata=""&gt;
 &lt;/span&gt;
 &lt;div class="callout-content dark:text-neutral-300"&gt;
 &lt;div class="callout-title font-semibold mb-1"&gt;Note&lt;/div&gt;
-&lt;div class="callout-body"&gt;**Noise Weighted Inner product of two time-series **
+&lt;div class="callout-body"&gt;&lt;p&gt;**Noise Weighted Inner product of two time-series **
 The noise weighted inner product $(a,b)$ of two time-series $a(t)$ and $b(t)$ is defined as
 \begin{equation} \label{eq:inner_producs}
 \begin{split}
@@ -833,12 +833,14 @@ The noise weighted inner product $(a,b)$ of two time-series $a(t)$ and $b(t)$ is
 &amp;amp;= 2 \int_{-\infty}}&lt;/sup&gt;{\infty} \frac{\tilde{a}(f) \tilde{b}&lt;sup&gt;*(f)}{\text{PSD}(|f|)}df\\
 &amp;amp;= \int_{-\infty}}&lt;/sup&gt;{\infty} \frac{\tilde{a}(f) \tilde{b}&lt;sup&gt;*(f) + \tilde{a}&lt;/sup&gt;*(f) \tilde{b}(f)}{\text{PSD}(|f|)}df,
 \end{split}
-\end{equation}&lt;/div&gt;
+\end{equation}
+where&lt;/p&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-where
-* $\text{PSD}(f) is the one-sided power spectral density of noise, and
-* $\tilde{y}(-f) = \tilde{y}^*(f)$ .
+&lt;ul&gt;
+&lt;li&gt;$\text{PSD}(f) is the one-sided power spectral density of noise, and&lt;/li&gt;
+&lt;li&gt;$\tilde{y}(-f) = \tilde{y}^*(f)$ .&lt;/li&gt;
+&lt;/ul&gt;
 &lt;h3 id="matched-filter"&gt;Matched-Filter&lt;/h3&gt;
 &lt;p&gt;The above section provides a mathematical perscription to calculate the probability desnsity that
 a collection of time-series data comes from stationary Gaussian white noise. Using this,
@@ -1075,7 +1077,7 @@ data-callout-metadata=""&gt;
 &lt;/span&gt;
 &lt;div class="callout-content dark:text-neutral-300"&gt;
 &lt;div class="callout-title font-semibold mb-1"&gt;Warning&lt;/div&gt;
-&lt;div class="callout-body"&gt;Where do we get the waveform datafiles from again?&lt;/div&gt;
+&lt;div class="callout-body"&gt;&lt;p&gt;Where do we get the waveform datafiles from again?&lt;/p&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;h2 id="test-installation-steps-with-the-following-script"&gt;Test installation steps with the following script&lt;/h2&gt;
