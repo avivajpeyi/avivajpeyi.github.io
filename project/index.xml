@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Projects |</title><link>https://avivajpeyi.github.io/project/</link><atom:link href="https://avivajpeyi.github.io/project/index.xml" rel="self" type="application/rss+xml"/><description>Projects</description><generator>HugoBlox Kit (https://hugoblox.com)</generator><language>en-us</language><image><url>https://avivajpeyi.github.io/media/icon.svg</url><title>Projects</title><link>https://avivajpeyi.github.io/project/</link></image><item><title>LogPSplinePSD: from a statistical method to a usable API</title><link>https://avivajpeyi.github.io/project/logpsplinepsd/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://avivajpeyi.github.io/project/logpsplinepsd/</guid><description>&lt;p&gt;Noise is part of the model in time-series inference. A useful analysis needs to estimate how noise varies with frequency, how channels are correlated, and how uncertain those estimates are.&lt;/p&gt;
+&lt;p&gt;
+implements Bayesian log-P-spline models for this problem. It supports univariate spectra and multivariate spectral matrices using JAX and NumPyro, and provides posterior summaries and diagnostic plots.&lt;/p&gt;
+&lt;h2 id="my-contribution"&gt;My contribution&lt;/h2&gt;
+&lt;p&gt;I contribute software to this collaborative research project, building on statistical work by the research team and earlier P-spline methods.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Clearer API naming:&lt;/strong&gt; I revised the fitting module and configuration names around the public &lt;code&gt;fit()&lt;/code&gt; interface, updating examples and tests together.
+.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Inference and controls:&lt;/strong&gt; I added scalar variational inference, sampler controls, and tests for stationary and time-varying power models.
+.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Outputs and examples:&lt;/strong&gt; the same contribution updates &lt;code&gt;PSDResult&lt;/code&gt; handling and adds worked multivariate and time-varying notebooks, so users can follow inputs through to posterior results.
+.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="how-the-software-fits-together"&gt;How the software fits together&lt;/h2&gt;
+&lt;p&gt;Time-series data → spectral preprocessing → spline model → Bayesian inference → posterior spectra and diagnostics.&lt;/p&gt;
+&lt;p&gt;The interface separates configuration from execution. Results include posterior spectra and ArviZ-compatible &lt;code&gt;xarray.DataTree&lt;/code&gt; outputs. The repository keeps reusable models and inference code separate from application-specific research studies.&lt;/p&gt;
+&lt;p&gt;This is the engineering thread I enjoy: translating a statistical method into a coherent interface, checking its behaviour, and documenting a path that another researcher can follow.&lt;/p&gt;
+&lt;h2 id="evidence-and-limits"&gt;Evidence and limits&lt;/h2&gt;
+&lt;p&gt;The repository contains tests for variational inference, sampler controls and time-varying power fits, alongside example notebooks. Those are inspectable implementation and validation artifacts; they do not establish performance for every dataset.&lt;/p&gt;
+&lt;p&gt;The package supports scalar time-varying fits. &lt;strong&gt;Multivariate time-varying inference is not yet implemented&lt;/strong&gt;, as recorded in the
+.&lt;/p&gt;
+&lt;p&gt;There is no single comparable benchmark or verified adoption measure attached to this case study. Runtime, accuracy and usage metrics need a defined dataset, hardware, baseline and measurement before they can support a quantitative claim.&lt;/p&gt;
+&lt;p&gt;
+·
+&lt;/p&gt;</description></item></channel></rss>
